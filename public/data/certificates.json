@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Course",
+    "issuer": "Programming Hero",
+    "year": "2024",
+    "image": "/assets/images/certificates/ph.jpg",
+    "skills": ["Web Design", "User Experience"]
+  },
+  {
+    "id": 2,
+    "title": "Voluntary Blood Donation Program",
+    "issuer": "Quantum Foundation",
+    "year": "2022",
+    "image": "/assets/images/certificates/blood.jpg",
+    "skills": ["Volunteer", "Community"]
+  },
+  {
+    "id": 3,
+    "title": "APTIS – Forward Thinking English Testing",
+    "issuer": "British Council",
+    "year": "2019",
+    "image": "/assets/images/certificates/eng.png",
+    "skills": ["Communication", "Language"]
+  },
+  {
+    "id": 4,
+    "title": "Quantum Method Course",
+    "issuer": "Yoga Foundation",
+    "year": "2018",
+    "image": "/assets/images/certificates/mehedi_hasan_certificate_Quantum_Method_Course.jpg",
+    "skills": ["Positive Lifestyle", "Meditation"]
+  },
+  {
+    "id": 5,
+    "title": "Communication Hack",
+    "issuer": "10 Minute School",
+    "year": "2025",
+    "image": "/assets/images/certificates/Mehedi_Hasan_communication_Hack_Certificate_page-0001.jpg",
+    "skills": ["Communication", "Soft Skills"]
+  },
+  {
+    "id": 6,
+    "title": "Video Editing and 2D/3D Animation",
+    "issuer": "Bangladesh Hi-Tech Park Authority",
+    "year": "2019",
+    "image": "/assets/images/certificates/Mehedi_Hasan_Video_Editing_Certificate.png",
+    "skills": ["Video Editing", "Creative Design"]
+  },
+  {
+    "id": 7,
+    "title": "Web Development (Laravel)",
+    "issuer": "Bangladesh Hi-Tech Park Authority",
+    "year": "2019",
+    "image": "/assets/images/certificates/Mehedi_Hasan_Web_Certificate .png",
+    "skills": ["Web Design", "User Experience"]
+  },
+  {
+    "id": 8,
+    "title": "Corporate Etiquette",
+    "issuer": "10 Minute School",
+    "year": "2025",
+    "image": "/assets/images/certificates/Mehedi_Hasan_Corpureate_manner_Certificate _page-0001.jpg",
+    "skills": ["Communication", "Professional Skills"]
+  },
+  {
+    "id": 9,
+    "title": "CV Writing and Interview",
+    "issuer": "10 Minute School",
+    "year": "2024",
+    "image": "/assets/images/certificates/Mehedi_Hasan_cv-cource-certificate_page-0001.jpg",
+    "skills": ["CV Writing", "Interview Skills"]
+  }
+]
