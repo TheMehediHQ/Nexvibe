@@ -5,11 +5,11 @@ import { getCertificates } from "@/lib/site-data";
 
 export const metadata: Metadata = createPageMetadata({
   path: "/certifications",
-  title: "Certifications | Vision Studio 23",
+  title: "Certifications | Nova 01 Labs",
   description:
     "Certifications that reflect continuous learning across modern frontend engineering and delivery.",
   keywords: [
-    "Vision Studio 23 certifications",
+    "Nova 01 Labs certifications",
     "web development certificates",
     "frontend developer certifications",
   ],

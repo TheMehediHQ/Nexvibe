@@ -4,11 +4,11 @@ import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
   path: "/zex",
-  title: "Marketplace Links | Vision Studio 23",
+  title: "Marketplace Links | Nova 01 Labs",
   description:
-    "Find Vision Studio 23 across active freelance marketplaces.",
+    "Find Nova 01 Labs across active freelance marketplaces.",
   keywords: [
-    "Vision Studio 23 marketplace links",
+    "Nova 01 Labs marketplace links",
     "freelance profile links",
     "Upwork Fiverr Freelancer PeoplePerHour Contra",
   ],

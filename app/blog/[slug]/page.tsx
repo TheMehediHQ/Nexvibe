@@ -34,7 +34,7 @@ export const generateMetadata = async ({
  if (!post) {
  return createPageMetadata({
  path: `/blog/${slug}`,
- title: 'Blog Post Not Found | Vision Studio 23',
+ title: 'Blog Post Not Found | Nova 01 Labs',
  description: 'The requested blog post could not be found.',
  noIndex: true,
  });
@@ -90,7 +90,7 @@ export default async function BlogPost({
   image: [absoluteImageUrl(post.meta.coverImage ?? '/profile/profile.png')],
   author: {
     '@type': 'Organization',
-    name: 'Vision Studio 23',
+    name: 'Nova 01 Labs',
    url: SITE_URL,
   },
   publisher: {

@@ -24,12 +24,12 @@ export default function LogoBrand({ onClick }: LogoBrandProps) {
       >
         <Image
           src="/profile/profile.png"
-          alt="Vision Studio 23 brand logo"
+          alt="Nova 01 Labs brand logo"
           width={28}
           height={28}
           className="rounded-full sm:mr-2"
         />
-        <span className="hidden sm:inline">Vision Studio 23</span>
+        <span className="hidden sm:inline">Nova 01 Labs</span>
       </Link>
     </div>
   );

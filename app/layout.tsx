@@ -8,11 +8,11 @@ import { SITE_URL, getSiteVerificationMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Vision Studio 23 | Web Agency",
+  title: "Nova 01 Labs | Web Agency",
   description:
-    "Vision Studio 23 is a web agency building high-converting websites, modern web apps, and growth-focused digital experiences.",
+    "Nova 01 Labs is a web agency building high-converting websites, modern web apps, and growth-focused digital experiences.",
   keywords: [
-    "Vision Studio 23",
+    "Nova 01 Labs",
     "Web Agency",
     "Agency Portfolio",
     "Next.js Agency",
@@ -23,19 +23,19 @@ export const metadata: Metadata = {
     "SEO-friendly websites",
     "UI UX and Web Design",
   ],
-  authors: [{ name: "Vision Studio 23" }],
+  authors: [{ name: "Nova 01 Labs" }],
   openGraph: {
-    title: "Vision Studio 23 | Web Agency",
+    title: "Nova 01 Labs | Web Agency",
     description:
-      "Agency portfolio of Vision Studio 23 featuring web design, development, and performance-focused delivery.",
+      "Agency portfolio of Nova 01 Labs featuring web design, development, and performance-focused delivery.",
     url: SITE_URL,
-    siteName: "Vision Studio 23",
+    siteName: "Nova 01 Labs",
     images: [
       {
         url: "/profile/profile.png",
         width: 1200,
         height: 630,
-        alt: "Vision Studio 23",
+        alt: "Nova 01 Labs",
       },
     ],
     locale: "en_US",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vision Studio 23 | Web Agency",
+    title: "Nova 01 Labs | Web Agency",
     description: "Web design and development agency portfolio.",
     images: ["/profile/profile.png"],
   },
@@ -61,14 +61,14 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Vision Studio 23",
+  name: "Nova 01 Labs",
   url: SITE_URL,
   sameAs: [
     "https://www.linkedin.com/in/mehedi-hasan1102",
     "https://github.com/mehedi-hasan1102",
   ],
   description:
-    "Vision Studio 23 builds conversion-focused websites and modern web applications for startups and growing businesses.",
+    "Nova 01 Labs builds conversion-focused websites and modern web applications for startups and growing businesses.",
 };
 
 export default function RootLayout({

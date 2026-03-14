@@ -18,7 +18,7 @@ export const generateMetadata = async ({ params }: ProjectPageProps): Promise<Me
   if (!project) {
     return createPageMetadata({
       path: `/projects/${slug}`,
-      title: "Project Not Found | Vision Studio 23",
+      title: "Project Not Found | Nova 01 Labs",
       description: "The requested project could not be found.",
       noIndex: true,
     });
@@ -34,7 +34,7 @@ export const generateMetadata = async ({ params }: ProjectPageProps): Promise<Me
     keywords: [
       `${project.title} case study`,
       ...project.tech,
-      "Vision Studio 23 project",
+      "Nova 01 Labs project",
     ],
     image: projectOgImage,
   });

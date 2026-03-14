@@ -1,4 +1,4 @@
-# Vision Studio 23 Website
+# Nova 01 Labs Website
 
 Production-focused freelance portfolio built with Next.js App Router and TypeScript.  
 It showcases services, projects, experience, recognition, and blog content with route-level SEO metadata and server-side data loading for key content paths.

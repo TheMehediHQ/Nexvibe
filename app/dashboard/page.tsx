@@ -14,7 +14,7 @@ const DeveloperDashboard = dynamic(() => import("../components/DeveloperDashboar
 
 export const metadata: Metadata = createPageMetadata({
   path: "/dashboard",
-  title: "Developer Dashboard | Vision Studio 23",
+  title: "Developer Dashboard | Nova 01 Labs",
   description:
     "Live developer dashboard with GitHub activity, repository highlights, and coding stats.",
   keywords: ["developer dashboard", "GitHub portfolio", "coding activity"],

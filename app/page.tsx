@@ -11,11 +11,11 @@ import { getSelectedProjects } from "@/lib/site-data";
 
 export const metadata: Metadata = createPageMetadata({
   path: "/",
-  title: "Vision Studio 23 | Web Agency Portfolio",
+  title: "Nova 01 Labs | Web Agency Portfolio",
   description:
-    "Explore Vision Studio 23 projects, services, and proven delivery in design, development, and web performance.",
+    "Explore Nova 01 Labs projects, services, and proven delivery in design, development, and web performance.",
   keywords: [
-    "Vision Studio 23",
+    "Nova 01 Labs",
     "Web agency portfolio",
     "Next.js agency",
     "React development agency",

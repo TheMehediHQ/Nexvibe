@@ -4,10 +4,10 @@ import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
   path: "/links",
-  title: "Social & Professional Links | Vision Studio 23",
+  title: "Social & Professional Links | Nova 01 Labs",
   description:
-    "Find Vision Studio 23 across GitHub, LinkedIn, YouTube, and other platforms.",
-  keywords: ["Vision Studio 23 links", "agency social profiles", "GitHub LinkedIn portfolio"],
+    "Find Nova 01 Labs across GitHub, LinkedIn, YouTube, and other platforms.",
+  keywords: ["Nova 01 Labs links", "agency social profiles", "GitHub LinkedIn portfolio"],
 });
 
 export default function LinksPage() {

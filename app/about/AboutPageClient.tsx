@@ -31,7 +31,7 @@ export default function AboutPageClient({ experiences }: AboutPageClientProps) {
               About <span style={{ color: 'var(--accent)' }}>Us</span>
             </h1>
             <p className="mx-auto mt-4 max-w-[760px] text-center text-[0.95rem] leading-relaxed text-[var(--text-secondary)]">
-              Vision Studio 23 helps businesses launch and scale high-performing digital products from strategy to execution.
+              Nova 01 Labs helps businesses launch and scale high-performing digital products from strategy to execution.
               {' '}Check out our{' '}
               <Link href="/portfolio" className="text-[var(--accent)] underline underline-offset-4 hover:opacity-80">
                 work
@@ -75,7 +75,7 @@ export default function AboutPageClient({ experiences }: AboutPageClientProps) {
                     <strong className="text-[clamp(1.05rem,2.5vw,1.5rem)] font-medium tracking-[0.04em] text-[var(--accent)] max-[480px]:tracking-[0.03em]">
                       Agency:
                     </strong>{' '}
-                    <span className="text-[clamp(1.05rem,2.5vw,1.5rem)] text-[var(--text)]">Vision Studio 23</span>
+                    <span className="text-[clamp(1.05rem,2.5vw,1.5rem)] text-[var(--text)]">Nova 01 Labs</span>
                   </li>
                   <li className="break-words [overflow-wrap:anywhere]">
                     <strong className="text-[clamp(1.05rem,2.5vw,1.5rem)] font-medium tracking-[0.04em] text-[var(--accent)] max-[480px]:tracking-[0.03em]">

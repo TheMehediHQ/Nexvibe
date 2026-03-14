@@ -7,7 +7,7 @@ export const SITE_URL = (
     ? configuredSiteUrl
     : DEFAULT_SITE_URL
 ).replace(/\/+$/, "");
-export const SITE_NAME = "Vision Studio 23";
+export const SITE_NAME = "Nova 01 Labs";
 export const DEFAULT_OG_IMAGE = "/profile/profile.png";
 const ABSOLUTE_URL_PATTERN = /^https?:\/\//i;
 
