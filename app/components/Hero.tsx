@@ -3,96 +3,101 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FiArrowUp, FiArrowUpRight, FiCalendar } from 'react-icons/fi';
-import { FaLinkedin } from 'react-icons/fa6';
+import { FiArrowUpRight, FiCalendar } from 'react-icons/fi';
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
+  const softBorder = 'color-mix(in srgb, var(--text) 16%, transparent)';
+  const strongBorder = 'color-mix(in srgb, var(--text) 24%, transparent)';
+  const softSurface = 'color-mix(in srgb, var(--text) 4%, var(--bg) 96%)';
+  const mutedDivider = 'linear-gradient(90deg, transparent, color-mix(in srgb, var(--text) 16%, transparent), transparent)';
+  const badgeText = 'color-mix(in srgb, var(--text) 94%, var(--bg) 6%)';
 
   return (
     <section
       ref={heroRef}
-      className="relative flex min-h-screen items-center overflow-hidden bg-[var(--bg)] py-10 md:py-12"
+      className="relative flex min-h-screen items-center overflow-hidden bg-[var(--bg)] py-14 md:py-18"
     >
-      <div className="container relative z-10 w-full max-w-[1160px]">
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_minmax(280px,400px)] lg:gap-14">
-          <div className="max-w-[760px] mt-10 md:mt-0">
-            <h1
-              data-hero-line
-              className="heroTitle text-[var(--text)] "
-            >
-              Vision Studio 23.
-            </h1>
-            <h1
-              data-hero-line
-              className="mt-1 heroTitle text-[var(--text)]"
-            >
-              Design.
-            </h1>
-            <h1
-              data-hero-line
-              className="mt-1 heroTitle text-[var(--text)]"
-            >
-              Development.
-            </h1>
-            <h1
-              data-hero-line
-              className="mt-1 heroTitle text-[var(--accent)]"
-            >
-              Growth Partner.
-            </h1>
-
-            <div data-hero-strip className="mt-8 flex flex-wrap gap-3">
-              <Link href="/book-call" className="btn-primary">
-                <FiCalendar size={16} />
-                <span>Book an Agency Call</span>
-              </Link>
-              <Link href="/portfolio" className="btn-secondary">
-                <FiArrowUpRight size={16} />
-                <span>View Agency Work</span>
-              </Link>
-            </div>
-          </div>
-
-          <div className="mx-auto w-full max-w-[400px] lg:mx-0">
-            <div
-              data-hero-image
-              className="relative overflow-hidden border border-[rgba(var(--accent-rgb),0.2)]  bg-transparent"
-            >
-              <Image
-                src="/profile/profile.png"
-                alt="Vision Studio 23 brand portrait"
-                width={740}
-                height={820}
-                sizes="(max-width: 1024px) 85vw, 400px"
-                className="h-auto w-full object-cover"
-                priority
-              />
-            </div>
-            <div
-              data-hero-caption
-              className="mt-2 flex items-center justify-between gap-3 text-[0.78rem] text-[var(--text-secondary)]"
-            >
-              <span className="inline-flex items-center gap-1 text-[0.86rem] font-medium tracking-[0.01em] text-[var(--text)]">
-                <FiArrowUp size={14} aria-hidden="true" />
-                Vision Studio 23
-              </span>
-              <a
-              href="https://www.linkedin.com/in/mehedi-hasan1102/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative mt-0 inline-flex items-center gap-2 text-[clamp(0.9rem,2.8vw,1.2rem)] font-semibold tracking-[0.01em] text-[var(--accent)] no-underline transition-all duration-300 [transition-timing-function:ease] after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-0 after:bg-[var(--accent)] after:content-[''] after:transition-[width] after:duration-300 after:[transition-timing-function:ease] hover:text-[var(--text)] hover:after:w-full"
-            >
-              <FaLinkedin size={18} />
-              <span>Connect on LinkedIn</span>
-              <FiArrowUpRight size={18} />
-            </a>
-            </div>
-          </div>
-        </div>
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(var(--accent-rgb),0.6),transparent)]" />
+      <div className="pointer-events-none absolute left-[8%] top-[18%] rotate-45 text-[3rem] font-light leading-none text-[var(--accent)] max-md:text-[2.2rem]">
+        +
+      </div>
+      <div className="pointer-events-none absolute right-[10%] top-[56%] rotate-12 text-[3rem] font-light leading-none text-[var(--accent)] max-md:text-[2.2rem]">
+        +
       </div>
 
-     
+      <div className="container relative z-10 w-full max-w-[1160px]">
+        <div className="mx-auto flex max-w-[860px] flex-col items-center text-center">
+          <div
+            className="mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-[0.76rem] font-semibold tracking-[0.14em]"
+            style={{ border: `1px solid ${softBorder}`, color: badgeText }}
+          >
+            <span className="h-2 w-2 rounded-full bg-[var(--accent)]" />
+            <span>VISION STUDIO 23</span>
+          </div>
+
+          <h1 className="max-w-[760px] text-[clamp(3.2rem,9vw,6.2rem)] font-bold leading-[0.96] tracking-[-0.045em] text-[var(--text)]">
+            Creative Design
+          </h1>
+
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-4 text-center">
+            <h1 className="text-[clamp(3.2rem,9vw,6.2rem)] font-bold leading-[0.96] tracking-[-0.045em] text-[var(--text)]">
+              Agency
+            </h1>
+
+            <div
+              className="inline-flex items-center rounded-full px-2 py-1"
+              style={{ border: `1px solid ${strongBorder}`, background: softSurface }}
+            >
+              <div className="relative flex items-center">
+                <Image
+                  src="/profile/profile.png"
+                  alt="Vision Studio 23 team avatar"
+                  width={46}
+                  height={46}
+                  className="h-11 w-11 rounded-full object-cover"
+                  style={{ border: `1px solid ${softBorder}` }}
+                  priority
+                />
+                <div
+                  className="-ml-3 flex h-11 w-11 items-center justify-center rounded-full bg-[var(--accent)] text-[0.7rem] font-semibold text-[var(--bg)]"
+                  style={{ border: `1px solid ${softBorder}` }}
+                >
+                  US
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-6 max-w-[520px] text-[0.98rem] leading-[1.7] text-[var(--text-secondary)] md:text-[1.04rem]">
+            We craft clean, modern websites for US-focused brands that want a
+            stronger presence, sharper messaging, and better-quality leads.
+          </p>
+
+          <div data-hero-strip className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <Link href="/book-call" className="btn-primary">
+              <FiCalendar size={16} />
+              <span>Book a Call</span>
+            </Link>
+            <Link href="/portfolio" className="btn-secondary">
+              <FiArrowUpRight size={16} />
+              <span>View Work</span>
+            </Link>
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[0.9rem] text-[var(--text-secondary)]">
+            <span>Brand Identity</span>
+            <span className="text-[var(--accent)]">+</span>
+            <span>Web Design</span>
+            <span className="text-[var(--accent)]">+</span>
+            <span>Web Development</span>
+            <span className="text-[var(--accent)]">+</span>
+            <span>Website Management</span>
+          </div>
+
+          <div className="mt-12 h-px w-full max-w-[760px]" style={{ background: mutedDivider }} />
+        </div>
+      </div>
     </section>
   );
 }
