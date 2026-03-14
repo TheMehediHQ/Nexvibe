@@ -36,12 +36,12 @@ export default function Hero() {
             <span>VISION STUDIO 23</span>
           </div>
 
-          <h1 className="max-w-[760px] text-[clamp(2.25rem,7vw,5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[var(--text)]">
-            Creative Design
+          <h1 className="sectionTitleGlobal mb-0 max-w-[760px]">
+            Creative Web
           </h1>
 
           <div className="mt-2 flex flex-wrap items-center justify-center gap-4 text-center">
-            <h1 className="text-[clamp(2.25rem,7vw,5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-[var(--text)]">
+            <h1 className="sectionTitleGlobal mb-0">
               Agency
             </h1>
 
