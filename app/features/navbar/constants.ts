@@ -8,9 +8,13 @@ export const NAV_LINKS: NavItem[] = [
 ];
 
 export const MORE_ITEMS: NavItem[] = [
-  { label: 'Dashboard', href: '/dashboard' },
-  { label: 'Certifications', href: '/certifications' },
-  { label: 'Links', href: '/links' },
+  
+  { label: 'Web Development', href: '/webdevelopement' },
+  { label: 'Mobile Development', href: '/mobiledevelopement' },
+  { label: 'Graphics Design', href: '/graphicsdesign' },
+   { label: 'Digital Marketing', href: '/digitalmarketing' },
+  { label: 'Ai Automation', href: '/ai-automation' },
+  { label: 'UI/UX Design', href: '/ui-ux-design' },
 ];
 
 export const SOCIAL_ITEMS: SocialItem[] = [
