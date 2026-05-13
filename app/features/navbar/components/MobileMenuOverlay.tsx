@@ -72,7 +72,7 @@ export default function MobileMenuOverlay({
           >
             <span className={MOBILE_MAIN_NUMBER_CLASS}>{String(NAV_LINKS.length + 1).padStart(2, '0')}</span>
             <span className={MOBILE_MAIN_LABEL_CLASS}>
-              More
+              Services
               <span
                 aria-hidden
                 className={`inline-block transition-transform duration-300 ${

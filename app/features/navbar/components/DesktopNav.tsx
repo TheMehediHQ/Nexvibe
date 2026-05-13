@@ -340,7 +340,7 @@ export default function DesktopNav({
           onClick={onToggleDropdownLock}
           onFocus={onOpenDropdown}
         >
-          More
+          Services
           <span
             aria-hidden
             className={`inline-block transition-transform duration-200 ${
