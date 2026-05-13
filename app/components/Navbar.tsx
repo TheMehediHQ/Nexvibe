@@ -29,9 +29,11 @@ function NavbarContent({ pathname }: NavbarContentProps) {
     isDropdownOpen,
     isMobileMoreOpen,
     isMobileAboutOpen,
+    isMobileIndustryOpen,
     isBookingModalOpen,
     setIsMobileMoreOpen,
     setIsMobileAboutOpen,
+    setIsMobileIndustryOpen,
     setIsBookingModalOpen,
     openDropdown,
     closeDropdownWithDelay,
@@ -86,10 +88,12 @@ function NavbarContent({ pathname }: NavbarContentProps) {
         isOpen={isOpen}
         isMobileMoreOpen={isMobileMoreOpen}
         isMobileAboutOpen={isMobileAboutOpen}
+        isMobileIndustryOpen={isMobileIndustryOpen}
         menuRef={mobileMenuRef}
         onClose={closeMobileMenu}
         onToggleMore={() => setIsMobileMoreOpen((prev) => !prev)}
         onToggleAbout={() => setIsMobileAboutOpen((prev) => !prev)}
+        onToggleIndustry={() => setIsMobileIndustryOpen((prev) => !prev)}
       />
 
       <BookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />

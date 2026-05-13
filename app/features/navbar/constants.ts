@@ -11,6 +11,15 @@ export const ABOUT_ITEMS: NavItem[] = [
   { label: 'Our Team', href: '/team' },
 ];
 
+export const INDUSTRY_ITEMS: NavItem[] = [
+  { label: 'SaaS & Startups', href: '/industry/saas' },
+  { label: 'E-commerce', href: '/industry/ecommerce' },
+  { label: 'Healthcare', href: '/industry/healthcare' },
+  { label: 'Finance & FinTech', href: '/industry/fintech' },
+  { label: 'Education', href: '/industry/education' },
+  { label: 'Real Estate', href: '/industry/realestate' },
+];
+
 export const MORE_ITEMS: NavItem[] = [
   
   { label: 'Web Development', href: '/webdevelopement' },

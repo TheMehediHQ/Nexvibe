@@ -17,6 +17,7 @@ export const useNavbarController = ({ pathname }: UseNavbarControllerArgs) => {
   const [isDropdownLocked, setIsDropdownLocked] = useState(false);
   const [isMobileMoreOpen, setIsMobileMoreOpen] = useState(false);
   const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
+  const [isMobileIndustryOpen, setIsMobileIndustryOpen] = useState(false);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   const clearDropdownCloseTimeout = () => {
@@ -119,6 +120,7 @@ export const useNavbarController = ({ pathname }: UseNavbarControllerArgs) => {
     setIsOpen(false);
     setIsMobileMoreOpen(false);
     setIsMobileAboutOpen(false);
+    setIsMobileIndustryOpen(false);
   };
 
   return {
@@ -129,9 +131,11 @@ export const useNavbarController = ({ pathname }: UseNavbarControllerArgs) => {
     isDropdownOpen,
     isMobileMoreOpen,
     isMobileAboutOpen,
+    isMobileIndustryOpen,
     isBookingModalOpen,
     setIsMobileMoreOpen,
     setIsMobileAboutOpen,
+    setIsMobileIndustryOpen,
     setIsBookingModalOpen,
     openDropdown,
     closeDropdownWithDelay,

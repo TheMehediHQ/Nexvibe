@@ -5,6 +5,7 @@ import { FiChevronDown } from 'react-icons/fi';
 import { type RefObject } from 'react';
 import {
   ABOUT_ITEMS,
+  INDUSTRY_ITEMS,
   MOBILE_MAIN_ITEM_CLASS,
   MOBILE_MAIN_LABEL_CLASS,
   MOBILE_MAIN_NUMBER_CLASS,
@@ -18,10 +19,12 @@ type MobileMenuOverlayProps = {
   isOpen: boolean;
   isMobileMoreOpen: boolean;
   isMobileAboutOpen: boolean;
+  isMobileIndustryOpen: boolean;
   menuRef: RefObject<HTMLDivElement | null>;
   onClose: () => void;
   onToggleMore: () => void;
   onToggleAbout: () => void;
+  onToggleIndustry: () => void;
 };
 
 export default function MobileMenuOverlay({
@@ -29,10 +32,12 @@ export default function MobileMenuOverlay({
   isOpen,
   isMobileMoreOpen,
   isMobileAboutOpen,
+  isMobileIndustryOpen,
   menuRef,
   onClose,
   onToggleMore,
   onToggleAbout,
+  onToggleIndustry,
 }: MobileMenuOverlayProps) {
   return (
     <div
@@ -115,11 +120,55 @@ export default function MobileMenuOverlay({
 
           <button
             type="button"
-            onClick={onToggleMore}
+            onClick={onToggleIndustry}
             className={`${MOBILE_MAIN_ITEM_CLASS} border-none bg-transparent text-left`}
             data-menu-link
           >
             <span className={MOBILE_MAIN_NUMBER_CLASS}>{String(NAV_LINKS.length + 2).padStart(2, '0')}</span>
+            <span className={MOBILE_MAIN_LABEL_CLASS}>
+              Industry
+              <span
+                aria-hidden
+                className={`inline-block transition-transform duration-300 ${
+                  isMobileIndustryOpen ? 'rotate-180' : 'rotate-0'
+                }`}
+              >
+                <FiChevronDown size={20} />
+              </span>
+            </span>
+          </button>
+
+          {isMobileIndustryOpen ? (
+            <div className="space-y-1 pl-20">
+              {INDUSTRY_ITEMS.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block cursor-pointer text-lg font-bold text-[var(--bg)] transition-transform origin-left hover:scale-105"
+                    data-menu-link
+                    onClick={onClose}
+                  >
+                    <span className="flex items-center gap-2">
+                      {item.label}
+                      {isActive ? (
+                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--bg)] shadow-[0_0_10px_var(--bg)]" />
+                      ) : null}
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+          ) : null}
+
+          <button
+            type="button"
+            onClick={onToggleMore}
+            className={`${MOBILE_MAIN_ITEM_CLASS} border-none bg-transparent text-left`}
+            data-menu-link
+          >
+            <span className={MOBILE_MAIN_NUMBER_CLASS}>{String(NAV_LINKS.length + 3).padStart(2, '0')}</span>
             <span className={MOBILE_MAIN_LABEL_CLASS}>
               Services
               <span

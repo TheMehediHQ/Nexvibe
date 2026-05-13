@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { FiCalendar, FiChevronDown, FiMonitor } from 'react-icons/fi';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { type KeyboardEvent, type MouseEvent, type RefObject, useEffect, useRef, useState } from 'react';
-import { ABOUT_ITEMS, MORE_ITEMS, NAV_LINKS } from '../constants';
+import { ABOUT_ITEMS, INDUSTRY_ITEMS, MORE_ITEMS, NAV_LINKS } from '../constants';
 import type { ThemePreference } from '@/lib/useTheme';
 
 type DesktopNavProps = {
@@ -43,12 +43,17 @@ export default function DesktopNav({
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const [isAboutDropdownLocked, setIsAboutDropdownLocked] = useState(false);
+  const [isIndustryDropdownOpen, setIsIndustryDropdownOpen] = useState(false);
+  const [isIndustryDropdownLocked, setIsIndustryDropdownLocked] = useState(false);
   const themeMenuRef = useRef<HTMLDivElement>(null);
   const themeTriggerRef = useRef<HTMLButtonElement>(null);
   const moreTriggerRef = useRef<HTMLButtonElement>(null);
   const aboutDropdownRef = useRef<HTMLDivElement>(null);
   const aboutTriggerRef = useRef<HTMLButtonElement>(null);
   const aboutDropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const industryDropdownRef = useRef<HTMLDivElement>(null);
+  const industryTriggerRef = useRef<HTMLButtonElement>(null);
+  const industryDropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: globalThis.MouseEvent) => {
@@ -345,6 +350,124 @@ export default function DesktopNav({
     setIsAboutDropdownLocked(false);
   };
 
+  const focusIndustryItem = (index: number) => {
+    if (!industryDropdownRef.current) return;
+    const items = Array.from(
+      industryDropdownRef.current.querySelectorAll<HTMLAnchorElement>('[data-industry-menu-item]')
+    );
+    if (!items.length) return;
+
+    const safeIndex = ((index % items.length) + items.length) % items.length;
+    items[safeIndex]?.focus();
+  };
+
+  const openIndustryMenuAndFocus = (index: number) => {
+    setIsIndustryDropdownOpen(true);
+    requestAnimationFrame(() => {
+      focusIndustryItem(index);
+    });
+  };
+
+  const handleIndustryTriggerKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      openIndustryMenuAndFocus(0);
+      return;
+    }
+
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      openIndustryMenuAndFocus(INDUSTRY_ITEMS.length - 1);
+      return;
+    }
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      if (isIndustryDropdownOpen) {
+        closeIndustryDropdown();
+      } else {
+        openIndustryMenuAndFocus(0);
+      }
+      return;
+    }
+
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeIndustryDropdown();
+    }
+  };
+
+  const handleIndustryItemKeyDown = (event: KeyboardEvent<HTMLAnchorElement>, index: number) => {
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      focusIndustryItem(index + 1);
+      return;
+    }
+
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      focusIndustryItem(index - 1);
+      return;
+    }
+
+    if (event.key === 'Home') {
+      event.preventDefault();
+      focusIndustryItem(0);
+      return;
+    }
+
+    if (event.key === 'End') {
+      event.preventDefault();
+      focusIndustryItem(INDUSTRY_ITEMS.length - 1);
+      return;
+    }
+
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      setIsIndustryDropdownOpen(false);
+      industryTriggerRef.current?.focus();
+    }
+  };
+
+  const clearIndustryDropdownCloseTimeout = () => {
+    if (industryDropdownTimeoutRef.current) {
+      clearTimeout(industryDropdownTimeoutRef.current);
+      industryDropdownTimeoutRef.current = null;
+    }
+  };
+
+  const openIndustryDropdown = () => {
+    clearIndustryDropdownCloseTimeout();
+    setIsIndustryDropdownOpen(true);
+  };
+
+  const closeIndustryDropdownWithDelay = () => {
+    if (isIndustryDropdownLocked) {
+      return;
+    }
+
+    clearIndustryDropdownCloseTimeout();
+    industryDropdownTimeoutRef.current = setTimeout(() => {
+      setIsIndustryDropdownOpen(false);
+      industryDropdownTimeoutRef.current = null;
+    }, 180);
+  };
+
+  const toggleIndustryDropdownLock = () => {
+    clearIndustryDropdownCloseTimeout();
+    setIsIndustryDropdownLocked((prev) => {
+      const nextLocked = !prev;
+      setIsIndustryDropdownOpen(nextLocked);
+      return nextLocked;
+    });
+  };
+
+  const closeIndustryDropdown = () => {
+    clearIndustryDropdownCloseTimeout();
+    setIsIndustryDropdownOpen(false);
+    setIsIndustryDropdownLocked(false);
+  };
+
   return (
     <div className="hidden shrink-0 items-center rounded-full border border-[rgba(var(--accent-rgb),0.15)] bg-[rgba(var(--accent-rgb),0.08)] py-1.5 backdrop-blur-[10px] lg:flex lg:gap-3 lg:px-3 xl:gap-4 xl:px-4">
       <div ref={themeMenuRef} className={TOGGLE_WRAPPER_CLASS}>
@@ -507,6 +630,84 @@ export default function DesktopNav({
                   isLastItem ? 'border-none' : 'border-b border-[rgba(var(--accent-rgb),0.1)]'
                 } ${isActive ? 'bg-[rgba(var(--accent-rgb),0.1)] text-[var(--accent)]' : 'text-[var(--text)]'}`}
                 onClick={closeAboutDropdown}
+              >
+                <span className="flex items-center gap-2">
+                  {item.label}
+                  {isActive ? (
+                    <span className="inline-block h-1 w-1 rounded-full bg-[var(--accent)] shadow-[0_0_8px_var(--accent)]" />
+                  ) : null}
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+
+      <div
+        ref={industryDropdownRef}
+        className={TOGGLE_WRAPPER_CLASS}
+        onMouseEnter={openIndustryDropdown}
+        onMouseLeave={closeIndustryDropdownWithDelay}
+      >
+        <button
+          ref={industryTriggerRef}
+          type="button"
+          aria-haspopup="true"
+          aria-expanded={isIndustryDropdownOpen}
+          aria-controls="desktop-industry-menu"
+          onKeyDown={handleIndustryTriggerKeyDown}
+          className={`flex h-full cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium tracking-[0.025em] transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${
+            isIndustryDropdownOpen
+              ? 'bg-[rgba(var(--accent-rgb),0.14)] text-[var(--accent)] shadow-[0_0_14px_rgba(var(--accent-rgb),0.2)] focus-visible:ring-[rgba(var(--accent-rgb),0.55)]'
+              : 'text-[var(--text)] hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-[var(--accent)] focus-visible:ring-[rgba(var(--accent-rgb),0.45)]'
+          }`}
+          onClick={toggleIndustryDropdownLock}
+          onFocus={openIndustryDropdown}
+        >
+          Industry
+          <span
+            aria-hidden
+            className={`inline-block transition-transform duration-200 ${
+              isIndustryDropdownOpen ? 'rotate-180' : 'rotate-0'
+            }`}
+          >
+            <FiChevronDown size={16} />
+          </span>
+        </button>
+
+        <div
+          id="desktop-industry-menu"
+          role="menu"
+          aria-label="Industry navigation"
+          onBlur={(event) => {
+            if (!industryDropdownRef.current?.contains(event.relatedTarget as Node)) {
+              closeIndustryDropdown();
+            }
+          }}
+          onMouseEnter={openIndustryDropdown}
+          onMouseLeave={closeIndustryDropdownWithDelay}
+          className={`absolute left-0 top-full ${DROPDOWN_TOP_MARGIN_CLASS} w-52 origin-top rounded-xl border border-[rgba(var(--accent-rgb),0.2)] bg-[var(--bg)] shadow-[0_14px_30px_rgba(var(--accent-rgb),0.16)] transition-all duration-200 ${
+            isIndustryDropdownOpen
+              ? 'pointer-events-auto translate-y-0 scale-100 opacity-100'
+              : 'pointer-events-none -translate-y-1 scale-[0.98] opacity-0'
+          }`}
+        >
+          {INDUSTRY_ITEMS.map((item, idx) => {
+            const isLastItem = idx === INDUSTRY_ITEMS.length - 1;
+            const isActive = pathname === item.href;
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                role="menuitem"
+                tabIndex={isIndustryDropdownOpen ? 0 : -1}
+                data-industry-menu-item
+                onKeyDown={(event) => handleIndustryItemKeyDown(event, idx)}
+                className={`block w-full cursor-pointer bg-transparent px-4 py-3 text-left text-sm transition-colors duration-200 hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[rgba(var(--accent-rgb),0.5)] ${
+                  isLastItem ? 'border-none' : 'border-b border-[rgba(var(--accent-rgb),0.1)]'
+                } ${isActive ? 'bg-[rgba(var(--accent-rgb),0.1)] text-[var(--accent)]' : 'text-[var(--text)]'}`}
+                onClick={closeIndustryDropdown}
               >
                 <span className="flex items-center gap-2">
                   {item.label}
