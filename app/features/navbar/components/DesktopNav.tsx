@@ -545,25 +545,19 @@ export default function DesktopNav({
 
       <div className="h-6 w-px bg-[rgba(var(--accent-rgb),0.2)]" />
 
-      {NAV_LINKS.map((link) => {
-        const isActive = pathname === link.href;
-        return (
-          <Link
-            key={link.href}
-            href={link.href}
-            onMouseEnter={onLinkHover}
-            onMouseLeave={onLinkHoverEnd}
-            className={`relative cursor-pointer whitespace-nowrap text-sm font-medium  tracking-[0.025em] transition-all duration-300 ${
-              isActive ? 'text-[var(--accent)]' : 'text-[var(--text)]'
-            }`}
-          >
-            {link.label}
-            {isActive ? (
-              <span className="absolute -bottom-2 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-[var(--accent)] shadow-[0_0_8px_var(--accent)]" />
-            ) : null}
-          </Link>
-        );
-      })}
+      <Link
+        href="/"
+        onMouseEnter={onLinkHover}
+        onMouseLeave={onLinkHoverEnd}
+        className={`relative cursor-pointer whitespace-nowrap text-sm font-medium tracking-[0.025em] transition-all duration-300 ${
+          pathname === '/' ? 'text-[var(--accent)]' : 'text-[var(--text)]'
+        }`}
+      >
+        Home
+        {pathname === '/' ? (
+          <span className="absolute -bottom-2 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-[var(--accent)] shadow-[0_0_8px_var(--accent)]" />
+        ) : null}
+      </Link>
 
       <div
         ref={aboutDropdownRef}
@@ -798,6 +792,34 @@ export default function DesktopNav({
           })}
         </div>
       </div>
+
+      <Link
+        href="/blog"
+        onMouseEnter={onLinkHover}
+        onMouseLeave={onLinkHoverEnd}
+        className={`relative cursor-pointer whitespace-nowrap text-sm font-medium tracking-[0.025em] transition-all duration-300 ${
+          pathname === '/blog' ? 'text-[var(--accent)]' : 'text-[var(--text)]'
+        }`}
+      >
+        Blog
+        {pathname === '/blog' ? (
+          <span className="absolute -bottom-2 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-[var(--accent)] shadow-[0_0_8px_var(--accent)]" />
+        ) : null}
+      </Link>
+
+      <Link
+        href="/portfolio"
+        onMouseEnter={onLinkHover}
+        onMouseLeave={onLinkHoverEnd}
+        className={`relative cursor-pointer whitespace-nowrap text-sm font-medium tracking-[0.025em] transition-all duration-300 ${
+          pathname === '/portfolio' ? 'text-[var(--accent)]' : 'text-[var(--text)]'
+        }`}
+      >
+        Portfolio
+        {pathname === '/portfolio' ? (
+          <span className="absolute -bottom-2 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-[var(--accent)] shadow-[0_0_8px_var(--accent)]" />
+        ) : null}
+      </Link>
 
       <div className="h-6 w-px bg-[rgba(var(--accent-rgb),0.2)]" />
 

@@ -53,26 +53,20 @@ export default function MobileMenuOverlay({
     >
       <div className="flex h-full flex-col overflow-y-auto px-6 pb-12 pt-6" onClick={(e) => e.stopPropagation()}>
         <div className="mt-8 min-h-0 flex-1 space-y-3 overflow-y-auto pb-6 sm:mt-12">
-          {NAV_LINKS.map((link, idx) => {
-            const isActive = pathname === link.href;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={MOBILE_MAIN_ITEM_CLASS}
-                data-menu-link
-                onClick={onClose}
-              >
-                <span className={MOBILE_MAIN_NUMBER_CLASS}>{String(idx + 1).padStart(2, '0')}</span>
-                <span className={MOBILE_MAIN_LABEL_CLASS}>
-                  {link.label}
-                  {isActive ? (
-                    <span className="inline-block h-2 w-2 rounded-full bg-[var(--bg)] shadow-[0_0_12px_var(--bg)]" />
-                  ) : null}
-                </span>
-              </Link>
-            );
-          })}
+          <Link
+            href="/"
+            className={MOBILE_MAIN_ITEM_CLASS}
+            data-menu-link
+            onClick={onClose}
+          >
+            <span className={MOBILE_MAIN_NUMBER_CLASS}>01</span>
+            <span className={MOBILE_MAIN_LABEL_CLASS}>
+              Home
+              {pathname === '/' ? (
+                <span className="inline-block h-2 w-2 rounded-full bg-[var(--bg)] shadow-[0_0_12px_var(--bg)]" />
+              ) : null}
+            </span>
+          </Link>
 
           <button
             type="button"
@@ -80,7 +74,7 @@ export default function MobileMenuOverlay({
             className={`${MOBILE_MAIN_ITEM_CLASS} border-none bg-transparent text-left`}
             data-menu-link
           >
-            <span className={MOBILE_MAIN_NUMBER_CLASS}>{String(NAV_LINKS.length + 1).padStart(2, '0')}</span>
+            <span className={MOBILE_MAIN_NUMBER_CLASS}>02</span>
             <span className={MOBILE_MAIN_LABEL_CLASS}>
               About
               <span
@@ -120,11 +114,55 @@ export default function MobileMenuOverlay({
 
           <button
             type="button"
+            onClick={onToggleMore}
+            className={`${MOBILE_MAIN_ITEM_CLASS} border-none bg-transparent text-left`}
+            data-menu-link
+          >
+            <span className={MOBILE_MAIN_NUMBER_CLASS}>03</span>
+            <span className={MOBILE_MAIN_LABEL_CLASS}>
+              Services
+              <span
+                aria-hidden
+                className={`inline-block transition-transform duration-300 ${
+                  isMobileMoreOpen ? 'rotate-180' : 'rotate-0'
+                }`}
+              >
+                <FiChevronDown size={20} />
+              </span>
+            </span>
+          </button>
+
+          {isMobileMoreOpen ? (
+            <div className="space-y-1 pl-20">
+              {MORE_ITEMS.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block cursor-pointer text-lg font-bold text-[var(--bg)] transition-transform origin-left hover:scale-105"
+                    data-menu-link
+                    onClick={onClose}
+                  >
+                    <span className="flex items-center gap-2">
+                      {item.label}
+                      {isActive ? (
+                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--bg)] shadow-[0_0_10px_var(--bg)]" />
+                      ) : null}
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+          ) : null}
+
+          <button
+            type="button"
             onClick={onToggleIndustry}
             className={`${MOBILE_MAIN_ITEM_CLASS} border-none bg-transparent text-left`}
             data-menu-link
           >
-            <span className={MOBILE_MAIN_NUMBER_CLASS}>{String(NAV_LINKS.length + 2).padStart(2, '0')}</span>
+            <span className={MOBILE_MAIN_NUMBER_CLASS}>04</span>
             <span className={MOBILE_MAIN_LABEL_CLASS}>
               Industry
               <span
@@ -162,49 +200,36 @@ export default function MobileMenuOverlay({
             </div>
           ) : null}
 
-          <button
-            type="button"
-            onClick={onToggleMore}
-            className={`${MOBILE_MAIN_ITEM_CLASS} border-none bg-transparent text-left`}
+          <Link
+            href="/blog"
+            className={MOBILE_MAIN_ITEM_CLASS}
             data-menu-link
+            onClick={onClose}
           >
-            <span className={MOBILE_MAIN_NUMBER_CLASS}>{String(NAV_LINKS.length + 3).padStart(2, '0')}</span>
+            <span className={MOBILE_MAIN_NUMBER_CLASS}>05</span>
             <span className={MOBILE_MAIN_LABEL_CLASS}>
-              Services
-              <span
-                aria-hidden
-                className={`inline-block transition-transform duration-300 ${
-                  isMobileMoreOpen ? 'rotate-180' : 'rotate-0'
-                }`}
-              >
-                <FiChevronDown size={20} />
-              </span>
+              Blog
+              {pathname === '/blog' ? (
+                <span className="inline-block h-2 w-2 rounded-full bg-[var(--bg)] shadow-[0_0_12px_var(--bg)]" />
+              ) : null}
             </span>
-          </button>
+          </Link>
 
-          {isMobileMoreOpen ? (
-            <div className="space-y-1 pl-20">
-              {MORE_ITEMS.map((item) => {
-                const isActive = pathname === item.href;
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="block cursor-pointer text-lg font-bold text-[var(--bg)] transition-transform origin-left hover:scale-105"
-                    data-menu-link
-                    onClick={onClose}
-                  >
-                    <span className="flex items-center gap-2">
-                      {item.label}
-                      {isActive ? (
-                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--bg)] shadow-[0_0_10px_var(--bg)]" />
-                      ) : null}
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
-          ) : null}
+          <Link
+            href="/portfolio"
+            className={MOBILE_MAIN_ITEM_CLASS}
+            data-menu-link
+            onClick={onClose}
+          >
+            <span className={MOBILE_MAIN_NUMBER_CLASS}>06</span>
+            <span className={MOBILE_MAIN_LABEL_CLASS}>
+              Portfolio
+              {pathname === '/portfolio' ? (
+                <span className="inline-block h-2 w-2 rounded-full bg-[var(--bg)] shadow-[0_0_12px_var(--bg)]" />
+              ) : null}
+            </span>
+          </Link>
+
         </div>
 
         <div className="flex gap-8">
