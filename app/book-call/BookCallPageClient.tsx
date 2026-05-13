@@ -219,14 +219,14 @@ export default function BookCallPageClient() {
                 <div className="mb-6">
                   <Image
                     src="/profile/profile.png"
-                    alt="Nova 01 Labs profile"
+                    alt="Nexvibe profile"
                     width={44}
                     height={44}
                     className="rounded-full border object-cover"
                     style={{ borderColor: borderSoft }}
                   />
                 </div>
-                <p className="mb-1 text-sm text-[var(--text-secondary)]">Nova 01 Labs</p>
+                <p className="mb-1 text-sm text-[var(--text-secondary)]">Nexvibe</p>
                 <h4 className="mb-2 text-[clamp(1.9rem,7vw,2.9rem)] font-semibold leading-[1.05]">Strategy & Consultation Call (20 Minutes)</h4>
                 <p className="mb-5 text-sm leading-relaxed text-[var(--text-secondary)]">
                  A quick session to discuss your ideas, understand your needs, and identify the best strategy or next steps.
@@ -334,7 +334,7 @@ export default function BookCallPageClient() {
   className="rounded-xl border p-4 sm:p-5 text-[var(--text)]"
   style={{ borderColor: borderSoft, backgroundColor: panelSurfaceSoft }}
 >
-  <p className="mb-1 text-sm text-[var(--text-secondary)]">Nova 01 Labs</p>
+  <p className="mb-1 text-sm text-[var(--text-secondary)]">Nexvibe</p>
 
   <h4 className="mb-2 text-[clamp(1.9rem,7vw,2.9rem)] font-semibold leading-[1.05]">
     Project Inquiry Form

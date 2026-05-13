@@ -24,12 +24,12 @@ export default function LogoBrand({ onClick }: LogoBrandProps) {
       >
         <Image
           src="/profile/profile.png"
-          alt="Nova 01 Labs brand logo"
+          alt="Nexvibe brand logo"
           width={28}
           height={28}
           className="rounded-full sm:mr-2"
         />
-        <span className="hidden sm:inline">Nova 01 Labs</span>
+        <span className="hidden sm:inline">Nexvibe</span>
       </Link>
     </div>
   );

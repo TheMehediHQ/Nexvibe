@@ -5,10 +5,10 @@ import { getExperienceItems } from "@/lib/site-data";
 
 export const metadata: Metadata = createPageMetadata({
   path: "/about",
-  title: "About Nova 01 Labs",
+  title: "About Nexvibe",
   description:
-    "Learn how Nova 01 Labs works, what we build, and the delivery process behind our agency projects.",
-  keywords: ["About Nova 01 Labs", "web agency background", "agency process"],
+    "Learn how Nexvibe works, what we build, and the delivery process behind our agency projects.",
+  keywords: ["About Nexvibe", "web agency background", "agency process"],
 });
 
 export default function AboutPage() {

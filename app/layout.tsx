@@ -8,11 +8,11 @@ import { SITE_URL, getSiteVerificationMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Nova 01 Labs | Web Agency",
+  title: "Nexvibe | Web Agency",
   description:
-    "Nova 01 Labs is a web agency building high-converting websites, modern web apps, and growth-focused digital experiences.",
+    "Nexvibe is a web agency building high-converting websites, modern web apps, and growth-focused digital experiences.",
   keywords: [
-    "Nova 01 Labs",
+    "Nexvibe",
     "Web Agency",
     "Agency Portfolio",
     "Next.js Agency",
@@ -23,19 +23,19 @@ export const metadata: Metadata = {
     "SEO-friendly websites",
     "UI UX and Web Design",
   ],
-  authors: [{ name: "Nova 01 Labs" }],
+  authors: [{ name: "Nexvibe" }],
   openGraph: {
-    title: "Nova 01 Labs | Web Agency",
+    title: "Nexvibe | Web Agency",
     description:
-      "Agency portfolio of Nova 01 Labs featuring web design, development, and performance-focused delivery.",
+      "Agency portfolio of Nexvibe featuring web design, development, and performance-focused delivery.",
     url: SITE_URL,
-    siteName: "Nova 01 Labs",
+    siteName: "Nexvibe",
     images: [
       {
         url: "/profile/profile.png",
         width: 1200,
         height: 630,
-        alt: "Nova 01 Labs",
+        alt: "Nexvibe",
       },
     ],
     locale: "en_US",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nova 01 Labs | Web Agency",
+    title: "Nexvibe | Web Agency",
     description: "Web design and development agency portfolio.",
     images: ["/profile/profile.png"],
   },
@@ -61,14 +61,14 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Nova 01 Labs",
+  name: "Nexvibe",
   url: SITE_URL,
   sameAs: [
     "https://www.linkedin.com/in/mehedi-hasan1102",
     "https://github.com/mehedi-hasan1102",
   ],
   description:
-    "Nova 01 Labs builds conversion-focused websites and modern web applications for startups and growing businesses.",
+    "Nexvibe builds conversion-focused websites and modern web applications for startups and growing businesses.",
 };
 
 export default function RootLayout({

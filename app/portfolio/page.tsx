@@ -5,9 +5,9 @@ import { getProjects } from "@/lib/site-data";
 
 export const metadata: Metadata = createPageMetadata({
   path: "/portfolio",
-  title: "Portfolio Projects | Nova 01 Labs",
+  title: "Portfolio Projects | Nexvibe",
   description:
-    "Explore web design and development case studies by Nova 01 Labs, including technologies, outcomes, and live demos.",
+    "Explore web design and development case studies by Nexvibe, including technologies, outcomes, and live demos.",
   keywords: ["agency portfolio", "Next.js projects", "frontend case studies"],
 });
 

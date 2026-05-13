@@ -11,11 +11,11 @@ import { getSelectedProjects } from "@/lib/site-data";
 
 export const metadata: Metadata = createPageMetadata({
   path: "/",
-  title: "Nova 01 Labs | Web Agency Portfolio",
+  title: "Nexvibe | Web Agency Portfolio",
   description:
-    "Explore Nova 01 Labs projects, services, and proven delivery in design, development, and web performance.",
+    "Explore Nexvibe projects, services, and proven delivery in design, development, and web performance.",
   keywords: [
-    "Nova 01 Labs",
+    "Nexvibe",
     "Web agency portfolio",
     "Next.js agency",
     "React development agency",

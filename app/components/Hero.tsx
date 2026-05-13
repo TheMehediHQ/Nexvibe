@@ -33,7 +33,7 @@ export default function Hero() {
             style={{ border: `1px solid ${softBorder}`, color: badgeText }}
           >
             <span className="h-2 w-2 rounded-full bg-[var(--accent)]" />
-            <span>NOVA 01 LABS</span>
+            <span>Nexvibe</span>
           </div>
 
           <h1 className="sectionTitleGlobal mb-0 max-w-[760px]">
@@ -52,7 +52,7 @@ export default function Hero() {
               <div className="relative flex items-center">
                 <Image
                   src="/profile/profile.png"
-                  alt="Nova 01 Labs team avatar"
+                  alt="Nexvibe team avatar"
                   width={46}
                   height={46}
                   className="h-11 w-11 rounded-full object-cover"

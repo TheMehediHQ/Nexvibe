@@ -5,7 +5,7 @@ import { createPageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = createPageMetadata({
   path: '/blog',
-  title: 'Blog | Nova 01 Labs',
+  title: 'Blog | Nexvibe',
   description:
     'Insights on web design, development, growth strategy, and lessons from real-world agency delivery.',
   keywords: ['Next.js blog', 'React articles', 'developer writing'],

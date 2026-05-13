@@ -4,14 +4,14 @@ import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
   path: "/book-call",
-  title: "Book a Call | Nova 01 Labs",
+  title: "Book a Call | Nexvibe",
   description:
-    "Book a discovery call with Nova 01 Labs to discuss your web design, development, and growth goals.",
+    "Book a discovery call with Nexvibe to discuss your web design, development, and growth goals.",
   keywords: [
     "book a call",
     "agency strategy call",
     "React Next.js consultation",
-    "Nova 01 Labs contact",
+    "Nexvibe contact",
   ],
 });
 
