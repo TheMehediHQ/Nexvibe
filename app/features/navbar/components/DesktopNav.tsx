@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { FiCalendar, FiChevronDown, FiMonitor } from 'react-icons/fi';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { type KeyboardEvent, type MouseEvent, type RefObject, useEffect, useRef, useState } from 'react';
-import { MORE_ITEMS, NAV_LINKS } from '../constants';
+import { ABOUT_ITEMS, MORE_ITEMS, NAV_LINKS } from '../constants';
 import type { ThemePreference } from '@/lib/useTheme';
 
 type DesktopNavProps = {
@@ -41,9 +41,14 @@ export default function DesktopNav({
   onOpenBookingModal,
 }: DesktopNavProps) {
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+  const [isAboutDropdownLocked, setIsAboutDropdownLocked] = useState(false);
   const themeMenuRef = useRef<HTMLDivElement>(null);
   const themeTriggerRef = useRef<HTMLButtonElement>(null);
   const moreTriggerRef = useRef<HTMLButtonElement>(null);
+  const aboutDropdownRef = useRef<HTMLDivElement>(null);
+  const aboutTriggerRef = useRef<HTMLButtonElement>(null);
+  const aboutDropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: globalThis.MouseEvent) => {
@@ -222,6 +227,124 @@ export default function DesktopNav({
     }
   };
 
+  const focusAboutItem = (index: number) => {
+    if (!aboutDropdownRef.current) return;
+    const items = Array.from(
+      aboutDropdownRef.current.querySelectorAll<HTMLAnchorElement>('[data-about-menu-item]')
+    );
+    if (!items.length) return;
+
+    const safeIndex = ((index % items.length) + items.length) % items.length;
+    items[safeIndex]?.focus();
+  };
+
+  const openAboutMenuAndFocus = (index: number) => {
+    setIsAboutDropdownOpen(true);
+    requestAnimationFrame(() => {
+      focusAboutItem(index);
+    });
+  };
+
+  const handleAboutTriggerKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      openAboutMenuAndFocus(0);
+      return;
+    }
+
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      openAboutMenuAndFocus(ABOUT_ITEMS.length - 1);
+      return;
+    }
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      if (isAboutDropdownOpen) {
+        setIsAboutDropdownOpen(false);
+      } else {
+        openAboutMenuAndFocus(0);
+      }
+      return;
+    }
+
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      setIsAboutDropdownOpen(false);
+    }
+  };
+
+  const handleAboutItemKeyDown = (event: KeyboardEvent<HTMLAnchorElement>, index: number) => {
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      focusAboutItem(index + 1);
+      return;
+    }
+
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      focusAboutItem(index - 1);
+      return;
+    }
+
+    if (event.key === 'Home') {
+      event.preventDefault();
+      focusAboutItem(0);
+      return;
+    }
+
+    if (event.key === 'End') {
+      event.preventDefault();
+      focusAboutItem(ABOUT_ITEMS.length - 1);
+      return;
+    }
+
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      setIsAboutDropdownOpen(false);
+      aboutTriggerRef.current?.focus();
+    }
+  };
+
+  const clearAboutDropdownCloseTimeout = () => {
+    if (aboutDropdownTimeoutRef.current) {
+      clearTimeout(aboutDropdownTimeoutRef.current);
+      aboutDropdownTimeoutRef.current = null;
+    }
+  };
+
+  const openAboutDropdown = () => {
+    clearAboutDropdownCloseTimeout();
+    setIsAboutDropdownOpen(true);
+  };
+
+  const closeAboutDropdownWithDelay = () => {
+    if (isAboutDropdownLocked) {
+      return;
+    }
+
+    clearAboutDropdownCloseTimeout();
+    aboutDropdownTimeoutRef.current = setTimeout(() => {
+      setIsAboutDropdownOpen(false);
+      aboutDropdownTimeoutRef.current = null;
+    }, 180);
+  };
+
+  const toggleAboutDropdownLock = () => {
+    clearAboutDropdownCloseTimeout();
+    setIsAboutDropdownLocked((prev) => {
+      const nextLocked = !prev;
+      setIsAboutDropdownOpen(nextLocked);
+      return nextLocked;
+    });
+  };
+
+  const closeAboutDropdown = () => {
+    clearAboutDropdownCloseTimeout();
+    setIsAboutDropdownOpen(false);
+    setIsAboutDropdownLocked(false);
+  };
+
   return (
     <div className="hidden shrink-0 items-center rounded-full border border-[rgba(var(--accent-rgb),0.15)] bg-[rgba(var(--accent-rgb),0.08)] py-1.5 backdrop-blur-[10px] lg:flex lg:gap-3 lg:px-3 xl:gap-4 xl:px-4">
       <div ref={themeMenuRef} className={TOGGLE_WRAPPER_CLASS}>
@@ -318,6 +441,84 @@ export default function DesktopNav({
           </Link>
         );
       })}
+
+      <div
+        ref={aboutDropdownRef}
+        className={TOGGLE_WRAPPER_CLASS}
+        onMouseEnter={openAboutDropdown}
+        onMouseLeave={closeAboutDropdownWithDelay}
+      >
+        <button
+          ref={aboutTriggerRef}
+          type="button"
+          aria-haspopup="true"
+          aria-expanded={isAboutDropdownOpen}
+          aria-controls="desktop-about-menu"
+          onKeyDown={handleAboutTriggerKeyDown}
+          className={`flex h-full cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium tracking-[0.025em] transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${
+            isAboutDropdownOpen
+              ? 'bg-[rgba(var(--accent-rgb),0.14)] text-[var(--accent)] shadow-[0_0_14px_rgba(var(--accent-rgb),0.2)] focus-visible:ring-[rgba(var(--accent-rgb),0.55)]'
+              : 'text-[var(--text)] hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-[var(--accent)] focus-visible:ring-[rgba(var(--accent-rgb),0.45)]'
+          }`}
+          onClick={toggleAboutDropdownLock}
+          onFocus={openAboutDropdown}
+        >
+          About
+          <span
+            aria-hidden
+            className={`inline-block transition-transform duration-200 ${
+              isAboutDropdownOpen ? 'rotate-180' : 'rotate-0'
+            }`}
+          >
+            <FiChevronDown size={16} />
+          </span>
+        </button>
+
+        <div
+          id="desktop-about-menu"
+          role="menu"
+          aria-label="About navigation"
+          onBlur={(event) => {
+            if (!aboutDropdownRef.current?.contains(event.relatedTarget as Node)) {
+              closeAboutDropdown();
+            }
+          }}
+          onMouseEnter={openAboutDropdown}
+          onMouseLeave={closeAboutDropdownWithDelay}
+          className={`absolute left-0 top-full ${DROPDOWN_TOP_MARGIN_CLASS} w-52 origin-top rounded-xl border border-[rgba(var(--accent-rgb),0.2)] bg-[var(--bg)] shadow-[0_14px_30px_rgba(var(--accent-rgb),0.16)] transition-all duration-200 ${
+            isAboutDropdownOpen
+              ? 'pointer-events-auto translate-y-0 scale-100 opacity-100'
+              : 'pointer-events-none -translate-y-1 scale-[0.98] opacity-0'
+          }`}
+        >
+          {ABOUT_ITEMS.map((item, idx) => {
+            const isLastItem = idx === ABOUT_ITEMS.length - 1;
+            const isActive = pathname === item.href;
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                role="menuitem"
+                tabIndex={isAboutDropdownOpen ? 0 : -1}
+                data-about-menu-item
+                onKeyDown={(event) => handleAboutItemKeyDown(event, idx)}
+                className={`block w-full cursor-pointer bg-transparent px-4 py-3 text-left text-sm transition-colors duration-200 hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[rgba(var(--accent-rgb),0.5)] ${
+                  isLastItem ? 'border-none' : 'border-b border-[rgba(var(--accent-rgb),0.1)]'
+                } ${isActive ? 'bg-[rgba(var(--accent-rgb),0.1)] text-[var(--accent)]' : 'text-[var(--text)]'}`}
+                onClick={closeAboutDropdown}
+              >
+                <span className="flex items-center gap-2">
+                  {item.label}
+                  {isActive ? (
+                    <span className="inline-block h-1 w-1 rounded-full bg-[var(--accent)] shadow-[0_0_8px_var(--accent)]" />
+                  ) : null}
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
 
       <div
         ref={dropdownRef}

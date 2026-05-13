@@ -2,9 +2,13 @@ import type { NavItem, SocialItem } from './types';
 
 export const NAV_LINKS: NavItem[] = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
   { label: 'Portfolio', href: '/portfolio' },
   { label: 'Blog', href: '/blog' },
+];
+
+export const ABOUT_ITEMS: NavItem[] = [
+  { label: 'Our Vision', href: '/vision' },
+  { label: 'Our Team', href: '/team' },
 ];
 
 export const MORE_ITEMS: NavItem[] = [
