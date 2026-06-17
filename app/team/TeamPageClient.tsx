@@ -1,6 +1,45 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
+
+const teamMembers = [
+  {
+    name: 'Mehedi Hasan',
+    role: 'Founder & Lead Developer',
+    expertise: 'Full-Stack Development, Product Strategy',
+    image: '/profile/profile.png',
+    bio: 'Passionate about building scalable web applications with modern technologies. Brings 5+ years of experience in full-stack development.',
+  },
+  {
+    name: 'Md Hossain',
+    role: 'Graphics Designer',
+    expertise: 'Visual Design, Branding, Creative Direction',
+    image: '/profile/about.png',
+    bio: 'Creates visual assets and brand-ready layouts that make the product presentation feel polished and consistent.',
+  },
+  {
+    name: 'Halima Katun',
+    role: 'UI/UX Designer',
+    expertise: 'User Research, Interface Design, Interaction Flow',
+    image: '/profile/profile.png',
+    bio: 'Designs clean and intuitive user experiences with a strong focus on usability and clarity.',
+  },
+  {
+    name: 'Hasibul Islam Shanto',
+    role: 'Frontend Developer',
+    expertise: 'React, Next.js, Responsive UI',
+    image: '/profile/about.png',
+    bio: 'Builds responsive interfaces and turns design concepts into fast, accessible web experiences.',
+  },
+  {
+    name: 'Riffat Hassan',
+    role: 'Backend Developer',
+    expertise: 'APIs, Server Logic, Database Integration',
+    image: '/profile/profile.png',
+    bio: 'Focuses on backend systems, clean APIs, and reliable data flow that power the user-facing product.',
+  },
+];
 
 export default function TeamPageClient() {
   return (
@@ -10,44 +49,22 @@ export default function TeamPageClient() {
         className="relative min-h-screen overflow-hidden py-[clamp(4rem,8vw,8rem)]"
         style={{ background: 'var(--bg)' }}
       >
-        <div className="relative z-[2] mx-auto max-w-[1400px] px-[clamp(1rem,4vw,4rem)]">
+        <div className="relative z-2 mx-auto max-w-350 px-[clamp(1rem,4vw,4rem)]">
           <div className="mb-16 overflow-hidden text-center">
             <h1 className="sectionTitleGlobal">
               Our <span style={{ color: 'var(--accent)' }}>Team</span>
             </h1>
-            <p className="mx-auto mt-4 max-w-[700px] text-lg text-[var(--text-secondary)]">
+            <p className="mx-auto mt-4 max-w-175 text-lg text-(--text-secondary)">
               A passionate group of designers, developers, and strategists dedicated to building exceptional digital
               products that drive real business impact.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-20">
-            {[
-              {
-                name: 'Mehedi Hasan',
-                role: 'Founder & Lead Developer',
-                expertise: 'Full-Stack Development, Product Strategy',
-                icon: '👨‍💻',
-                bio: 'Passionate about building scalable web applications with modern technologies. Brings 5+ years of experience in full-stack development.',
-              },
-              {
-                name: 'Design Excellence',
-                role: 'UI/UX Design',
-                expertise: 'User Interface, User Experience Design',
-                icon: '🎨',
-                bio: 'Crafts beautiful, intuitive interfaces that users love. Focused on usability and visual hierarchy.',
-              },
-              {
-                name: 'Digital Strategy',
-                role: 'Strategy & Growth',
-                expertise: 'Market Analysis, Growth Optimization',
-                icon: '📊',
-                bio: 'Helps businesses identify opportunities and develop strategies that lead to sustainable growth.',
-              },
-            ].map((member, idx) => (
+          <div className="mb-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {teamMembers.map((member) => (
               <div
-                key={idx}
-                className="group relative overflow-hidden rounded-2xl border p-8 transition-all duration-300 h-full"
+                key={member.name}
+                className="group relative h-full overflow-hidden rounded-3xl border p-4 transition-all duration-300"
                 style={{ borderColor: 'rgba(var(--accent-rgb), 0.2)' }}
               >
                 <div
@@ -57,79 +74,70 @@ export default function TeamPageClient() {
                   }}
                 />
 
-                <div className="relative z-[2] space-y-4">
-                  <div className="text-5xl">{member.icon}</div>
-                  <div>
-                    <h2 className="text-xl font-semibold text-[var(--text)]">{member.name}</h2>
-                    <p className="text-sm font-medium text-[var(--accent)]">{member.role}</p>
+                <div className="relative z-2 space-y-5">
+                  <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
+                    <Image
+                      src={member.image}
+                      alt={`${member.name} portrait`}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      priority={member.name === 'Mehedi Hasan'}
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-[rgba(6,9,14,0.88)] via-[rgba(6,9,14,0.2)] to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 p-5">
+                      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-(--accent)">
+                        {member.role}
+                      </p>
+                      <h2 className="mt-2 text-2xl font-semibold text-white">{member.name}</h2>
+                    </div>
                   </div>
-                  <p className="font-medium text-[var(--text-secondary)]">{member.expertise}</p>
-                  <p className="text-sm leading-relaxed text-[var(--text-secondary)]">{member.bio}</p>
+                  <div className="space-y-3 px-1 pb-2">
+                    <p className="font-medium text-(--text-secondary)">{member.expertise}</p>
+                    <p className="text-sm leading-relaxed text-(--text-secondary)">{member.bio}</p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
+        
+
           <div
-            className="space-y-8 rounded-2xl border p-8 md:p-12"
-            style={{ borderColor: 'rgba(var(--accent-rgb), 0.2)' }}
+            className="mt-20 space-y-6 rounded-2xl border-2 border-dashed p-8 text-center md:p-12"
+            style={{ borderColor: 'rgba(var(--accent-rgb), 0.3)' }}
           >
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--text)]">Why We Work Together</h2>
-              <p className="mt-4 text-lg leading-relaxed text-[var(--text-secondary)]">
-                We're not just colleagues—we're a team united by shared values and a common mission. Every person at
-                Nexvibe brings unique expertise, but we all share an unwavering commitment to excellence.
+            <div className="mx-auto max-w-190 space-y-4">
+              <h2 className="text-2xl font-bold text-(--text)">Join Our Team</h2>
+              <p className="text-lg text-(--text-secondary)">
+                We&apos;re always looking for talented individuals who share our passion for innovation and excellence.
               </p>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2">
-              {[
-                {
-                  title: 'Shared Vision',
-                  description:
-                    'We all believe in building products that make a real difference in the world and deliver genuine value to users.',
-                },
-                {
-                  title: 'Continuous Growth',
-                  description:
-                    'Learning is at the core of everything we do. We invest in our skills and knowledge individually and as a team.',
-                },
-                {
-                  title: 'Collaboration',
-                  description:
-                    'Open communication and diverse perspectives lead to better solutions. We believe in collective wisdom.',
-                },
-                {
-                  title: 'Quality Over Speed',
-                  description:
-                    'We prioritize excellence and craftsmanship in every project we deliver. Speed is important, but quality is paramount.',
-                },
-              ].map((item, idx) => (
-                <div key={idx} className="space-y-2">
-                  <h3 className="font-semibold text-[var(--text)]">{item.title}</h3>
-                  <p className="text-[var(--text-secondary)]">{item.description}</p>
-                </div>
-              ))}
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a
+                href="https://www.apexiumstechnologies.com/careers"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-full bg-(--accent) px-8 py-3 text-sm font-semibold text-(--bg) transition-all duration-300 hover:scale-105 active:scale-95"
+              >
+                View Open Positions
+              </a>
+              <a
+                href="https://wa.me/923405542097?text=Hello%20I%20want%20to%20send%20my%20resume"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-[rgba(var(--accent-rgb),0.35)] px-8 py-3 text-sm font-semibold text-(--text) transition-all duration-300 hover:bg-[rgba(var(--accent-rgb),0.08)] active:scale-95"
+              >
+                Send Your Resume
+              </a>
             </div>
-          </div>
-
-          <div className="mt-20 rounded-2xl border-2 border-dashed p-12 text-center" style={{ borderColor: 'rgba(var(--accent-rgb), 0.3)' }}>
-            <h2 className="text-2xl font-bold text-[var(--text)]">Join Us</h2>
-            <p className="mt-4 text-lg text-[var(--text-secondary)]">
-              Are you passionate about building exceptional digital products? We're always looking for talented individuals to join our team.
-            </p>
-            <Link
-              href="mailto:hello@nexvibe.com"
-              className="mt-6 inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-[var(--accent)] px-8 py-3 text-sm font-semibold text-[var(--bg)] transition-all duration-300 hover:scale-105 active:scale-95"
-            >
-              Get In Touch
-            </Link>
           </div>
 
           <div className="mt-16 text-center">
             <Link
               href="/about"
-              className="text-[var(--accent)] hover:underline underline-offset-4"
+              className="text-(--accent) hover:underline underline-offset-4"
             >
               ← Back to About
             </Link>
