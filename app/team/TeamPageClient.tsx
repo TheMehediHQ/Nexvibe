@@ -115,14 +115,12 @@ export default function TeamPageClient() {
             </div>
 
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a
-                href="https://www.apexiumstechnologies.com/careers"
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                href="/career"
                 className="inline-flex items-center justify-center rounded-full bg-(--accent) px-8 py-3 text-sm font-semibold text-(--bg) transition-all duration-300 hover:scale-105 active:scale-95"
               >
                 View Open Positions
-              </a>
+              </Link>
               <a
                 href="https://wa.me/923405542097?text=Hello%20I%20want%20to%20send%20my%20resume"
                 target="_blank"
