@@ -81,7 +81,7 @@ export default function VisionPageClient() {
                   href="https://www.linkedin.com/in/mehedi-hasan1102"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-base font-bold text-[var(--accent)] transition-opacity hover:opacity-80 sm:text-lg"
+                  className="relative inline-flex items-center gap-2 text-base font-bold text-[var(--accent)] no-underline transition-all duration-300 [transition-timing-function:ease] after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-0 after:bg-[var(--accent)] after:transition-[width] after:duration-300 after:[transition-timing-function:ease] hover:text-[var(--text)] hover:after:w-full sm:text-lg"
                 >
                   <FiLinkedin aria-hidden="true" />
                   <span>Follow us on LinkedIn</span>
