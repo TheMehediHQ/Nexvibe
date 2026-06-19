@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function VisionPageClient() {
   return (
@@ -27,7 +28,7 @@ export default function VisionPageClient() {
                 </p>
                 <p className="text-lg leading-relaxed text-[var(--text-secondary)]">
                   Every project we undertake is driven by a simple philosophy:{' '}
-                  <strong className="text-[var(--accent)]">build products that matter</strong>. We don't just create
+                  <strong className="text-[var(--accent)]">build products that matter</strong>. We don&apos;t just create
                   websites or applications; we craft digital experiences that solve real problems and deliver
                   measurable results.
                 </p>
@@ -59,19 +60,14 @@ export default function VisionPageClient() {
               className="relative overflow-hidden rounded-2xl border"
               style={{ borderColor: 'rgba(var(--accent-rgb), 0.2)' }}
             >
-              <div className="aspect-square bg-gradient-to-br from-[rgba(var(--accent-rgb),0.1)] to-[rgba(var(--accent-rgb),0.05)] p-8 flex flex-col items-center justify-center text-center">
-                <div className="space-y-4">
-                  <div
-                    className="mx-auto w-16 h-16 rounded-full flex items-center justify-center"
-                    style={{ background: 'rgba(var(--accent-rgb), 0.15)' }}
-                  >
-                    <span className="text-3xl">🚀</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-[var(--text)]">Innovation</h3>
-                  <p className="text-[var(--text-secondary)]">
-                    Leveraging the latest technologies and methodologies to stay ahead of the curve
-                  </p>
-                </div>
+              <div className="relative aspect-square bg-gradient-to-br from-[rgba(var(--accent-rgb),0.1)] to-[rgba(var(--accent-rgb),0.05)]">
+                <Image
+                  src="/profile/profile.png"
+                  alt="Nexvibe vision"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             </div>
           </div>
@@ -80,9 +76,9 @@ export default function VisionPageClient() {
             <div>
               <h2 className="text-2xl font-bold text-[var(--text)]">Why This Vision Matters</h2>
               <p className="mt-4 text-lg leading-relaxed text-[var(--text-secondary)]">
-                In today's digital landscape, businesses face unprecedented challenges. Technology evolves rapidly,
+                In today&apos;s digital landscape, businesses face unprecedented challenges. Technology evolves rapidly,
                 user expectations are higher than ever, and competition is fierce. We exist to bridge this gap—to
-                help companies navigate this complexity and emerge with products that don't just work, but inspire.
+                help companies navigate this complexity and emerge with products that don&apos;t just work, but inspire.
               </p>
             </div>
 
@@ -117,7 +113,7 @@ export default function VisionPageClient() {
               href="/book-call"
               className="inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-[var(--accent)] px-8 py-3 text-sm font-semibold text-[var(--bg)] transition-all duration-300 hover:scale-105 active:scale-95"
             >
-              Let's Talk
+              Let&apos;s Talk
             </Link>
           </div>
         </div>
