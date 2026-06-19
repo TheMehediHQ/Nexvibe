@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { FiArrowUpRight, FiLinkedin } from 'react-icons/fi';
 
 export default function VisionPageClient() {
   return (
@@ -57,7 +58,7 @@ export default function VisionPageClient() {
             </div>
 
             <div
-              className="relative overflow-hidden rounded-2xl border"
+              className="relative overflow-hidden "
               style={{ borderColor: 'rgba(var(--accent-rgb), 0.2)' }}
             >
               <div className="relative aspect-square bg-gradient-to-br from-[rgba(var(--accent-rgb),0.1)] to-[rgba(var(--accent-rgb),0.05)]">
@@ -68,6 +69,24 @@ export default function VisionPageClient() {
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
+              </div>
+              <div
+                className="flex flex-wrap items-center justify-between gap-3 border-t px-4 py-3 text-sm font-semibold sm:px-5"
+                style={{ borderColor: 'rgba(var(--accent-rgb), 0.2)' }}
+              >
+                <span className="inline-flex items-center gap-2 text-[var(--text)]">
+                  
+                </span>
+                <a
+                  href="https://www.linkedin.com/in/mehedi-hasan1102"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-base font-bold text-[var(--accent)] transition-opacity hover:opacity-80 sm:text-lg"
+                >
+                  <FiLinkedin aria-hidden="true" />
+                  <span>Follow us on LinkedIn</span>
+                  <FiArrowUpRight aria-hidden="true" />
+                </a>
               </div>
             </div>
           </div>
