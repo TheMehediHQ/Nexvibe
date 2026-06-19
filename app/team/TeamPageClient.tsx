@@ -8,35 +8,35 @@ const teamMembers = [
     name: 'Mehedi Hasan',
     role: 'Founder & Lead Developer',
     expertise: 'Full-Stack Development, Product Strategy',
-    image: '/profile/profile.png',
+    image: '/profile/1.png',
     bio: 'Passionate about building scalable web applications with modern technologies. Brings 5+ years of experience in full-stack development.',
   },
   {
     name: 'Md Hossain',
     role: 'Graphics Designer',
     expertise: 'Visual Design, Branding, Creative Direction',
-    image: '/profile/about.png',
+    image: '/profile/3.png',
     bio: 'Creates visual assets and brand-ready layouts that make the product presentation feel polished and consistent.',
   },
   {
     name: 'Halima Katun',
     role: 'UI/UX Designer',
     expertise: 'User Research, Interface Design, Interaction Flow',
-    image: '/profile/profile.png',
+    image: '/profile/4.png',
     bio: 'Designs clean and intuitive user experiences with a strong focus on usability and clarity.',
   },
   {
-    name: 'Hasibul Islam Shanto',
+    name: 'MD Rifat Hasan',
     role: 'Frontend Developer',
     expertise: 'React, Next.js, Responsive UI',
-    image: '/profile/about.png',
+    image: '/profile/5.png',
     bio: 'Builds responsive interfaces and turns design concepts into fast, accessible web experiences.',
   },
   {
-    name: 'Riffat Hassan',
+    name: 'Hasibul Hossain',
     role: 'Backend Developer',
     expertise: 'APIs, Server Logic, Database Integration',
-    image: '/profile/profile.png',
+    image: '/profile/2.png',
     bio: 'Focuses on backend systems, clean APIs, and reliable data flow that power the user-facing product.',
   },
 ];
@@ -102,7 +102,7 @@ export default function TeamPageClient() {
           </div>
 
         
-
+{/* 
           <div
             className="mt-20 space-y-6 rounded-2xl border-2 border-dashed p-8 text-center md:p-12"
             style={{ borderColor: 'rgba(var(--accent-rgb), 0.3)' }}
@@ -130,16 +130,9 @@ export default function TeamPageClient() {
                 Send Your Resume
               </a>
             </div>
-          </div>
+          </div> */}
 
-          <div className="mt-16 text-center">
-            <Link
-              href="/about"
-              className="text-(--accent) hover:underline underline-offset-4"
-            >
-              ← Back to About
-            </Link>
-          </div>
+        
         </div>
       </section>
     </div>

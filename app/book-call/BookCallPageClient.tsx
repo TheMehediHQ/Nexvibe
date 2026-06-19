@@ -166,7 +166,7 @@ export default function BookCallPageClient() {
 
           <div className="flex items-center justify-center gap-2 text-[var(--text-secondary)] sm:justify-end sm:gap-3">
             <a
-              href="mailto:mehedi.hasan16777@gmail.com"
+              href="mailto:contact.nexvibe@gmail.com"
               className="rounded-full border p-2 transition-colors hover:text-[var(--text)]"
               style={{ borderColor: borderStrong }}
               aria-label="Email"

@@ -26,7 +26,7 @@ const DELIVERY_SIGNALS = [
 ];
 
 const CUSTOM_OFFER_MAILTO =
- "mailto:mehedi.hasan16777@gmail.com?subject=Custom%20Offer%20Request&body=Hi%20Mehedi%2C%0A%0AI%20would%20like%20a%20custom%20offer%20for%20my%20project.%0AProject%20details%3A%0ABudget%20range%3A%0ATimeline%3A%0A%0AThanks.";
+ "mailto:contact.nexvibe@gmail.com?subject=Custom%20Offer%20Request&body=Hi%20Mehedi%2C%0A%0AI%20would%20like%20a%20custom%20offer%20for%20my%20project.%0AProject%20details%3A%0ABudget%20range%3A%0ATimeline%3A%0A%0AThanks.";
 
 const tagClassName =
  "rounded-full border border-[rgba(var(--accent-rgb),0.3)] bg-[rgba(var(--accent-rgb),0.08)] px-3 py-1 text-[0.78rem] tracking-[0.02em] text-[var(--text)]";

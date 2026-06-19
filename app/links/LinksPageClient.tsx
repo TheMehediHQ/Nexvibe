@@ -62,7 +62,7 @@ const SOCIAL_SECTIONS: SocialSection[] = [
       { icon: FiLinkedin, href: 'https://www.linkedin.com/in/mehedi-hasan1102/', label: 'LinkedIn', handle: '@mehedi-hasan1102' },
       { icon: SiPeerlist, href: 'https://peerlist.io/mehedihasan', label: 'Peerlist', handle: '@mehedihasan' },
       { icon: FiFileText, href: '/Resume_of_Mehedi_Hasan.pdf', label: 'Resume', handle: 'Resume PDF' },
-      { icon: FiMail, href: 'mailto:mehedi.hasan16777@gmail.com', label: 'Email', handle: 'mehedi.hasan16777@gmail.com' },
+      { icon: FiMail, href: 'mailto:contact.nexvibe@gmail.com', label: 'Email', handle: 'contact.nexvibe@gmail.com' },
     ],
   },
   {

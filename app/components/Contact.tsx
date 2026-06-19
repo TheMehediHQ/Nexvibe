@@ -38,7 +38,7 @@ const availabilityTextClassName =
  "text-[clamp(0.65rem,1.1vw,0.875rem)] tracking-[0.04em] text-[#22c55e] font-normal max-[768px]:text-[clamp(0.95rem,1.3vw,1.05rem)] max-[600px]:text-[clamp(0.9rem,1.25vw,1rem)]";
 
 const LANDING_PAGE_AUDIT_MAILTO =
- 'mailto:mehedi.hasan16777@gmail.com?subject=Landing%20Page%20Audit%20Request';
+ 'mailto:contact.nexvibe@gmail.com?subject=Landing%20Page%20Audit%20Request';
 
 export default function Contact() {
  const headerRef = useRef<HTMLDivElement>(null);
@@ -78,8 +78,8 @@ export default function Contact() {
  </div>
 
  <div className="text-center">
- <a href="mailto:mehedi.hasan16777@gmail.com" className={emailClassName}>
- mehedi.hasan16777@gmail.com
+ <a href="mailto:contact.nexvibe@gmail.com" className={emailClassName}>
+ contact.nexvibe@gmail.com
  </a>
  </div>
 
