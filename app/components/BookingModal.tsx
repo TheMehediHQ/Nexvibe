@@ -126,9 +126,8 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   return (
     <div
       ref={modalRef}
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-[rgba(0,0,0,0.7)] p-4 [backdrop-filter:blur(4px)] transition-opacity duration-300 [transition-timing-function:ease] max-[480px]:px-2 max-[480px]:py-4 ${
-        isOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
-      }`}
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-[rgba(0,0,0,0.7)] p-4 [backdrop-filter:blur(4px)] transition-opacity duration-300 [transition-timing-function:ease] max-[480px]:px-2 max-[480px]:py-4 ${isOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
+        }`}
       role="dialog"
       aria-modal="true"
       aria-labelledby="booking-modal-title"
@@ -148,7 +147,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-6 top-6 flex cursor-pointer items-center justify-center border-none bg-transparent p-2 text-[var(--text-secondary)] transition-all duration-300 [transition-timing-function:ease] hover:text-[var(--accent)] max-[480px]:right-4 max-[480px]:top-4"
+          className="absolute right-6 top-6 flex cursor-pointer items-center justify-center border-none bg-transparent p-2 text-[var(--text-secondary)] transition-all duration-300 [transition-timing-function:ease] hover:text-(--accent) max-[480px]:right-4 max-[480px]:top-4"
           aria-label="Close modal"
         >
           <FiX size={24} />
@@ -177,7 +176,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           <Link
             href="/book-call"
             onClick={onClose}
-            className="flex items-center justify-center gap-2 rounded-[8px] border border-[rgba(6,182,212,0.35)] bg-[rgba(6,182,212,0.1)] px-4 py-3 text-[0.85rem] font-medium tracking-[0.02em] text-[var(--accent)] transition-all duration-300 [transition-timing-function:ease] hover:-translate-y-0.5 hover:bg-[rgba(6,182,212,0.2)]"
+            className="flex items-center justify-center gap-2 rounded-[8px] border border-[rgba(6,182,212,0.35)] bg-[rgba(6,182,212,0.1)] px-4 py-3 text-[0.85rem] font-medium tracking-[0.02em] text-(--accent) transition-all duration-300 [transition-timing-function:ease] hover:-translate-y-0.5 hover:bg-[rgba(6,182,212,0.2)]"
           >
             <FiCalendar size={16} />
             <span>Book 20-min Call</span>

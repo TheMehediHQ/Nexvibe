@@ -39,7 +39,7 @@ export default function SoftSkillsOrbitCard({
           <span className="block font-['Graphik',-apple-system,sans-serif] text-[1.5rem] font-semibold tracking-[0.04em] [word-spacing:0em] text-[var(--text-secondary)] max-[768px]:text-[1.25rem]">
             Soft
           </span>
-          <span className="block font-['Graphik',-apple-system,sans-serif] text-[1.5rem] font-semibold tracking-[0.04em] [word-spacing:0em] text-[var(--accent)] max-[768px]:text-[1.25rem]">
+          <span className="block font-['Graphik',-apple-system,sans-serif] text-[1.5rem] font-semibold tracking-[0.04em] [word-spacing:0em] text-(--accent) max-[768px]:text-[1.25rem]">
             Skills
           </span>
         </div>

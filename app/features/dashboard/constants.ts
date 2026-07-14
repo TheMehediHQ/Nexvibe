@@ -3,7 +3,7 @@ export const DASHBOARD =
 export const DASHBOARD_CONTAINER =
   'relative z-[2] mx-auto max-w-[1400px] px-[clamp(1rem,4vw,4rem)] max-[768px]:px-8 max-[640px]:px-6';
 export const HEADER = 'mb-10 flex flex-col gap-3 overflow-hidden text-left';
-export const TITLE_ACCENT = 'text-[var(--accent)]';
+export const TITLE_ACCENT = 'text-(--accent)';
 export const MAIN_GRID =
   'mb-12 grid grid-cols-2 gap-6 max-[768px]:grid-cols-1 max-[768px]:gap-4';
 export const CARD =
@@ -19,7 +19,7 @@ export const SECTION_HEADER =
 export const SECTION_TITLE =
   'm-0 flex items-center gap-2 text-[clamp(1rem,2vw,1.25rem)] font-semibold tracking-[-0.01em] text-[var(--text)] max-[640px]:text-[0.95rem]';
 export const VIEW_LINK =
-  'flex items-center gap-1 text-[0.8rem] font-medium text-[var(--accent)] no-underline transition-all duration-200 [transition-timing-function:ease] hover:gap-2';
+  'flex items-center gap-1 text-[0.8rem] font-medium text-(--accent) no-underline transition-all duration-200 [transition-timing-function:ease] hover:gap-2';
 export const PROJECTS_GRID =
   'grid grid-cols-3 gap-6 max-[1200px]:grid-cols-2 max-[768px]:grid-cols-1';
 export const PROJECT_CARD =

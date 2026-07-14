@@ -128,7 +128,7 @@ export default function MobileControls({
     <div className="flex items-center gap-1.5 lg:hidden sm:gap-2">
       <button
         onClick={onOpenBookingModal}
-        className="rounded-full bg-[rgba(var(--accent-rgb),0.2)] p-1.5 text-[var(--accent)] transition-all duration-300 hover:scale-110 sm:p-2"
+        className="rounded-full bg-[rgba(var(--accent-rgb),0.2)] p-1.5 text-(--accent) transition-all duration-300 hover:scale-110 sm:p-2"
         aria-label="Book a call"
       >
         <FiCalendar size={18} />
@@ -140,9 +140,8 @@ export default function MobileControls({
           type="button"
           onClick={() => setIsThemeMenuOpen((prev) => !prev)}
           onKeyDown={handleThemeTriggerKeyDown}
-          className={`rounded-full bg-[rgba(var(--accent-rgb),0.1)] p-1.5 text-[var(--accent)] transition-all duration-300 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(var(--accent-rgb),0.5)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] sm:p-2 ${
-            isThemeMenuOpen ? 'ring-1 ring-[rgba(var(--accent-rgb),0.35)]' : ''
-          }`}
+          className={`rounded-full bg-[rgba(var(--accent-rgb),0.1)] p-1.5 text-(--accent) transition-all duration-300 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(var(--accent-rgb),0.5)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] sm:p-2 ${isThemeMenuOpen ? 'ring-1 ring-[rgba(var(--accent-rgb),0.35)]' : ''
+            }`}
           aria-controls="mobile-theme-menu"
           aria-label="Theme options"
           title="Theme options"
@@ -162,11 +161,10 @@ export default function MobileControls({
               setIsThemeMenuOpen(false);
             }
           }}
-          className={`absolute right-0 top-full z-50 mt-2 w-32 rounded-xl border border-[rgba(var(--accent-rgb),0.2)] bg-[var(--bg)] p-1 shadow-[0_14px_30px_rgba(var(--accent-rgb),0.16)] transition-all duration-200 ${
-            isThemeMenuOpen
+          className={`absolute right-0 top-full z-50 mt-2 w-32 rounded-xl border border-[rgba(var(--accent-rgb),0.2)] bg-[var(--bg)] p-1 shadow-[0_14px_30px_rgba(var(--accent-rgb),0.16)] transition-all duration-200 ${isThemeMenuOpen
               ? 'pointer-events-auto translate-y-0 scale-100 opacity-100'
               : 'pointer-events-none -translate-y-1 scale-[0.98] opacity-0'
-          }`}
+            }`}
         >
           {THEME_OPTIONS.map((option, index) => (
             <button
@@ -178,11 +176,10 @@ export default function MobileControls({
                 themeTriggerRef.current?.focus();
               }}
               onKeyDown={(event) => handleThemeItemKeyDown(event, index)}
-              className={`flex w-full items-center justify-between rounded-lg px-2.5 py-2 text-left text-xs capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(var(--accent-rgb),0.5)] focus-visible:ring-inset ${
-                themeMode === option
-                  ? 'bg-[rgba(var(--accent-rgb),0.12)] text-[var(--accent)]'
-                  : 'text-[var(--text)] hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-[var(--accent)]'
-              }`}
+              className={`flex w-full items-center justify-between rounded-lg px-2.5 py-2 text-left text-xs capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(var(--accent-rgb),0.5)] focus-visible:ring-inset ${themeMode === option
+                  ? 'bg-[rgba(var(--accent-rgb),0.12)] text-(--accent)'
+                  : 'text-[var(--text)] hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-(--accent)'
+                }`}
               role="menuitemradio"
               aria-checked={themeMode === option}
               tabIndex={isThemeMenuOpen ? 0 : -1}
@@ -197,7 +194,7 @@ export default function MobileControls({
 
       <button
         onClick={onToggleMenu}
-        className="rounded-full bg-[rgba(var(--accent-rgb),0.1)] p-1.5 text-[var(--accent)] transition-all duration-300 hover:scale-110 sm:p-2"
+        className="rounded-full bg-[rgba(var(--accent-rgb),0.1)] p-1.5 text-(--accent) transition-all duration-300 hover:scale-110 sm:p-2"
         aria-label="Toggle menu"
       >
         {isOpen ? <FiX size={22} /> : <FiMenu size={22} />}

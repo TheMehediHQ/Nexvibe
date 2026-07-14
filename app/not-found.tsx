@@ -42,13 +42,13 @@ export default function NotFound() {
             ref={titleRef}
             className="mb-6 font-['Graphik',-apple-system,sans-serif] text-[clamp(3rem,8vw,5rem)] font-normal leading-[1.2] tracking-[0.02em] text-[var(--text)] transition-[color] duration-[600ms] [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] max-[768px]:text-[clamp(2rem,6vw,3rem)] max-[480px]:mb-4 max-[480px]:text-[clamp(1.75rem,5vw,2.5rem)]"
           >
-            404 - <span className="inline-block text-[var(--accent)]">Page not found</span>
+            404 - <span className="inline-block text-(--accent)">Page not found</span>
           </h1>
           <p
             ref={textRef}
             className="mx-auto mb-12 max-w-[600px] text-lg leading-[1.8] text-[var(--text-secondary)] transition-[color] duration-[600ms] [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] max-[768px]:mb-8 max-[768px]:text-base max-[480px]:text-sm max-[480px]:leading-[1.6]"
           >
-            Oops! Looks like this page took a trip to outer space. 
+            Oops! Looks like this page took a trip to outer space.
             The cow astronaut couldn&apos;t find what you&apos;re looking for!
           </p>
 

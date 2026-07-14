@@ -141,11 +141,10 @@ export default function BookCallPageClient() {
             <button
               type="button"
               onClick={() => setViewMode('book')}
-              className={`inline-flex h-10 items-center justify-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 text-[0.78rem] font-semibold tracking-[0.01em] transition-all duration-200 sm:h-11 sm:gap-2 sm:px-5 sm:text-sm ${
-                viewMode === 'book'
+              className={`inline-flex h-10 items-center justify-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 text-[0.78rem] font-semibold tracking-[0.01em] transition-all duration-200 sm:h-11 sm:gap-2 sm:px-5 sm:text-sm ${viewMode === 'book'
                   ? 'bg-[rgba(var(--accent-rgb),0.2)] text-[var(--text)] shadow-[inset_0_0_0_1px_rgba(var(--accent-rgb),0.35)]'
                   : 'text-[var(--text-secondary)] hover:bg-[rgba(var(--accent-rgb),0.08)] hover:text-[var(--text)]'
-              }`}
+                }`}
             >
               <FiCalendar size={15} className="shrink-0" />
               <span>Book a Call</span>
@@ -153,11 +152,10 @@ export default function BookCallPageClient() {
             <button
               type="button"
               onClick={() => setViewMode('message')}
-              className={`inline-flex h-10 items-center justify-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 text-[0.78rem] font-semibold tracking-[0.01em] transition-all duration-200 sm:h-11 sm:gap-2 sm:px-5 sm:text-sm ${
-                viewMode === 'message'
+              className={`inline-flex h-10 items-center justify-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 text-[0.78rem] font-semibold tracking-[0.01em] transition-all duration-200 sm:h-11 sm:gap-2 sm:px-5 sm:text-sm ${viewMode === 'message'
                   ? 'bg-[rgba(var(--accent-rgb),0.2)] text-[var(--text)] shadow-[inset_0_0_0_1px_rgba(var(--accent-rgb),0.35)]'
                   : 'text-[var(--text-secondary)] hover:bg-[rgba(var(--accent-rgb),0.08)] hover:text-[var(--text)]'
-              }`}
+                }`}
             >
               <FiMessageSquare size={15} className="shrink-0" />
               <span>Request a Quote</span>
@@ -229,11 +227,11 @@ export default function BookCallPageClient() {
                 <p className="mb-1 text-sm text-[var(--text-secondary)]">Nexvibe</p>
                 <h4 className="mb-2 text-[clamp(1.9rem,7vw,2.9rem)] font-semibold leading-[1.05]">Strategy & Consultation Call (20 Minutes)</h4>
                 <p className="mb-5 text-sm leading-relaxed text-[var(--text-secondary)]">
-                 A quick session to discuss your ideas, understand your needs, and identify the best strategy or next steps.
+                  A quick session to discuss your ideas, understand your needs, and identify the best strategy or next steps.
 
                 </p>
 
-                
+
 
                 <div className="space-y-3 text-[0.95rem] text-[var(--text-secondary)]">
                   <div className="flex items-center gap-2">
@@ -263,15 +261,15 @@ export default function BookCallPageClient() {
                   </p>
                   <ol className="space-y-2 text-sm text-[var(--text-secondary)]">
                     <li className="flex items-start gap-2">
-                      <span className="mt-0.5 text-[var(--accent)]">1.</span>
+                      <span className="mt-0.5 text-(--accent)">1.</span>
                       Pick a time that works for you.
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="mt-0.5 text-[var(--accent)]">2.</span>
+                      <span className="mt-0.5 text-(--accent)">2.</span>
                       Get the calendar invite instantly.
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="mt-0.5 text-[var(--accent)]">3.</span>
+                      <span className="mt-0.5 text-(--accent)">3.</span>
                       Join via Google Meet.
                     </li>
                   </ol>
@@ -331,66 +329,66 @@ export default function BookCallPageClient() {
           >
             <div className="grid gap-4 sm:gap-5 lg:grid-cols-[280px_1fr]">
               <aside
-  className="rounded-xl border p-4 sm:p-5 text-[var(--text)]"
-  style={{ borderColor: borderSoft, backgroundColor: panelSurfaceSoft }}
->
-  <p className="mb-1 text-sm text-[var(--text-secondary)]">Nexvibe</p>
+                className="rounded-xl border p-4 sm:p-5 text-[var(--text)]"
+                style={{ borderColor: borderSoft, backgroundColor: panelSurfaceSoft }}
+              >
+                <p className="mb-1 text-sm text-[var(--text-secondary)]">Nexvibe</p>
 
-  <h4 className="mb-2 text-[clamp(1.9rem,7vw,2.9rem)] font-semibold leading-[1.05]">
-    Project Inquiry Form
-  </h4>
+                <h4 className="mb-2 text-[clamp(1.9rem,7vw,2.9rem)] font-semibold leading-[1.05]">
+                  Project Inquiry Form
+                </h4>
 
-  <p className="mb-5 text-sm leading-relaxed text-[var(--text-secondary)]">
-    Share your project details, goals, and requirements. We will review your
-    submission and respond with the next steps.
-  </p>
+                <p className="mb-5 text-sm leading-relaxed text-[var(--text-secondary)]">
+                  Share your project details, goals, and requirements. We will review your
+                  submission and respond with the next steps.
+                </p>
 
-  <div className="space-y-3 text-[0.95rem] text-[var(--text-secondary)]">
-    <div className="flex items-center gap-2">
-      <FiClock size={15} />
-      <span>Typical reply in 24 hours</span>
-    </div>
+                <div className="space-y-3 text-[0.95rem] text-[var(--text-secondary)]">
+                  <div className="flex items-center gap-2">
+                    <FiClock size={15} />
+                    <span>Typical reply in 24 hours</span>
+                  </div>
 
-    <div className="flex items-center gap-2">
-      <FiPhone size={15} />
-      <span>Follow-up call if needed</span>
-    </div>
+                  <div className="flex items-center gap-2">
+                    <FiPhone size={15} />
+                    <span>Follow-up call if needed</span>
+                  </div>
 
-    <div className="flex items-center gap-2">
-      <FiShield size={15} />
-      <span>Your details stay private</span>
-    </div>
+                  <div className="flex items-center gap-2">
+                    <FiShield size={15} />
+                    <span>Your details stay private</span>
+                  </div>
 
-    <div className="flex items-center gap-2">
-      <FiUser size={15} />
-      <span>Directly reviewed by our strategy team</span>
-    </div>
-  </div>
+                  <div className="flex items-center gap-2">
+                    <FiUser size={15} />
+                    <span>Directly reviewed by our strategy team</span>
+                  </div>
+                </div>
 
-  <div
-    className="mt-6 rounded-xl border p-4"
-    style={{ borderColor: borderSoft, backgroundColor: panelSurface }}
-  >
-    <p className="mb-2 text-xs font-semibold tracking-[0.12em] text-[var(--text-secondary)]">
-      WHAT HAPPENS NEXT
-    </p>
+                <div
+                  className="mt-6 rounded-xl border p-4"
+                  style={{ borderColor: borderSoft, backgroundColor: panelSurface }}
+                >
+                  <p className="mb-2 text-xs font-semibold tracking-[0.12em] text-[var(--text-secondary)]">
+                    WHAT HAPPENS NEXT
+                  </p>
 
-    <ol className="space-y-2 text-sm text-[var(--text-secondary)]">
-      <li className="flex items-start gap-2">
-        <span className="mt-0.5 text-[var(--accent)]">1.</span>
-        Submit the inquiry form.
-      </li>
-      <li className="flex items-start gap-2">
-        <span className="mt-0.5 text-[var(--accent)]">2.</span>
-        We review your project details.
-      </li>
-      <li className="flex items-start gap-2">
-        <span className="mt-0.5 text-[var(--accent)]">3.</span>
-        You receive a reply with next steps.
-      </li>
-    </ol>
-  </div>
-   <div className="mt-6 space-y-3">
+                  <ol className="space-y-2 text-sm text-[var(--text-secondary)]">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-0.5 text-(--accent)">1.</span>
+                      Submit the inquiry form.
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-0.5 text-(--accent)">2.</span>
+                      We review your project details.
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-0.5 text-(--accent)">3.</span>
+                      You receive a reply with next steps.
+                    </li>
+                  </ol>
+                </div>
+                <div className="mt-6 space-y-3">
                   <a
                     href={WHATSAPP_URL}
                     target="_blank"
@@ -400,19 +398,19 @@ export default function BookCallPageClient() {
                     <FaWhatsapp size={16} />
                     WhatsApp
                   </a>
-                   {/* View Form Button */}
-    <a
-      href="https://form.jotform.com/260627107187054"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex w-full items-center justify-center gap-2 rounded-lg border px-3 py-2 text-sm font-semibold text-[var(--text-secondary)] transition-colors hover:text-[var(--text)]"
-      style={{ borderColor: borderStrong }}
-    >
-      <FiExternalLink size={14} />
-      Open form in new tab
-    </a>
+                  {/* View Form Button */}
+                  <a
+                    href="https://form.jotform.com/260627107187054"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg border px-3 py-2 text-sm font-semibold text-[var(--text-secondary)] transition-colors hover:text-[var(--text)]"
+                    style={{ borderColor: borderStrong }}
+                  >
+                    <FiExternalLink size={14} />
+                    Open form in new tab
+                  </a>
                 </div>
-</aside>
+              </aside>
 
               {/* Jotform Embed Start */}
               <div className="rounded-xl border p-4 sm:p-6" style={{ borderColor: borderSoft, backgroundColor: panelSurfaceSoft }}>

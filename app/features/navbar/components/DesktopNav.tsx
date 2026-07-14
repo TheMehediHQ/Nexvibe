@@ -482,11 +482,10 @@ export default function DesktopNav({
           aria-haspopup="menu"
           aria-expanded={isThemeMenuOpen}
           data-theme-toggle-btn
-          className={`flex h-full cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium tracking-[0.025em] transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${
-            isThemeMenuOpen
-              ? 'bg-[rgba(var(--accent-rgb),0.14)] text-[var(--accent)] shadow-[0_0_14px_rgba(var(--accent-rgb),0.2)] focus-visible:ring-[rgba(var(--accent-rgb),0.55)]'
-              : 'text-[var(--text)] hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-[var(--accent)] focus-visible:ring-[rgba(var(--accent-rgb),0.45)]'
-          }`}
+          className={`flex h-full cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium tracking-[0.025em] transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${isThemeMenuOpen
+              ? 'bg-[rgba(var(--accent-rgb),0.14)] text-(--accent) shadow-[0_0_14px_rgba(var(--accent-rgb),0.2)] focus-visible:ring-[rgba(var(--accent-rgb),0.55)]'
+              : 'text-[var(--text)] hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-(--accent) focus-visible:ring-[rgba(var(--accent-rgb),0.45)]'
+            }`}
         >
           {themeIcon}
           <span className={`inline-block transition-transform duration-200 ${isThemeMenuOpen ? 'rotate-180' : 'rotate-0'}`}>
@@ -503,11 +502,10 @@ export default function DesktopNav({
               setIsThemeMenuOpen(false);
             }
           }}
-          className={`absolute left-0 top-full ${DROPDOWN_TOP_MARGIN_CLASS} w-36 origin-top rounded-xl border border-[rgba(var(--accent-rgb),0.2)] bg-[var(--bg)] shadow-[0_14px_30px_rgba(var(--accent-rgb),0.16)] transition-all duration-200 ${
-            isThemeMenuOpen
+          className={`absolute left-0 top-full ${DROPDOWN_TOP_MARGIN_CLASS} w-36 origin-top rounded-xl border border-[rgba(var(--accent-rgb),0.2)] bg-[var(--bg)] shadow-[0_14px_30px_rgba(var(--accent-rgb),0.16)] transition-all duration-200 ${isThemeMenuOpen
               ? 'pointer-events-auto translate-y-0 scale-100 opacity-100'
               : 'pointer-events-none -translate-y-1 scale-[0.98] opacity-0'
-          }`}
+            }`}
         >
           {THEME_OPTIONS.map((option, index) => {
             const isLastOption = index === THEME_OPTIONS.length - 1;
@@ -521,13 +519,11 @@ export default function DesktopNav({
                   themeTriggerRef.current?.focus();
                 }}
                 onKeyDown={(event) => handleThemeItemKeyDown(event, index)}
-                className={`flex w-full items-center justify-between px-4 py-3 text-left text-sm capitalize transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(var(--accent-rgb),0.5)] focus-visible:ring-inset ${
-                  isLastOption ? 'border-none' : 'border-b border-[rgba(var(--accent-rgb),0.1)]'
-                } ${
-                  themeMode === option
-                    ? 'text-[var(--accent)]'
-                    : 'text-[var(--text)] hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-[var(--accent)]'
-                }`}
+                className={`flex w-full items-center justify-between px-4 py-3 text-left text-sm capitalize transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(var(--accent-rgb),0.5)] focus-visible:ring-inset ${isLastOption ? 'border-none' : 'border-b border-[rgba(var(--accent-rgb),0.1)]'
+                  } ${themeMode === option
+                    ? 'text-(--accent)'
+                    : 'text-[var(--text)] hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-(--accent)'
+                  }`}
                 role="menuitemradio"
                 aria-checked={themeMode === option}
                 tabIndex={isThemeMenuOpen ? 0 : -1}
@@ -549,9 +545,8 @@ export default function DesktopNav({
         href="/"
         onMouseEnter={onLinkHover}
         onMouseLeave={onLinkHoverEnd}
-        className={`relative cursor-pointer whitespace-nowrap text-sm font-medium tracking-[0.025em] transition-all duration-300 ${
-          pathname === '/' ? 'text-[var(--accent)]' : 'text-[var(--text)]'
-        }`}
+        className={`relative cursor-pointer whitespace-nowrap text-sm font-medium tracking-[0.025em] transition-all duration-300 ${pathname === '/' ? 'text-(--accent)' : 'text-[var(--text)]'
+          }`}
       >
         Home
         {pathname === '/' ? (
@@ -572,20 +567,18 @@ export default function DesktopNav({
           aria-expanded={isAboutDropdownOpen}
           aria-controls="desktop-about-menu"
           onKeyDown={handleAboutTriggerKeyDown}
-          className={`flex h-full cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium tracking-[0.025em] transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${
-            isAboutDropdownOpen
-              ? 'bg-[rgba(var(--accent-rgb),0.14)] text-[var(--accent)] shadow-[0_0_14px_rgba(var(--accent-rgb),0.2)] focus-visible:ring-[rgba(var(--accent-rgb),0.55)]'
-              : 'text-[var(--text)] hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-[var(--accent)] focus-visible:ring-[rgba(var(--accent-rgb),0.45)]'
-          }`}
+          className={`flex h-full cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium tracking-[0.025em] transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${isAboutDropdownOpen
+              ? 'bg-[rgba(var(--accent-rgb),0.14)] text-(--accent) shadow-[0_0_14px_rgba(var(--accent-rgb),0.2)] focus-visible:ring-[rgba(var(--accent-rgb),0.55)]'
+              : 'text-[var(--text)] hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-(--accent) focus-visible:ring-[rgba(var(--accent-rgb),0.45)]'
+            }`}
           onClick={toggleAboutDropdownLock}
           onFocus={openAboutDropdown}
         >
           About
           <span
             aria-hidden
-            className={`inline-block transition-transform duration-200 ${
-              isAboutDropdownOpen ? 'rotate-180' : 'rotate-0'
-            }`}
+            className={`inline-block transition-transform duration-200 ${isAboutDropdownOpen ? 'rotate-180' : 'rotate-0'
+              }`}
           >
             <FiChevronDown size={16} />
           </span>
@@ -602,11 +595,10 @@ export default function DesktopNav({
           }}
           onMouseEnter={openAboutDropdown}
           onMouseLeave={closeAboutDropdownWithDelay}
-          className={`absolute left-0 top-full ${DROPDOWN_TOP_MARGIN_CLASS} w-52 origin-top rounded-xl border border-[rgba(var(--accent-rgb),0.2)] bg-[var(--bg)] shadow-[0_14px_30px_rgba(var(--accent-rgb),0.16)] transition-all duration-200 ${
-            isAboutDropdownOpen
+          className={`absolute left-0 top-full ${DROPDOWN_TOP_MARGIN_CLASS} w-52 origin-top rounded-xl border border-[rgba(var(--accent-rgb),0.2)] bg-[var(--bg)] shadow-[0_14px_30px_rgba(var(--accent-rgb),0.16)] transition-all duration-200 ${isAboutDropdownOpen
               ? 'pointer-events-auto translate-y-0 scale-100 opacity-100'
               : 'pointer-events-none -translate-y-1 scale-[0.98] opacity-0'
-          }`}
+            }`}
         >
           {ABOUT_ITEMS.map((item, idx) => {
             const isLastItem = idx === ABOUT_ITEMS.length - 1;
@@ -620,9 +612,8 @@ export default function DesktopNav({
                 tabIndex={isAboutDropdownOpen ? 0 : -1}
                 data-about-menu-item
                 onKeyDown={(event) => handleAboutItemKeyDown(event, idx)}
-                className={`block w-full cursor-pointer bg-transparent px-4 py-3 text-left text-sm transition-colors duration-200 hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[rgba(var(--accent-rgb),0.5)] ${
-                  isLastItem ? 'border-none' : 'border-b border-[rgba(var(--accent-rgb),0.1)]'
-                } ${isActive ? 'bg-[rgba(var(--accent-rgb),0.1)] text-[var(--accent)]' : 'text-[var(--text)]'}`}
+                className={`block w-full cursor-pointer bg-transparent px-4 py-3 text-left text-sm transition-colors duration-200 hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-(--accent) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[rgba(var(--accent-rgb),0.5)] ${isLastItem ? 'border-none' : 'border-b border-[rgba(var(--accent-rgb),0.1)]'
+                  } ${isActive ? 'bg-[rgba(var(--accent-rgb),0.1)] text-(--accent)' : 'text-[var(--text)]'}`}
                 onClick={closeAboutDropdown}
               >
                 <span className="flex items-center gap-2">
@@ -650,20 +641,18 @@ export default function DesktopNav({
           aria-expanded={isIndustryDropdownOpen}
           aria-controls="desktop-industry-menu"
           onKeyDown={handleIndustryTriggerKeyDown}
-          className={`flex h-full cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium tracking-[0.025em] transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${
-            isIndustryDropdownOpen
-              ? 'bg-[rgba(var(--accent-rgb),0.14)] text-[var(--accent)] shadow-[0_0_14px_rgba(var(--accent-rgb),0.2)] focus-visible:ring-[rgba(var(--accent-rgb),0.55)]'
-              : 'text-[var(--text)] hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-[var(--accent)] focus-visible:ring-[rgba(var(--accent-rgb),0.45)]'
-          }`}
+          className={`flex h-full cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium tracking-[0.025em] transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${isIndustryDropdownOpen
+              ? 'bg-[rgba(var(--accent-rgb),0.14)] text-(--accent) shadow-[0_0_14px_rgba(var(--accent-rgb),0.2)] focus-visible:ring-[rgba(var(--accent-rgb),0.55)]'
+              : 'text-[var(--text)] hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-(--accent) focus-visible:ring-[rgba(var(--accent-rgb),0.45)]'
+            }`}
           onClick={toggleIndustryDropdownLock}
           onFocus={openIndustryDropdown}
         >
           Industry
           <span
             aria-hidden
-            className={`inline-block transition-transform duration-200 ${
-              isIndustryDropdownOpen ? 'rotate-180' : 'rotate-0'
-            }`}
+            className={`inline-block transition-transform duration-200 ${isIndustryDropdownOpen ? 'rotate-180' : 'rotate-0'
+              }`}
           >
             <FiChevronDown size={16} />
           </span>
@@ -680,11 +669,10 @@ export default function DesktopNav({
           }}
           onMouseEnter={openIndustryDropdown}
           onMouseLeave={closeIndustryDropdownWithDelay}
-          className={`absolute left-0 top-full ${DROPDOWN_TOP_MARGIN_CLASS} w-52 origin-top rounded-xl border border-[rgba(var(--accent-rgb),0.2)] bg-[var(--bg)] shadow-[0_14px_30px_rgba(var(--accent-rgb),0.16)] transition-all duration-200 ${
-            isIndustryDropdownOpen
+          className={`absolute left-0 top-full ${DROPDOWN_TOP_MARGIN_CLASS} w-52 origin-top rounded-xl border border-[rgba(var(--accent-rgb),0.2)] bg-[var(--bg)] shadow-[0_14px_30px_rgba(var(--accent-rgb),0.16)] transition-all duration-200 ${isIndustryDropdownOpen
               ? 'pointer-events-auto translate-y-0 scale-100 opacity-100'
               : 'pointer-events-none -translate-y-1 scale-[0.98] opacity-0'
-          }`}
+            }`}
         >
           {INDUSTRY_ITEMS.map((item, idx) => {
             const isLastItem = idx === INDUSTRY_ITEMS.length - 1;
@@ -698,9 +686,8 @@ export default function DesktopNav({
                 tabIndex={isIndustryDropdownOpen ? 0 : -1}
                 data-industry-menu-item
                 onKeyDown={(event) => handleIndustryItemKeyDown(event, idx)}
-                className={`block w-full cursor-pointer bg-transparent px-4 py-3 text-left text-sm transition-colors duration-200 hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[rgba(var(--accent-rgb),0.5)] ${
-                  isLastItem ? 'border-none' : 'border-b border-[rgba(var(--accent-rgb),0.1)]'
-                } ${isActive ? 'bg-[rgba(var(--accent-rgb),0.1)] text-[var(--accent)]' : 'text-[var(--text)]'}`}
+                className={`block w-full cursor-pointer bg-transparent px-4 py-3 text-left text-sm transition-colors duration-200 hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-(--accent) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[rgba(var(--accent-rgb),0.5)] ${isLastItem ? 'border-none' : 'border-b border-[rgba(var(--accent-rgb),0.1)]'
+                  } ${isActive ? 'bg-[rgba(var(--accent-rgb),0.1)] text-(--accent)' : 'text-[var(--text)]'}`}
                 onClick={closeIndustryDropdown}
               >
                 <span className="flex items-center gap-2">
@@ -728,20 +715,18 @@ export default function DesktopNav({
           aria-expanded={isDropdownOpen}
           aria-controls="desktop-more-menu"
           onKeyDown={handleMoreTriggerKeyDown}
-          className={`flex h-full cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium tracking-[0.025em] transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${
-            isDropdownOpen
-              ? 'bg-[rgba(var(--accent-rgb),0.14)] text-[var(--accent)] shadow-[0_0_14px_rgba(var(--accent-rgb),0.2)] focus-visible:ring-[rgba(var(--accent-rgb),0.55)]'
-              : 'text-[var(--text)] hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-[var(--accent)] focus-visible:ring-[rgba(var(--accent-rgb),0.45)]'
-          }`}
+          className={`flex h-full cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium tracking-[0.025em] transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${isDropdownOpen
+              ? 'bg-[rgba(var(--accent-rgb),0.14)] text-(--accent) shadow-[0_0_14px_rgba(var(--accent-rgb),0.2)] focus-visible:ring-[rgba(var(--accent-rgb),0.55)]'
+              : 'text-[var(--text)] hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-(--accent) focus-visible:ring-[rgba(var(--accent-rgb),0.45)]'
+            }`}
           onClick={onToggleDropdownLock}
           onFocus={onOpenDropdown}
         >
           Services
           <span
             aria-hidden
-            className={`inline-block transition-transform duration-200 ${
-              isDropdownOpen ? 'rotate-180' : 'rotate-0'
-            }`}
+            className={`inline-block transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : 'rotate-0'
+              }`}
           >
             <FiChevronDown size={16} />
           </span>
@@ -758,11 +743,10 @@ export default function DesktopNav({
           }}
           onMouseEnter={onOpenDropdown}
           onMouseLeave={onCloseDropdownWithDelay}
-          className={`absolute left-0 top-full ${DROPDOWN_TOP_MARGIN_CLASS} w-52 origin-top rounded-xl border border-[rgba(var(--accent-rgb),0.2)] bg-[var(--bg)] shadow-[0_14px_30px_rgba(var(--accent-rgb),0.16)] transition-all duration-200 ${
-            isDropdownOpen
+          className={`absolute left-0 top-full ${DROPDOWN_TOP_MARGIN_CLASS} w-52 origin-top rounded-xl border border-[rgba(var(--accent-rgb),0.2)] bg-[var(--bg)] shadow-[0_14px_30px_rgba(var(--accent-rgb),0.16)] transition-all duration-200 ${isDropdownOpen
               ? 'pointer-events-auto translate-y-0 scale-100 opacity-100'
               : 'pointer-events-none -translate-y-1 scale-[0.98] opacity-0'
-          }`}
+            }`}
         >
           {MORE_ITEMS.map((item, idx) => {
             const isLastItem = idx === MORE_ITEMS.length - 1;
@@ -776,9 +760,8 @@ export default function DesktopNav({
                 tabIndex={isDropdownOpen ? 0 : -1}
                 data-more-menu-item
                 onKeyDown={(event) => handleMoreItemKeyDown(event, idx)}
-                className={`block w-full cursor-pointer bg-transparent px-4 py-3 text-left text-sm transition-colors duration-200 hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[rgba(var(--accent-rgb),0.5)] ${
-                  isLastItem ? 'border-none' : 'border-b border-[rgba(var(--accent-rgb),0.1)]'
-                } ${isActive ? 'bg-[rgba(var(--accent-rgb),0.1)] text-[var(--accent)]' : 'text-[var(--text)]'}`}
+                className={`block w-full cursor-pointer bg-transparent px-4 py-3 text-left text-sm transition-colors duration-200 hover:bg-[rgba(var(--accent-rgb),0.1)] hover:text-(--accent) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[rgba(var(--accent-rgb),0.5)] ${isLastItem ? 'border-none' : 'border-b border-[rgba(var(--accent-rgb),0.1)]'
+                  } ${isActive ? 'bg-[rgba(var(--accent-rgb),0.1)] text-(--accent)' : 'text-[var(--text)]'}`}
                 onClick={onCloseDropdown}
               >
                 <span className="flex items-center gap-2">
@@ -797,9 +780,8 @@ export default function DesktopNav({
         href="/blog"
         onMouseEnter={onLinkHover}
         onMouseLeave={onLinkHoverEnd}
-        className={`relative cursor-pointer whitespace-nowrap text-sm font-medium tracking-[0.025em] transition-all duration-300 ${
-          pathname === '/blog' ? 'text-[var(--accent)]' : 'text-[var(--text)]'
-        }`}
+        className={`relative cursor-pointer whitespace-nowrap text-sm font-medium tracking-[0.025em] transition-all duration-300 ${pathname === '/blog' ? 'text-(--accent)' : 'text-[var(--text)]'
+          }`}
       >
         Blog
         {pathname === '/blog' ? (
@@ -811,9 +793,8 @@ export default function DesktopNav({
         href="/portfolio"
         onMouseEnter={onLinkHover}
         onMouseLeave={onLinkHoverEnd}
-        className={`relative cursor-pointer whitespace-nowrap text-sm font-medium tracking-[0.025em] transition-all duration-300 ${
-          pathname === '/portfolio' ? 'text-[var(--accent)]' : 'text-[var(--text)]'
-        }`}
+        className={`relative cursor-pointer whitespace-nowrap text-sm font-medium tracking-[0.025em] transition-all duration-300 ${pathname === '/portfolio' ? 'text-(--accent)' : 'text-[var(--text)]'
+          }`}
       >
         Portfolio
         {pathname === '/portfolio' ? (

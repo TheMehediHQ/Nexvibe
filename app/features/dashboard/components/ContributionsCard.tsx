@@ -26,7 +26,7 @@ export default function ContributionsCard({ username }: ContributionsCardProps) 
           rel="noopener noreferrer"
           className={VIEW_LINK}
         >
-          View on GitHub <FaArrowRight className="text-[var(--accent)]" />
+          View on GitHub <FaArrowRight className="text-(--accent)" />
         </a>
       </div>
       <div style={{ width: '100%', overflow: 'auto', marginTop: '1.5rem', position: 'relative', zIndex: 1 }}>

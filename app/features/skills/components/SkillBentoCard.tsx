@@ -43,7 +43,7 @@ export default function SkillBentoCard({
           <span className="font-['Graphik',-apple-system,sans-serif] text-[3rem] font-bold leading-none text-[rgba(6,182,212,0.2)] [html.light-mode_&]:text-[rgba(37,99,235,0.2)] max-[768px]:text-[2rem]">
             {String(index + 1).padStart(2, '0')}
           </span>
-          <h3 className="font-['Graphik',-apple-system,sans-serif] text-[1.5rem] tracking-[0.04em] text-[var(--accent)] max-[768px]:text-[1.25rem]">
+          <h3 className="font-['Graphik',-apple-system,sans-serif] text-[1.5rem] tracking-[0.04em] text-(--accent) max-[768px]:text-[1.25rem]">
             {category.title}
           </h3>
         </div>

@@ -67,12 +67,12 @@ export const CodeBlock = ({ children, title, language, code }: CodeBlockProps) =
   return (
     <div className="my-6 overflow-hidden rounded-[12px] border border-[rgba(var(--accent-rgb),0.15)] bg-[var(--surface)] shadow-[0_4px_12px_rgba(0,0,0,0.2)] transition-all duration-300 [transition-timing-function:ease] max-[768px]:my-4">
       <div
-        className={`flex items-center gap-3 border-b border-b-[rgba(var(--accent-rgb),0.2)] bg-[rgba(var(--accent-rgb),0.08)] px-5 py-3.5 font-mono text-[0.85rem] font-semibold  tracking-[0.05em] text-[var(--accent)] ${headerClassName}`}
+        className={`flex items-center gap-3 border-b border-b-[rgba(var(--accent-rgb),0.2)] bg-[rgba(var(--accent-rgb),0.08)] px-5 py-3.5 font-mono text-[0.85rem] font-semibold  tracking-[0.05em] text-(--accent) ${headerClassName}`}
       >
         {title ? <span className="mr-auto">{title}</span> : null}
         <button
           type="button"
-          className="cursor-pointer rounded-full border border-[rgba(var(--accent-rgb),0.4)] bg-[rgba(var(--accent-rgb),0.08)] px-[0.7rem] py-[0.35rem] text-[0.75rem] font-semibold tracking-[0.02em] text-[var(--accent)] transition-all duration-200 [transition-timing-function:ease] hover:border-[rgba(var(--accent-rgb),0.8)] hover:bg-[rgba(var(--accent-rgb),0.2)] disabled:cursor-not-allowed disabled:opacity-50 data-[copied=true]:border-[rgba(34,197,94,0.8)] data-[copied=true]:bg-[rgba(34,197,94,0.2)] data-[copied=true]:text-[#22c55e]"
+          className="cursor-pointer rounded-full border border-[rgba(var(--accent-rgb),0.4)] bg-[rgba(var(--accent-rgb),0.08)] px-[0.7rem] py-[0.35rem] text-[0.75rem] font-semibold tracking-[0.02em] text-(--accent) transition-all duration-200 [transition-timing-function:ease] hover:border-[rgba(var(--accent-rgb),0.8)] hover:bg-[rgba(var(--accent-rgb),0.2)] disabled:cursor-not-allowed disabled:opacity-50 data-[copied=true]:border-[rgba(34,197,94,0.8)] data-[copied=true]:bg-[rgba(34,197,94,0.2)] data-[copied=true]:text-[#22c55e]"
           onClick={handleCopy}
           disabled={!codeText}
           data-copied={copied ? 'true' : 'false'}

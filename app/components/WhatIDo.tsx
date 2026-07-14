@@ -69,8 +69,8 @@ const ServiceCard = ({
   };
 
   return (
-    <div 
-      ref={cardRef} 
+    <div
+      ref={cardRef}
       className="group relative overflow-hidden rounded-[24px] border border-[rgba(6,182,212,0.1)] bg-transparent [transform-style:preserve-3d] [perspective:1000px] will-change-transform transition-all duration-[400ms] [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)] max-[768px]:min-h-[200px] max-[480px]:min-h-[180px]"
       onMouseMove={handleMouseMove}
     >
@@ -83,7 +83,7 @@ const ServiceCard = ({
           <div className="font-['Graphik',-apple-system,sans-serif] text-5xl font-bold leading-none text-[rgba(6,182,212,0.2)] [html.light-mode_&]:text-[rgba(37,99,235,0.2)] max-[768px]:text-[2.5rem] max-[480px]:text-[2rem]">
             {service.number}
           </div>
-          <h3 className="font-['Graphik',-apple-system,sans-serif] text-[1.5rem] tracking-[0.04em] text-[var(--accent)] max-[768px]:text-[1.25rem] max-[480px]:text-[1rem]">
+          <h3 className="font-['Graphik',-apple-system,sans-serif] text-[1.5rem] tracking-[0.04em] text-(--accent) max-[768px]:text-[1.25rem] max-[480px]:text-[1rem]">
             {service.title}
           </h3>
         </div>
@@ -107,7 +107,7 @@ export default function WhatIDo() {
       className="relative min-h-screen overflow-hidden py-32 max-[768px]:py-16"
       style={{ background: 'var(--bg)' }}
     >
-      
+
 
       <div className="relative z-[2] mx-auto max-w-[1400px] px-16 max-[768px]:px-8 max-[480px]:px-4">
         {/* Section Header */}

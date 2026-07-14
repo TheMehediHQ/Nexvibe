@@ -29,7 +29,7 @@ export default function VisionPageClient() {
                 </p>
                 <p className="text-lg leading-relaxed text-[var(--text-secondary)]">
                   Every project we undertake is driven by a simple philosophy:{' '}
-                  <strong className="text-[var(--accent)]">build products that matter</strong>. We don&apos;t just create
+                  <strong className="text-(--accent)">build products that matter</strong>. We don&apos;t just create
                   websites or applications; we craft digital experiences that solve real problems and deliver
                   measurable results.
                 </p>
@@ -75,13 +75,13 @@ export default function VisionPageClient() {
                 style={{ borderColor: 'rgba(var(--accent-rgb), 0.2)' }}
               >
                 <span className="inline-flex items-center gap-2 text-[var(--text)]">
-                  
+
                 </span>
                 <a
                   href="https://www.linkedin.com/in/mehedi-hasan1102"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative inline-flex items-center gap-2 text-base font-bold text-[var(--accent)] no-underline transition-all duration-300 [transition-timing-function:ease] after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-0 after:bg-[var(--accent)] after:transition-[width] after:duration-300 after:[transition-timing-function:ease] hover:text-[var(--text)] hover:after:w-full sm:text-lg"
+                  className="relative inline-flex items-center gap-2 text-base font-bold text-(--accent) no-underline transition-all duration-300 [transition-timing-function:ease] after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-0 after:bg-[var(--accent)] after:transition-[width] after:duration-300 after:[transition-timing-function:ease] hover:text-[var(--text)] hover:after:w-full sm:text-lg"
                 >
                   <FiLinkedin aria-hidden="true" />
                   <span>Follow us on LinkedIn</span>

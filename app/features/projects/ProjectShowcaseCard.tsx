@@ -71,12 +71,12 @@ export default function ProjectShowcaseCard({
             <span className="min-w-[64px] font-['Graphik',-apple-system,sans-serif] text-[2.4rem] font-bold leading-none text-[rgba(6,182,212,0.2)] [html.light-mode_&]:text-[rgba(37,99,235,0.2)] max-[1024px]:text-[clamp(1.4rem,3.2vw,1.8rem)] max-[768px]:min-w-[50px] max-[768px]:text-[clamp(1.2rem,3vw,1.6rem)] max-[480px]:min-w-[44px] max-[480px]:text-[clamp(1rem,2.8vw,1.4rem)]">
               {String(index + 1).padStart(2, "0")}
             </span>
-            <h3 className="flex-1 font-['Graphik',-apple-system,sans-serif] text-[1.25rem] tracking-[0.03em] text-[var(--accent)] max-[1024px]:text-[clamp(0.98rem,2.2vw,1.12rem)] max-[768px]:text-[clamp(0.95rem,2.7vw,1.08rem)] max-[480px]:text-[clamp(0.9rem,2.6vw,1rem)]">
+            <h3 className="flex-1 font-['Graphik',-apple-system,sans-serif] text-[1.25rem] tracking-[0.03em] text-(--accent) max-[1024px]:text-[clamp(0.98rem,2.2vw,1.12rem)] max-[768px]:text-[clamp(0.95rem,2.7vw,1.08rem)] max-[480px]:text-[clamp(0.9rem,2.6vw,1rem)]">
               {project.title}
             </h3>
           </div>
           <p className="mb-2">
-            <span className="inline-flex w-fit items-center gap-1.5 whitespace-nowrap rounded-full border border-[rgba(6,182,212,0.34)] bg-[rgba(6,182,212,0.09)] px-3 py-1 font-['Graphik',-apple-system,sans-serif] text-[0.68rem] font-semibold tracking-[0.06em] text-[var(--accent)]">
+            <span className="inline-flex w-fit items-center gap-1.5 whitespace-nowrap rounded-full border border-[rgba(6,182,212,0.34)] bg-[rgba(6,182,212,0.09)] px-3 py-1 font-['Graphik',-apple-system,sans-serif] text-[0.68rem] font-semibold tracking-[0.06em] text-(--accent)">
               <span
                 className="h-1.5 w-1.5 rounded-full bg-[rgba(6,182,212,0.9)]"
                 aria-hidden="true"
@@ -85,7 +85,7 @@ export default function ProjectShowcaseCard({
             </span>
           </p>
           <p className="mb-4 flex-1 font-['Graphik',-apple-system,sans-serif] text-[0.82rem] leading-[1.45] text-[var(--text-secondary)] max-[1024px]:text-[0.78rem] max-[768px]:mb-3 max-[768px]:text-[0.78rem] max-[480px]:text-[0.76rem]">
-            <span className="font-semibold text-[var(--accent)]">Overview :</span>{" "}
+            <span className="font-semibold text-(--accent)">Overview :</span>{" "}
             {truncateDescription(project.description)}
           </p>
           <div className="mt-auto flex flex-wrap gap-2">

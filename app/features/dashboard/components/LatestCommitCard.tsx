@@ -57,7 +57,7 @@ function LatestCommitItem({ commit, index }: LatestCommitItemProps) {
             <span className="whitespace-nowrap">#{commit.sha.slice(0, 7)}</span>
             <span className="whitespace-nowrap">{formatRelativeTime(commit.committedAt)}</span>
             <span className={`${VIEW_LINK} text-[0.72rem] max-[640px]:text-[0.7rem]`}>
-              View commit <FiExternalLink className="text-[var(--accent)]" />
+              View commit <FiExternalLink className="text-(--accent)" />
             </span>
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function LatestCommitCard({
             rel="noopener noreferrer"
             className={VIEW_LINK}
           >
-            View on GitHub <FaArrowRight className="text-[var(--accent)]" />
+            View on GitHub <FaArrowRight className="text-(--accent)" />
           </a>
         ) : null}
       </div>
@@ -97,7 +97,7 @@ export default function LatestCommitCard({
         <div className="relative z-[1]">
           {/* <div className="relative mb-4 pl-6 max-[640px]:mb-3 max-[640px]:pl-5">
             <span className="absolute left-[0.5rem] top-[0.55rem] h-2 w-2 rounded-full bg-[rgba(148,163,184,0.8)] max-[640px]:left-[0.25rem]" />
-            <p className="font-['Graphik',-apple-system,sans-serif] text-[1rem] tracking-[0.02em] text-[var(--accent)] max-[640px]:text-[0.92rem]">
+            <p className="font-['Graphik',-apple-system,sans-serif] text-[1rem] tracking-[0.02em] text-(--accent) max-[640px]:text-[0.92rem]">
               Git Journaling
             </p>
           </div> */}

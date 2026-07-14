@@ -68,7 +68,7 @@ export default function PortfolioPageClient({
             included here. Check out my{" "}
             <Link
               href="/blog"
-              className="text-[var(--accent)] underline underline-offset-4 hover:opacity-80"
+              className="text-(--accent) underline underline-offset-4 hover:opacity-80"
             >
               blog
             </Link>{" "}
@@ -116,11 +116,10 @@ export default function PortfolioPageClient({
               key={filter}
               type="button"
               onClick={() => changeFilter(filter)}
-              className={`inline-flex items-center rounded-[999px] border px-4 py-2 font-['Graphik',-apple-system,sans-serif] text-[0.85rem] tracking-[0.02em] transition-colors duration-200 ${
-                activeFilter === filter
+              className={`inline-flex items-center rounded-[999px] border px-4 py-2 font-['Graphik',-apple-system,sans-serif] text-[0.85rem] tracking-[0.02em] transition-colors duration-200 ${activeFilter === filter
                   ? "border-[var(--accent)] bg-[var(--accent)] text-[var(--bg)]"
                   : "border-[rgba(6,182,212,0.3)] bg-[rgba(6,182,212,0.06)] text-[var(--text)] hover:bg-[rgba(6,182,212,0.12)]"
-              }`}
+                }`}
             >
               {filter}
             </button>
@@ -135,7 +134,7 @@ export default function PortfolioPageClient({
             <button
               type="button"
               onClick={clearQuery}
-              className="rounded-[999px] border border-[var(--accent)] px-4 py-2 font-['Graphik',-apple-system,sans-serif] text-[0.9rem] tracking-[0.02em] text-[var(--accent)] transition-colors duration-200 hover:bg-[var(--accent)] hover:text-[var(--bg)]"
+              className="rounded-[999px] border border-[var(--accent)] px-4 py-2 font-['Graphik',-apple-system,sans-serif] text-[0.9rem] tracking-[0.02em] text-(--accent) transition-colors duration-200 hover:bg-[var(--accent)] hover:text-[var(--bg)]"
             >
               Clear search
             </button>
@@ -180,11 +179,10 @@ export default function PortfolioPageClient({
                   type="button"
                   onClick={() => changePage(pageNumber)}
                   aria-current={activePage === pageNumber ? "page" : undefined}
-                  className={`inline-flex h-10 min-w-10 items-center justify-center rounded-full border px-3 text-[0.88rem] font-semibold transition-colors duration-200 ${
-                    activePage === pageNumber
+                  className={`inline-flex h-10 min-w-10 items-center justify-center rounded-full border px-3 text-[0.88rem] font-semibold transition-colors duration-200 ${activePage === pageNumber
                       ? "border-[var(--accent)] bg-[var(--accent)] text-[var(--bg)]"
                       : "border-[rgba(6,182,212,0.35)] text-[var(--text)] hover:bg-[rgba(6,182,212,0.12)]"
-                  }`}
+                    }`}
                 >
                   {pageNumber}
                 </button>

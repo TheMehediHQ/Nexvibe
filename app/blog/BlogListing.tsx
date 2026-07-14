@@ -156,7 +156,7 @@ export const BlogListing = ({
               setCurrentPage(1);
               syncUrl('', 1);
             }}
-            className="rounded-[999px] border border-[var(--accent)] px-4 py-2 font-['Graphik',-apple-system,sans-serif] text-[0.9rem] tracking-[0.02em] text-[var(--accent)] transition-colors duration-200 hover:bg-[var(--accent)] hover:text-[var(--bg)]"
+            className="rounded-[999px] border border-[var(--accent)] px-4 py-2 font-['Graphik',-apple-system,sans-serif] text-[0.9rem] tracking-[0.02em] text-(--accent) transition-colors duration-200 hover:bg-[var(--accent)] hover:text-[var(--bg)]"
           >
             Clear search
           </button>
@@ -213,11 +213,10 @@ export const BlogListing = ({
                       syncUrl(query, pageNumber);
                     }}
                     aria-current={activePage === pageNumber ? 'page' : undefined}
-                    className={`inline-flex h-10 min-w-10 items-center justify-center rounded-full border px-3 text-[0.88rem] font-semibold transition-colors duration-200 ${
-                      activePage === pageNumber
+                    className={`inline-flex h-10 min-w-10 items-center justify-center rounded-full border px-3 text-[0.88rem] font-semibold transition-colors duration-200 ${activePage === pageNumber
                         ? 'border-[var(--accent)] bg-[var(--accent)] text-[var(--bg)]'
                         : 'border-[rgba(var(--accent-rgb),0.35)] text-[var(--text)] hover:bg-[rgba(var(--accent-rgb),0.12)]'
-                    }`}
+                      }`}
                   >
                     {pageNumber}
                   </button>
