@@ -63,9 +63,9 @@ export default function Contact() {
     }, []);
 
     const socials = [
-        { label: 'GitHub', href: 'https://github.com/mehedi-hasan1102' },
-        { label: 'X', href: 'https://x.com/mehedihasan1102' },
-        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mehedi-hasan1102' },
+        { label: 'GitHub', href: 'https://github.com/NexvibeHq' },
+        { label: 'Facebook', href: 'https://www.facebook.com/nexvivehq' },
+        { label: 'LinkedIn', href: 'https://www.linkedin.com/company/nexvivehq' },
     ];
 
     return (
