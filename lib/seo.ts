@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const DEFAULT_SITE_URL = "https://mehedi-hasan.me";
+const DEFAULT_SITE_URL = "https://nexvibe.tech";
 const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
 export const SITE_URL = (
   configuredSiteUrl && configuredSiteUrl.length > 0
