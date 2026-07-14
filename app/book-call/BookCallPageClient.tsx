@@ -16,8 +16,7 @@ import {
   FiUser,
   FiVideo,
 } from 'react-icons/fi';
-import { FaGithub, FaWhatsapp } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaFacebook, FaGithub, FaWhatsapp } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import { useTheme } from '@/lib/useTheme';
 
@@ -172,7 +171,7 @@ export default function BookCallPageClient() {
               <FiMail size={16} />
             </a>
             <a
-              href="https://www.linkedin.com/in/mehedi-hasan1102"
+              href="https://www.linkedin.com/company/nexvivehq"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border p-2 transition-colors hover:text-[var(--text)]"
@@ -182,7 +181,7 @@ export default function BookCallPageClient() {
               <FiLinkedin size={16} />
             </a>
             <a
-              href="https://github.com/mehedi-hasan1102"
+              href="https://github.com/nexvibehq"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border p-2 transition-colors hover:text-[var(--text)]"
@@ -192,14 +191,14 @@ export default function BookCallPageClient() {
               <FaGithub size={16} />
             </a>
             <a
-              href="https://x.com/mehedihasan1102"
+              href="https://facebook.com/nexvibehq"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border p-2 transition-colors hover:text-[var(--text)]"
               style={{ borderColor: borderStrong }}
-              aria-label="X"
+              aria-label="Facebook"
             >
-              <FaXTwitter size={16} />
+              <FaFacebook size={16} />
             </a>
           </div>
         </div>
