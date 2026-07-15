@@ -82,16 +82,17 @@ export default function Services() {
               className="flex flex-col items-center text-center bg-[#0F0F0F] border border-white/[0.04] rounded-[36px] p-8 lg:p-10 shadow-2xl transition-all duration-300 hover:border-white/[0.08] hover:-translate-y-1"
             >
               {/* Illustration Container */}
-              <div className="relative w-44 h-44 mb-8 flex items-center justify-center">
-                <Image
-                  src={service.imageSrc}
-                  alt={service.title}
-                  width={180}
-                  height={180}
-                  className="object-contain"
-                  priority
-                />
-              </div>
+            <div className="relative w-28 h-28 mb-6 flex items-center justify-center">
+  <Image
+    src={service.imageSrc}
+    alt={service.title}
+    width={120}
+    height={120}
+    className="object-contain"
+    priority
+  />
+</div>
+
 
               {/* Title */}
               <h3 className="text-xl font-semibold text-white mb-4 tracking-wide">
