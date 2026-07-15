@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -13,18 +14,17 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-black">
       <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded border border-white text-lg font-bold text-white">
-            CA
-          </div>
+        <Link href="/">
+         
 
           <div className="leading-tight">
-            <h2 className="text-2xl font-bold text-white">
-              Catalyst
-            </h2>
-            <p className="text-2xl font-bold text-white">
-              Analytics
-            </p>
+           <Image
+  src="/logos/logo_nav.png"
+  alt="Nexvibe Logo"
+  width={180}
+  height={48}
+  priority
+/>
           </div>
         </Link>
 

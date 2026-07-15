@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { FaFacebookF, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF, FaGithub, FaLinkedinIn} from "react-icons/fa6";
+
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -19,33 +21,37 @@ export default function Footer() {
           {/* Left */}
           <div className="space-y-10">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded border border-white text-lg font-bold">
-                CA
-              </div>
+            <Link href="/" >
+             
 
-              <div className="leading-tight">
-                <h3 className="text-xl font-bold">Catalyst</h3>
-                <h3 className="text-xl font-bold">Analytics</h3>
-              </div>
+            <div className="leading-tight">
+                       <Image
+              src="/logos/logo_nav.png"
+              alt="Nexvibe Logo"
+              width={180}
+              height={48}
+              priority
+            />
+                      </div>
             </Link>
 
             {/* Contact */}
             <div className="flex flex-wrap gap-8 text-sm text-gray-300">
               <div className="flex items-center gap-3">
                 <Mail size={18} className="text-blue-500" />
-                <span>contact@catalystanalytics.io</span>
+                <span>contact.nexvibe@gmail.com</span>
               </div>
 
               <div className="flex items-center gap-3">
                 <Phone size={18} className="text-blue-500" />
-                <span>+1 (469) 712-4672</span>
+                <span>+8801747874773</span>
               </div>
 
               <div className="flex items-center gap-3">
-                <MapPin size={18} className="text-blue-500" />
-                <span>5511 Parkcrest Dr, Suite 103, Austin, TX 78731</span>
-              </div>
+  <MapPin size={18} className="text-blue-500" />
+  <span>Fully Remote • Worldwide Team</span>
+</div>
+
             </div>
           </div>
 
@@ -54,7 +60,7 @@ export default function Footer() {
             {/* Social */}
             <div className="flex gap-4 rounded-2xl border border-white/10 p-4">
               <Link
-                href="https://facebook.com"
+                href="https://www.facebook.com/nexvivehq"
                 target="_blank"
                 className="rounded-xl bg-white/10 p-4 transition hover:bg-blue-600"
               >
@@ -62,15 +68,15 @@ export default function Footer() {
               </Link>
 
               <Link
-                href="https://x.com"
+                href="https://github.com/NexvibeHq"
                 target="_blank"
                 className="rounded-xl bg-white/10 p-4 transition hover:bg-blue-600"
               >
-                <FaXTwitter size={22} />
+                <FaGithub size={22} />
               </Link>
 
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/nexvivehq"
                 target="_blank"
                 className="rounded-xl bg-white/10 p-4 transition hover:bg-blue-600"
               >
