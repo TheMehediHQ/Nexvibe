@@ -129,9 +129,10 @@ export default function Hero() {
 
 
           {/* Subtext */}
-          <p className="text-gray-400 text-base md:text-lg max-w-md leading-relaxed">
-            Leverage the power of machine learning and AI to unlock insights and drive business growth.
-          </p>
+       <p className="text-gray-400 text-base md:text-lg max-w-md leading-relaxed">
+  Empower your business with AI‑driven insights that accelerate growth and unlock smarter decision‑making.
+</p>
+
 
           {/* CTA + Social Proof */}
           <div className="space-y-6">
