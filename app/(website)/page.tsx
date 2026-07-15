@@ -13,7 +13,7 @@ export default function HomePage() {
       <WhyChooseUs />
       <WhyWeStarted />
       <FAQ />
-      <CTA />
+     
     </>
   );
 }
