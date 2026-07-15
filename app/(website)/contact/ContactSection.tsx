@@ -1,6 +1,9 @@
+
 "use client";
 
-
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { IoArrowForward } from "react-icons/io5";
 
 export default function ContactSection() {
   return (
@@ -38,43 +41,34 @@ export default function ContactSection() {
 
           </div>
 
-
           {/* Chat Icon */}
-          <div className="relative flex h-44 w-44 md:h-56 md:w-56 items-center justify-center">
+        <div className="relative flex h-44 w-44 md:h-56 md:w-56 items-center justify-center">
+      <motion.div
+        animate={{
+          y: [0, -15, 0],
+        }}
+        transition={{
+          duration: 1.8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      >
+        <Image
+          src="/icons/contact-hero.png"
+          alt="Contact Icon"
+          width={220}
+          height={220}
+          className="h-40 w-40 md:h-52 md:w-52 object-contain"
+        />
+      </motion.div>
+    </div>
 
-            <div className="flex h-36 w-36 md:h-44 md:w-44 items-center justify-center gap-2 rounded-full rounded-br-none bg-gradient-to-br from-blue-500 to-blue-600 shadow-2xl">
-
-              {[1,2,3].map((item)=>(
-                <span
-                  key={item}
-                  className="h-3 w-3 rounded-full bg-white animate-bounce"
-                />
-              ))}
-
-            </div>
-
-
-            <div className="absolute bottom-2 right-0 flex h-24 w-24 items-center justify-center gap-1 rounded-full rounded-bl-none border-4 border-[#141414] bg-gray-100 shadow-xl">
-
-              {[1,2,3].map((item)=>(
-                <span
-                  key={item}
-                  className="h-2 w-2 rounded-full bg-blue-500"
-                />
-              ))}
-
-            </div>
-
-          </div>
-
+         
 
         </div>
 
-
-
         {/* Content */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-stretch">
-
 
           {/* Form */}
           <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-[#141414] p-6 md:p-8 lg:col-span-7">
@@ -83,7 +77,6 @@ export default function ContactSection() {
               Send Us a Message
             </h2>
 
-
             <form className="space-y-4">
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -91,62 +84,52 @@ export default function ContactSection() {
                 <input
                   required
                   placeholder="First Name"
-                  className="contact-input"
+                  className="w-full bg-[#1E1E1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600"
                 />
 
                 <input
                   required
                   placeholder="Last Name"
-                  className="contact-input"
+                  className="w-full bg-[#1E1E1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600"
                 />
 
               </div>
-
 
               <input
                 required
                 type="email"
                 placeholder="Email"
-                className="contact-input"
+                className="w-full bg-[#1E1E1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600"
               />
-
 
               <input
                 placeholder="Company"
-                className="contact-input"
+                className="w-full bg-[#1E1E1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600"
               />
-
 
               <input
                 placeholder="Phone Number"
-                className="contact-input"
+                className="w-full bg-[#1E1E1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600"
               />
-
 
               <textarea
                 rows={4}
                 placeholder="Message"
-                className="contact-input resize-none"
+                className="w-full bg-[#1E1E1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600 resize-none"
               />
 
-
-              <button
-                className="w-full rounded-xl bg-blue-600 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
-              >
-                Send →
-              </button>
-
-
+             <button
+  className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+>
+  Send
+  <IoArrowForward className="text-base" />
+</button>
             </form>
 
           </div>
 
-
-
-
           {/* Right Side */}
           <div className="flex h-full flex-col gap-6 lg:col-span-5">
-
 
             <div className="flex flex-1 flex-col rounded-2xl border border-white/10 bg-[#141414] p-6 md:p-8">
 
@@ -154,37 +137,22 @@ export default function ContactSection() {
                 Contact Information
               </h2>
 
-
               <div className="space-y-5">
 
                 <div>
-                  <h4 className="text-sm font-semibold text-white">
-                    Email
-                  </h4>
-                  <p className="text-xs text-gray-400">
-                    contact.nexvibe@gmail.com
-                  </p>
+                  <h4 className="text-sm font-semibold text-white">Email</h4>
+                  <p className="text-xs text-gray-400">contact.nexvibe@gmail.com</p>
                 </div>
 
-
                 <div>
-                  <h4 className="text-sm font-semibold text-white">
-                    Phone
-                  </h4>
-                  <p className="text-xs text-gray-400">
-                    +8801747874773
-                  </p>
+                  <h4 className="text-sm font-semibold text-white">Phone</h4>
+                  <p className="text-xs text-gray-400">+8801747874773</p>
                 </div>
 
-
                 <div>
-                  <h4 className="text-sm font-semibold text-white">
-                    Office
-                  </h4>
+                  <h4 className="text-sm font-semibold text-white">Office</h4>
                   <p className="text-xs text-gray-400">
-                    Remote Based
-                    <br />
-                    Bangladesh
+                    Remote Based <br /> Bangladesh
                   </p>
                 </div>
 
@@ -192,20 +160,16 @@ export default function ContactSection() {
 
             </div>
 
-
-
             <div className="flex flex-1 flex-col justify-between space-y-5 rounded-2xl border border-white/10 bg-[#141414] p-6 md:p-8">
 
               <h2 className="text-lg font-semibold text-white">
                 Book a Consultation
               </h2>
 
-
               <p className="text-xs leading-relaxed text-gray-400">
                 Want to discuss your project? Schedule a free consultation
                 and let&apos;s talk about your ideas.
               </p>
-
 
               <button className="w-full rounded-xl bg-blue-600 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">
                 Book a Meeting
@@ -213,36 +177,11 @@ export default function ContactSection() {
 
             </div>
 
-
           </div>
-
 
         </div>
 
       </div>
-
-
-      <style jsx>{`
-        .contact-input {
-          width: 100%;
-          background: #1E1E1E;
-          border: 1px solid rgba(255,255,255,0.1);
-          border-radius: 0.75rem;
-          padding: 0.75rem 1rem;
-          font-size: 0.875rem;
-          color: white;
-          outline: none;
-        }
-
-        .contact-input:focus {
-          border-color: #2563eb;
-        }
-
-        .contact-input::placeholder {
-          color: #6b7280;
-        }
-      `}</style>
-
     </section>
   );
 }
