@@ -1,3 +1,6 @@
+import PortfolioSection from "./PortfolioSection";
+
+
 export default function PortfolioPage() {
-  return <h1>Portfolio</h1>;
+  return <PortfolioSection />;
 }

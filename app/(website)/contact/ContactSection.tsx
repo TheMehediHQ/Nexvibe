@@ -25,8 +25,9 @@ export default function ContactSection() {
           <div className="relative z-10 max-w-xl space-y-4 text-center md:text-left">
 
             <h1 className="text-3xl md:text-4xl font-bold text-white">
-              Contact Us
-            </h1>
+  <span className="text-blue-500">Contact</span> Us
+</h1>
+
 
             <p className="text-gray-400 text-sm md:text-base leading-relaxed">
               Get in touch with our team to discuss how we can help transform

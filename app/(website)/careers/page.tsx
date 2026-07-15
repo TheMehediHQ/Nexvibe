@@ -1,3 +1,6 @@
+import CareersSection from "./CareersSection";
+
+
 export default function CareersPage() {
-  return <h1>Careers</h1>;
+  return <CareersSection />;
 }

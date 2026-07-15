@@ -1,3 +1,5 @@
+import AboutSection from "./AboutSection";
+
 export default function AboutPage() {
-  return <h1>About Us</h1>;
+  return <AboutSection />;
 }
