@@ -42,26 +42,33 @@ export default function ContactSection() {
           </div>
 
           {/* Chat Icon */}
-        <div className="relative flex h-44 w-44 md:h-56 md:w-56 items-center justify-center">
-      <motion.div
-        animate={{
-          y: [0, -15, 0],
-        }}
-        transition={{
-          duration: 1.8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      >
-        <Image
-          src="/icons/contact-hero.png"
-          alt="Contact Icon"
-          width={220}
-          height={220}
-          className="h-40 w-40 md:h-52 md:w-52 object-contain"
-        />
-      </motion.div>
-    </div>
+       <div className="relative flex h-44 w-44 md:h-56 md:w-56 items-center justify-center">
+
+  {/* Glow Background */}
+  <div className="
+    absolute inset-0 
+    rounded-full 
+    bg-blue-500/20 
+    blur-3xl 
+    animate-pulse
+  " />
+
+  <motion.div
+    animate={{ y: [0, -15, 0] }}
+    transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+    className="relative"
+  >
+    <Image
+      src="/icons/contact-hero.png"
+      alt="Contact Icon"
+      width={220}
+      height={220}
+      className="h-40 w-40 md:h-52 md:w-52 object-contain"
+    />
+  </motion.div>
+
+</div>
+
 
          
 
