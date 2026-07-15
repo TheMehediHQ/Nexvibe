@@ -3,12 +3,14 @@ import Services from "@/components/home/Services";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import WhyWeStarted from "@/components/home/WhyWeStarted";
 import FAQ from "@/components/home/FAQ";
-import CTA from "@/components/home/CTA";
+import LogoCloud from "@/components/home/Logo";
+
 
 export default function HomePage() {
   return (
     <>
       <Hero />
+      <LogoCloud />
       <Services />
       <WhyChooseUs />
       <WhyWeStarted />
