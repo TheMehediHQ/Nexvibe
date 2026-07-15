@@ -10,32 +10,32 @@ interface ServiceCardProps {
 
 const services: ServiceCardProps[] = [
   {
-    imageSrc: "/icons/web-service.png",
+    imageSrc: "/icons/icons8-laptop-coding-1500.png",
     title: "Custom Software Development",
     description: "Scalable, high‑performance software tailored to your business needs.",
   },
   {
-    imageSrc: "/icons/ai-service.png",
+    imageSrc: "/icons/icons8-world-wide-web-blue-globe-1500.png",
     title: "Web Development",
     description: "Modern, responsive websites built for speed, conversion, and brand impact.",
   },
   {
-    imageSrc: "/icons/ai-service.png",
+    imageSrc: "/icons/icons8-smartphone-tablet-1500.png",
     title: "Mobile App Development",
     description: "iOS and Android apps engineered for seamless performance and great UX.",
   },
   {
-    imageSrc: "/icons/ai-service.png",
+    imageSrc: "/icons/icons8-chatbot-1500.png",
     title: "AI & Machine Learning Solutions",
     description: "Intelligent systems that automate workflows and enhance decision‑making.",
   },
   {
-    imageSrc: "/icons/ai-service.png",
+    imageSrc: "/icons/icons8-paint-palette-1500.png",
     title: "Graphics & Creative Design",
     description: "Branding, UI/UX, and visual design that elevate your digital identity.",
   },
   {
-    imageSrc: "/icons/ai-service.png",
+    imageSrc: "/icons/icons8-digital-marketing-1500.png",
     title: "Digital Marketing",
     description: "SEO, social media, and paid campaigns that boost visibility and growth.",
   },
