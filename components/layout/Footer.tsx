@@ -1,8 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { FaFacebookF, FaGithub, FaLinkedinIn} from "react-icons/fa6";
-
+import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -14,106 +13,188 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-black text-white">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        {/* Top */}
-        <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
-          {/* Left */}
-          <div className="space-y-10">
-            {/* Logo */}
-            <Link href="/" >
-             
+    <footer className="border-t border-white/10 text-white">
+      <div className="mx-auto max-w-7xl px-5 py-12 sm:px-6 lg:px-8 lg:py-16">
 
-            <div className="leading-tight">
-                       <Image
-              src="/logos/logo_nav.png"
-              alt="Nexvibe Logo"
-              width={180}
-              height={48}
-              priority
-            />
-                      </div>
+        {/* Top Footer */}
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
+
+          {/* Brand & Contact */}
+          <div className="space-y-8">
+
+            {/* Logo */}
+            <Link href="/" className="inline-block">
+              <Image
+                src="/logos/logo_nav.png"
+                alt="Nexvibe Logo"
+                width={180}
+                height={48}
+                priority
+                className="w-[140px] sm:w-[160px] lg:w-[180px]"
+              />
             </Link>
 
-            {/* Contact */}
-            <div className="flex flex-wrap gap-8 text-sm text-gray-300">
-              <div className="flex items-center gap-3">
-                <Mail size={18} className="text-blue-500" />
-                <span>contact.nexvibe@gmail.com</span>
-              </div>
+
+            {/* Contact Information */}
+            <div className="flex flex-col gap-4 text-sm text-gray-300">
 
               <div className="flex items-center gap-3">
-                <Phone size={18} className="text-blue-500" />
-                <span>+8801747874773</span>
+                <Mail
+                  size={18}
+                  className="shrink-0 text-blue-500"
+                />
+                <span>
+                  contact.nexvibe@gmail.com
+                </span>
               </div>
 
+
               <div className="flex items-center gap-3">
-  <MapPin size={18} className="text-blue-500" />
-  <span>Fully Remote • Worldwide Team</span>
-</div>
+                <Phone
+                  size={18}
+                  className="shrink-0 text-blue-500"
+                />
+                <span>
+                  +8801747874773
+                </span>
+              </div>
+
+
+              <div className="flex items-center gap-3">
+                <MapPin
+                  size={18}
+                  className="shrink-0 text-blue-500"
+                />
+                <span>
+                  Fully Remote • Worldwide Team
+                </span>
+              </div>
 
             </div>
+
           </div>
 
-          {/* Right */}
+
+
+          {/* Social & Policies */}
           <div className="space-y-8">
-            {/* Social */}
-            <div className="flex gap-4 rounded-2xl border border-white/10 p-4">
+
+
+            {/* Social Links */}
+            <div className="flex w-fit gap-3 rounded-2xl border border-white/10 p-3">
+
               <Link
                 href="https://www.facebook.com/nexvivehq"
                 target="_blank"
-                className="rounded-xl bg-white/10 p-4 transition hover:bg-blue-600"
+                aria-label="Facebook"
+                className="
+                  flex h-12 w-12 items-center justify-center
+                  rounded-xl bg-white/10
+                  transition hover:bg-blue-600
+                "
               >
-                <FaFacebookF size={22} />
+                <FaFacebookF size={20} />
               </Link>
+
 
               <Link
                 href="https://github.com/NexvibeHq"
                 target="_blank"
-                className="rounded-xl bg-white/10 p-4 transition hover:bg-blue-600"
+                aria-label="Github"
+                className="
+                  flex h-12 w-12 items-center justify-center
+                  rounded-xl bg-white/10
+                  transition hover:bg-blue-600
+                "
               >
-                <FaGithub size={22} />
+                <FaGithub size={20} />
               </Link>
+
 
               <Link
                 href="https://www.linkedin.com/company/nexvivehq"
                 target="_blank"
-                className="rounded-xl bg-white/10 p-4 transition hover:bg-blue-600"
+                aria-label="LinkedIn"
+                className="
+                  flex h-12 w-12 items-center justify-center
+                  rounded-xl bg-white/10
+                  transition hover:bg-blue-600
+                "
               >
-                <FaLinkedinIn size={22} />
+                <FaLinkedinIn size={20} />
               </Link>
+
             </div>
 
-            {/* Policy */}
-            <div className="flex gap-8 text-sm text-gray-400">
-              <Link href="/privacy-policy" className="hover:text-white">
+
+
+            {/* Policies */}
+            <div className="flex flex-wrap gap-6 text-sm text-gray-400">
+
+              <Link
+                href="/privacy-policy"
+                className="transition hover:text-white"
+              >
                 Privacy Policy
               </Link>
 
-              <Link href="/terms-of-service" className="hover:text-white">
+
+              <Link
+                href="/terms-of-service"
+                className="transition hover:text-white"
+              >
                 Terms of Service
               </Link>
+
             </div>
+
+
           </div>
+
+
         </div>
 
+
+
         {/* Navigation */}
-        <div className="mt-14 flex flex-wrap justify-center gap-10">
+        <div
+          className="
+            mt-12 flex flex-wrap justify-center
+            gap-x-8 gap-y-4
+            border-t border-white/10
+            pt-10
+          "
+        >
           {navLinks.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="font-medium text-gray-300 transition hover:text-white"
+              className="
+                text-sm font-medium
+                text-gray-300
+                transition hover:text-white
+              "
             >
               {item.name}
             </Link>
           ))}
         </div>
 
-        {/* Bottom */}
-        <div className="mt-12 border-t border-white/10 pt-8 text-center text-sm text-gray-500">
-          © 2025 Catalyst Analytics. All rights reserved.
+
+
+        {/* Copyright */}
+        <div
+          className="
+            mt-8 border-t border-white/10
+            pt-6 text-center
+            text-xs text-gray-500
+            sm:text-sm
+          "
+        >
+          © {new Date().getFullYear()} Nexvibe. All rights reserved.
         </div>
+
+
       </div>
     </footer>
   );
