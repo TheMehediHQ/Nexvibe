@@ -313,7 +313,7 @@ export default function ServicesSection() {
         </div>
 
         {/* ----------------- INDUSTRIES GRID ----------------- */}
-        <div className="space-y-16 pt-8 border-t border-white/[0.03]">
+        {/* <div className="space-y-16 pt-8 border-t border-white/[0.03]">
           <div className="text-center space-y-3">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">Industries We Serve</h2>
             <p className="text-xs md:text-sm text-white max-w-md mx-auto leading-relaxed font-light">
@@ -326,7 +326,7 @@ export default function ServicesSection() {
               <ServiceCard key={idx} item={industry} />
             ))}
           </div>
-        </div>
+        </div> */}
 
       </div>
     </section>
