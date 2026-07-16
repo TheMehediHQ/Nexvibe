@@ -1,5 +1,6 @@
 import CareersSection from "./CareersSection";
 import FilterBar from "./FilterBar";
+import JobListings from "./JobListings";
 
 export default function CareersPage() {
   return (
@@ -7,6 +8,7 @@ export default function CareersPage() {
       
       <CareersSection />
       <FilterBar />
+      <JobListings/>
     </>
   );
 }
