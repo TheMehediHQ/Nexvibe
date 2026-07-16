@@ -161,7 +161,8 @@ function FeatureCard({ feature, index }: { feature: FeatureItem; index: number }
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-black py-16 md:py-24 px-4 sm:px-6">
+    // <section className="relative overflow-hidden bg-black py-16 md:py-24 px-4 sm:px-6">
+    <section className="relative overflow-hidden bg-background py-16 md:py-24 px-4 sm:px-6">
       {/* Top Right Pattern */}
       <div className="absolute right-0 top-0 hidden h-48 w-64 opacity-20 md:block" />
 
