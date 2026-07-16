@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion, useMotionValue, useMotionTemplate } from "framer-motion";
+import { motion, useMotionValue, useMotionTemplate, Variants } from "framer-motion";
 import { Cpu, Users, Award, ShieldCheck, LucideIcon } from "lucide-react";
 
 interface FeatureItem {
@@ -37,7 +37,7 @@ const features: FeatureItem[] = [
   },
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -46,7 +46,7 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 50,
@@ -64,7 +64,7 @@ const itemVariants = {
   },
 };
 
-const headingVariants = {
+const headingVariants: Variants = {
   hidden: { opacity: 0, y: -20 },
   visible: {
     opacity: 1,
