@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Button from "@/components/ui/Button";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -69,12 +70,10 @@ export default function MobileMenu() {
               </li>
             ))}
 
-            <Link
-              href="/contact"
-              onClick={() => setOpen(false)}
-              className="rounded-xl bg-[var(--primary)] px-8 py-3 text-center text-sm font-semibold text-white transition hover:bg-blue-700"
-            >
-              Contact Us
+            <Link href="/contact" onClick={() => setOpen(false)} className="block">
+              <Button variant="primary" className="w-full px-8 py-3 text-sm">
+                Contact Us
+              </Button>
             </Link>
           </ul>
         </div>
