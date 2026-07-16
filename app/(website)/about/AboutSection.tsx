@@ -22,9 +22,9 @@ export default function AboutSection() {
 
           <div className="relative z-10 max-w-xl space-y-4 text-center md:text-left">
 
-          <h1 className="text-3xl md:text-4xl font-bold text-white">
-  We’re Engineers of <span className="text-blue-500">Intelligent Change</span>
-</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-white">
+              We’re Engineers of <span className="text-blue-500">Intelligent Change</span>
+            </h1>
 
 
             <p className="text-gray-400 text-sm md:text-base leading-relaxed">
@@ -32,7 +32,7 @@ export default function AboutSection() {
             </p>
 
             <button
-              className="rounded-xl bg-blue-600 px-8 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+              className="rounded-xl bg-[var(--primary)] px-8 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
             >
               Get In Touch Now
             </button>
@@ -40,10 +40,10 @@ export default function AboutSection() {
           </div>
 
           {/* Chat Icon */}
-       <div className="relative flex h-44 w-44 md:h-56 md:w-56 items-center justify-center">
+          <div className="relative flex h-44 w-44 md:h-56 md:w-56 items-center justify-center">
 
-  {/* Glow Background */}
-  <div className="
+            {/* Glow Background */}
+            <div className="
     absolute inset-0 
     rounded-full 
     bg-blue-500/20 
@@ -51,29 +51,29 @@ export default function AboutSection() {
     animate-pulse
   " />
 
-  <motion.div
-    animate={{ y: [0, -15, 0] }}
-    transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-    className="relative"
-  >
-    <Image
-      src="/icons/about-hero.png"
-      alt="Contact Icon"
-      width={220}
-      height={220}
-      className="h-40 w-40 md:h-52 md:w-52 object-contain"
-    />
-  </motion.div>
+            <motion.div
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+              className="relative"
+            >
+              <Image
+                src="/icons/about-hero.png"
+                alt="Contact Icon"
+                width={220}
+                height={220}
+                className="h-40 w-40 md:h-52 md:w-52 object-contain"
+              />
+            </motion.div>
 
-</div>
+          </div>
 
 
-         
+
 
         </div>
 
         {/* Main Content */}
-       
+
 
       </div>
     </section>
