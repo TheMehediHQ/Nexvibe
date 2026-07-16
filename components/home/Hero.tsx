@@ -113,9 +113,15 @@ export default function Hero() {
 
           {/* CTA + Social Proof */}
           <div className="space-y-6">
-            <Button variant="primary" onClick={() => (window.location.href = "/contact")}>
-              Book a Meeting
-            </Button>
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center">
+              <Button variant="primary" onClick={() => (window.location.href = "/contact")}>
+                Book a Meeting
+              </Button>
+
+              <Button variant="secondary">
+                WhatsApp Chat
+              </Button>
+            </div>
 
 
             <div className="flex flex-col items-center gap-4 sm:flex-row">
