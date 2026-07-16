@@ -304,22 +304,6 @@ export default function ServicesSection() {
             </motion.div>
 
           </div>
-
-
-            <motion.div
-              animate={{ y: [0, -15, 0] }}
-              transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-              className="relative"
-            >
-              <Image
-                src="/icons/service-hero.png"
-                alt="Contact Icon"
-                width={220}
-                height={220}
-                className="h-40 w-40 md:h-52 md:w-52 object-contain"
-              />
-            </motion.div>
-          </div>
         </div>
 
 
@@ -328,7 +312,6 @@ export default function ServicesSection() {
               <ServiceCard key={idx} item={service} />
             ))}
           </div>
-        </div>
 
         {/* Main Content */}
 
