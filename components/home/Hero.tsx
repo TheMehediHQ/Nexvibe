@@ -1,11 +1,55 @@
-
-
 "use client";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const robotRef = useRef<HTMLDivElement>(null);
+
+  const { contextSafe } = useGSAP({ scope: containerRef });
+
+  const handleMouseMove = contextSafe((e: React.MouseEvent<HTMLDivElement>) => {
+    const container = containerRef.current;
+    const robot = robotRef.current;
+    if (!container || !robot) return;
+
+    const rect = container.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const distX = e.clientX - centerX;
+    const distY = e.clientY - centerY;
+
+    // Follow the cursor up to 35% of the distance, capping the maximum translation to 65px
+    const targetX = Math.max(-65, Math.min(65, distX * 0.35));
+    const targetY = Math.max(-65, Math.min(65, distY * 0.35));
+
+    gsap.to(robot, {
+      x: targetX,
+      y: targetY,
+      duration: 0.4,
+      ease: "power3.out",
+      overwrite: "auto",
+    });
+  });
+
+  const handleMouseLeave = contextSafe(() => {
+    const robot = robotRef.current;
+    if (!robot) return;
+
+    gsap.to(robot, {
+      x: 0,
+      y: 0,
+      duration: 0.8,
+      ease: "elastic.out(1, 0.3)",
+      overwrite: "auto",
+    });
+  });
+
   return (
     <section className="relative overflow-hidden bg-[var(--background)] py-16 sm:py-20 md:py-24 lg:py-32">
       {/* Background Dot Grid */}
@@ -122,31 +166,41 @@ export default function Hero() {
         </div>
 
         {/* Right Illustration */}
-        <div className="relative flex min-h-[280px] items-center justify-center sm:min-h-[360px] lg:min-h-[520px]">
+        <div
+          ref={containerRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          className="relative flex min-h-[280px] items-center justify-center sm:min-h-[360px] lg:min-h-[520px]"
+        >
           {/* Glow */}
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
             <div className="h-[240px] w-[240px] rounded-full bg-blue-600/15 blur-[120px] sm:h-[320px] sm:w-[320px] lg:h-[420px] lg:w-[420px]" />
           </div>
 
           {/* Robot */}
-          <motion.div
-            animate={{ y: [0, -18, 0] }}
-            transition={{
-              duration: 3.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+          <div
+            ref={robotRef}
             className="relative z-10 w-full max-w-[240px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[480px]"
           >
-            <Image
-              src="/icons/robot.png"
-              alt="AI Robot"
-              width={500}
-              height={500}
-              priority
-              className="object-contain drop-shadow-[0_0_45px_rgba(0,112,243,0.25)]"
-            />
-          </motion.div>
+            <motion.div
+              animate={{ y: [0, -18, 0] }}
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="w-full"
+            >
+              <Image
+                src="/icons/robot.png"
+                alt="AI Robot"
+                width={500}
+                height={500}
+                priority
+                className="object-contain drop-shadow-[0_0_45px_rgba(0,112,243,0.25)]"
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
