@@ -12,15 +12,15 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     id: "01",
-    question: "What services does Catalyst Analytics provide?",
+    question: "What services does NexVibe provide?",
     answer:
-      "Catalyst Analytics delivers end-to-end digital solutions including UX/UI design, web development, mobile app development, custom software engineering, product strategy, and brand identity. Our team supports startups, enterprises, and global brands with scalable, high-quality digital products.",
+      "NexVibe delivers end-to-end digital solutions including UX/UI design, web development, mobile app development, custom software engineering, product strategy, and brand identity. Our team supports startups, enterprises, and global brands with scalable, high-quality digital products.",
   },
   {
     id: "02",
     question: "Do you operate from a physical office?",
     answer:
-      "We are a fully remote, globally distributed software agency. Our team collaborates across multiple time zones, allowing us to provide seamless support and faster delivery without the limitations of a physical office.",
+      "We operate as a fully remote, globally distributed digital agency. Our team collaborates across multiple time zones, enabling seamless communication, faster delivery, and flexible support without the limitations of a physical office.",
   },
   {
     id: "03",
@@ -32,15 +32,16 @@ const faqData: FAQItem[] = [
     id: "04",
     question: "What is your typical project timeline?",
     answer:
-      "Project timelines vary depending on the scope and complexity. Most projects are delivered within 4–12 weeks, with clear milestones and regular progress updates.",
+      "Project timelines vary depending on the scope and complexity. Most projects are delivered within 4–12 weeks, with clearly defined milestones and consistent progress updates.",
   },
   {
     id: "05",
-    question: "How can we get started with Catalyst Analytics?",
+    question: "How can we get started with NexVibe?",
     answer:
-      "Simply contact us through our website or email. We'll schedule a discovery call, discuss your goals, define the project scope, and prepare a tailored proposal that fits your business needs.",
+      "Simply contact us through our website or email. We'll schedule a discovery call, discuss your goals, define the project scope, and prepare a tailored proposal that aligns with your business needs.",
   },
 ];
+
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
