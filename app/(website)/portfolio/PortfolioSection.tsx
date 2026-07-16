@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
 import PortfolioCard, { PortfolioItem } from "@/components/ui/PortfolioCard";
+import Button from "@/components/ui/Button";
 
 const portfolioData: PortfolioItem[] = [
   {
@@ -105,9 +106,7 @@ export default function PortfolioSection() {
             <p className="text-gray-400 text-sm md:text-base leading-relaxed">
               Explore a collection of digital experiences we’ve crafted for ambitious brands — from high-performance websites and web applications to innovative solutions designed to solve real business challenges.
             </p>
-            <button className="rounded-xl bg-blue-600 px-8 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">
-              Get In Touch Now
-            </button>
+            <Button variant="primary">Get In Touch Now</Button>
           </div>
 
           <div className="relative flex h-44 w-44 md:h-56 md:w-56 items-center justify-center">

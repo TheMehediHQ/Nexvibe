@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Button from "@/components/ui/Button";
 
 export default function AboutSection() {
   return (
@@ -29,11 +30,7 @@ export default function AboutSection() {
               Pioneering the intersection of AI, blockchain, and quantitative finance to deliver innovative solutions that drive business transformation
             </p>
 
-            <button
-              className="rounded-xl bg-blue-600 px-8 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
-            >
-              Get In Touch Now
-            </button>
+            <Button variant="primary">Get In Touch Now</Button>
           </div>
 
           {/* Chat Icon (With Animation) */}

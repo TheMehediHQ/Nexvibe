@@ -4,6 +4,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { IoArrowForward } from "react-icons/io5";
+import Button from "@/components/ui/Button";
 
 export default function ContactSection() {
   return (
@@ -34,11 +35,7 @@ export default function ContactSection() {
               your business. We&apos;re here to help.
             </p>
 
-            <button
-              className="rounded-xl bg-[var(--primary)] px-8 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
-            >
-              Get In Touch Now
-            </button>
+            <Button variant="primary">Get In Touch Now</Button>
 
           </div>
 
