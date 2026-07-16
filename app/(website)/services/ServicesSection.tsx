@@ -245,7 +245,7 @@ const industriesData: CardItem[] = [
 
 export default function ServicesSection() {
   return (
-    <section className="text-gray-300 min-h-screen py-12 bg-black selection:bg-blue-500/30">
+    <section className="text-gray-300 min-h-screen py-12 bg-background selection:bg-blue-500/30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-24">
 
         {/* Hero Banner */}
