@@ -1,11 +1,55 @@
-
-
 "use client";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const robotRef = useRef<HTMLDivElement>(null);
+
+  const { contextSafe } = useGSAP({ scope: containerRef });
+
+  const handleMouseMove = contextSafe((e: React.MouseEvent<HTMLDivElement>) => {
+    const container = containerRef.current;
+    const robot = robotRef.current;
+    if (!container || !robot) return;
+
+    const rect = container.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const distX = e.clientX - centerX;
+    const distY = e.clientY - centerY;
+
+    // Follow the cursor up to 35% of the distance, capping the maximum translation to 65px
+    const targetX = Math.max(-65, Math.min(65, distX * 0.35));
+    const targetY = Math.max(-65, Math.min(65, distY * 0.35));
+
+    gsap.to(robot, {
+      x: targetX,
+      y: targetY,
+      duration: 0.4,
+      ease: "power3.out",
+      overwrite: "auto",
+    });
+  });
+
+  const handleMouseLeave = contextSafe(() => {
+    const robot = robotRef.current;
+    if (!robot) return;
+
+    gsap.to(robot, {
+      x: 0,
+      y: 0,
+      duration: 0.8,
+      ease: "elastic.out(1, 0.3)",
+      overwrite: "auto",
+    });
+  });
+
   return (
     <section className="relative overflow-hidden bg-[var(--background)] py-16 sm:py-20 md:py-24 lg:py-32">
       {/* Background Dot Grid */}
@@ -59,13 +103,7 @@ export default function Hero() {
 
           {/* Subtext */}
           <p
-            className="
-              max-w-xl
-              text-[15px]
-              leading-8
-              text-[var(--muted)]
-              sm:text-base
-              lg:text-lg
+            className="text-[15px] max-w-xl leading-8 text-[var(--muted)] sm:text-base lg:text-lg
             "
           >
             Empower your business with AI-driven insights that accelerate
@@ -74,26 +112,24 @@ export default function Hero() {
 
           {/* CTA + Social Proof */}
           <div className="space-y-6">
-            <button
-              className="
-                w-full
-                rounded-xl
-                bg-blue-600
-                px-7
-                py-3.5
-                text-sm
-                font-semibold
-                text-white
-                shadow-lg
-                shadow-blue-600/20
-                transition
-                hover:bg-blue-700
-                active:scale-95
-                sm:w-auto
-              "
+            {/* <button
+              className="btn-primary border-beam"
             >
               Book a Meeting
+            </button> */}
+
+            <button
+              className="relative inline-flex items-center px-8 py-2.5 overflow-hidden text-lg font-medium text-white bg-[var(--primary)] border-2 border-primary rounded-full cursor-pointer group">
+              <span
+                className="absolute left-0 block w-full h-0 transition-all bg-blue-700 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+              <span
+                className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </span>
+              <span className="relative text-[1rem] group-hover:pr-4 transition-all duration-400"> Book a Meeting</span>
             </button>
+
 
             <div className="flex flex-col items-center gap-4 sm:flex-row">
               <div className="flex -space-x-3">
@@ -122,31 +158,41 @@ export default function Hero() {
         </div>
 
         {/* Right Illustration */}
-        <div className="relative flex min-h-[280px] items-center justify-center sm:min-h-[360px] lg:min-h-[520px]">
+        <div
+          ref={containerRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          className="relative flex min-h-[280px] items-center justify-center sm:min-h-[360px] lg:min-h-[520px]"
+        >
           {/* Glow */}
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
             <div className="h-[240px] w-[240px] rounded-full bg-blue-600/15 blur-[120px] sm:h-[320px] sm:w-[320px] lg:h-[420px] lg:w-[420px]" />
           </div>
 
           {/* Robot */}
-          <motion.div
-            animate={{ y: [0, -18, 0] }}
-            transition={{
-              duration: 3.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+          <div
+            ref={robotRef}
             className="relative z-10 w-full max-w-[240px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[480px]"
           >
-            <Image
-              src="/icons/robot.png"
-              alt="AI Robot"
-              width={500}
-              height={500}
-              priority
-              className="object-contain drop-shadow-[0_0_45px_rgba(0,112,243,0.25)]"
-            />
-          </motion.div>
+            <motion.div
+              animate={{ y: [0, -18, 0] }}
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="w-full"
+            >
+              <Image
+                src="/icons/robot.png"
+                alt="AI Robot"
+                width={500}
+                height={500}
+                priority
+                className="object-contain drop-shadow-[0_0_45px_rgba(0,112,243,0.25)]"
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

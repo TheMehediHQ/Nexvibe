@@ -265,12 +265,13 @@ export default function ServicesSection() {
               Our Comprehensive <span className="text-blue-500">Digital Solutions</span>
             </h1>
 
+
             <p className="text-gray-400 text-sm md:text-base leading-relaxed">
               We create powerful digital solutions that help businesses thrive online. From stunning websites and scalable web applications to custom software and modern digital experiences, our team delivers technology-driven solutions designed for growth, performance, and success.
             </p>
 
             <button
-              className="rounded-xl bg-blue-600 px-8 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+              className="rounded-xl bg-[var(--primary)] px-8 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
             >
               Get In Touch Now
             </button>
@@ -278,7 +279,15 @@ export default function ServicesSection() {
 
           {/* Chat Icon */}
           <div className="relative flex h-44 w-44 md:h-56 md:w-56 items-center justify-center">
-            <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-3xl animate-pulse" />
+
+            {/* Glow Background */}
+            <div className="
+    absolute inset-0 
+    rounded-full 
+    bg-blue-500/20 
+    blur-3xl 
+    animate-pulse
+  " />
 
             <motion.div
               animate={{ y: [0, -15, 0] }}
@@ -293,40 +302,19 @@ export default function ServicesSection() {
                 className="h-40 w-40 md:h-52 md:w-52 object-contain"
               />
             </motion.div>
+
           </div>
         </div>
 
-        {/* ----------------- SERVICES GRID ----------------- */}
-        <div className="space-y-16">
-          <div className="text-center space-y-3">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">Our Services</h2>
-            <p className="text-xs md:text-sm text-white max-w-md mx-auto leading-relaxed font-light">
-              High-performance system architecture and custom interfaces built to scale your workflow efficiency.
-            </p>
-          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
             {servicesData.map((service, idx) => (
               <ServiceCard key={idx} item={service} />
             ))}
           </div>
-        </div>
 
-        {/* ----------------- INDUSTRIES GRID ----------------- */}
-        <div className="space-y-16 pt-8 border-t border-white/[0.03]">
-          <div className="text-center space-y-3">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">Industries We Serve</h2>
-            <p className="text-xs md:text-sm text-white max-w-md mx-auto leading-relaxed font-light">
-              Integrating specialized engineering models and architectures into targeted market domains.
-            </p>
-          </div>
+        {/* Main Content */}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-            {industriesData.map((industry, idx) => (
-              <ServiceCard key={idx} item={industry} />
-            ))}
-          </div>
-        </div>
 
       </div>
     </section>
