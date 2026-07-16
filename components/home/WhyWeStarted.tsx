@@ -97,8 +97,8 @@ export default function WhyWeStarted() {
             <ArrowLeft className="w-5 h-5" />
           </button>
 
-       {/* Cards */}
-<div className="
+          {/* Cards */}
+          <div className="
   grid 
   grid-cols-1 
   sm:grid-cols-2 
@@ -108,20 +108,20 @@ export default function WhyWeStarted() {
   w-full 
   max-w-5xl
 ">
-  {testimonials.map((item, index) => {
-    const isActive = index === activeIndex;
-    const isPrev = index === (activeIndex === 0 ? testimonials.length - 1 : activeIndex - 1);
-    const isNext = index === (activeIndex === testimonials.length - 1 ? 0 : activeIndex + 1);
+            {testimonials.map((item, index) => {
+              const isActive = index === activeIndex;
+              const isPrev = index === (activeIndex === 0 ? testimonials.length - 1 : activeIndex - 1);
+              const isNext = index === (activeIndex === testimonials.length - 1 ? 0 : activeIndex + 1);
 
-    // ⭐ Visibility logic
-    const showMobile = isActive;
-    const showTablet = isActive || isPrev;
-    const showDesktop = isActive || isPrev || isNext;
+              // ⭐ Visibility logic
+              const showMobile = isActive;
+              const showTablet = isActive || isPrev;
+              const showDesktop = isActive || isPrev || isNext;
 
-    return (
-      <div
-        key={index}
-        className={`
+              return (
+                <div
+                  key={index}
+                  className={`
           relative flex flex-col items-center text-center px-6 py-10
           transition-all duration-700 ease-out
 
@@ -138,35 +138,35 @@ export default function WhyWeStarted() {
           ${isPrev ? "md:scale-90 md:-rotate-y-6 md:translate-x-4 md:opacity-80" : ""}
           ${isNext ? "md:scale-90 md:rotate-y-6 md:-translate-x-4 md:opacity-80" : ""}
         `}
-        style={{ transformStyle: "preserve-3d" }}
-      >
-        {/* Divider + Quote Icon */}
-        <div className="w-full flex items-center justify-center gap-4 mb-6">
-          <div className="h-[1px] flex-1 bg-white/20" />
-          <span className="text-3xl font-serif text-blue-500 italic drop-shadow-[0_0_12px_rgba(59,130,246,0.6)]">
-            ““
-          </span>
-          <div className="h-[1px] flex-1 bg-white/20" />
-        </div>
+                  style={{ transformStyle: "preserve-3d" }}
+                >
+                  {/* Divider + Quote Icon */}
+                  <div className="w-full flex items-center justify-center gap-4 mb-6">
+                    <div className="h-[1px] flex-1 bg-white/20" />
+                    <span className="text-3xl font-serif text-blue-500 italic drop-shadow-[0_0_12px_rgba(59,130,246,0.6)]">
+                      ““
+                    </span>
+                    <div className="h-[1px] flex-1 bg-white/20" />
+                  </div>
 
-        {/* Quote */}
-        <p className="text-sm md:text-base text-gray-300 leading-relaxed font-light min-h-[80px] max-w-sm mb-8">
-          {item.quote}
-        </p>
+                  {/* Quote */}
+                  <p className="text-sm md:text-base text-gray-300 leading-relaxed font-light min-h-[80px] max-w-sm mb-8">
+                    {item.quote}
+                  </p>
 
-        {/* Identity */}
-        <div className="space-y-1">
-          <h4 className="text-blue-500 font-semibold text-sm tracking-wide">
-            {item.name}
-          </h4>
-          <p className="text-[11px] text-gray-500 uppercase tracking-wider font-medium">
-            {item.role}
-          </p>
-        </div>
-      </div>
-    );
-  })}
-</div>
+                  {/* Identity */}
+                  <div className="space-y-1">
+                    <h4 className="text-blue-500 font-semibold text-sm tracking-wide">
+                      {item.name}
+                    </h4>
+                    <p className="text-[11px] text-gray-500 uppercase tracking-wider font-medium">
+                      {item.role}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
 
 
 
@@ -180,7 +180,7 @@ export default function WhyWeStarted() {
         </div>
 
         {/* CTA */}
-        <button className="mt-16 rounded-xl bg-[#0070f3] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-600 active:scale-95">
+        <button className="mt-16 rounded-xl bg-[#0070f3] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-[var(--primary)] active:scale-95">
           Learn More
         </button>
       </div>
