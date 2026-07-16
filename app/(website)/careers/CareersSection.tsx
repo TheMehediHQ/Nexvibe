@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 
 export default function CareersSection() {
   return (
-    <section className="text-gray-300 min-h-screen py-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+    <section className="text-gray-300  py-12 ">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10 ">
 
         {/* Hero Banner */}
         <div className="relative overflow-hidden bg-[#141414] rounded-3xl p-8 md:p-12 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8">
