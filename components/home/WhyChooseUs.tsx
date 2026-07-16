@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Award } from "lucide-react"; // Custom badge icon matching the screenshot
+import { Award } from "lucide-react";
 
 interface FeatureItem {
   title: string;
@@ -11,75 +11,97 @@ interface FeatureItem {
 const features: FeatureItem[] = [
   {
     title: "Innovation",
-    description: "Pushing boundaries in AI, blockchain, and quantitative trading to deliver cutting-edge solutions.",
+    description:
+      "Pushing boundaries in AI, blockchain, and quantitative trading to deliver cutting-edge solutions.",
   },
   {
     title: "Collaboration",
-    description: "Working closely with clients to develop tailored solutions that drive measurable success.",
+    description:
+      "Working closely with clients to develop tailored solutions that drive measurable success.",
   },
   {
     title: "Excellence",
-    description: "Maintaining the highest standards in code quality, system performance, and client outcomes.",
+    description:
+      "Maintaining the highest standards in code quality, system performance, and client outcomes.",
   },
   {
     title: "Integrity",
-    description: "Operating with transparency and ethical considerations at the forefront of all decisions.",
+    description:
+      "Operating with transparency and ethical considerations at the forefront of all decisions.",
   },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-black text-white py-24 px-6 sm:px-8">
-      
-      {/* Top Right Cross/Plus Grid Pattern */}
-      <div 
-        className="absolute right-0 top-0 w-64 h-48 opacity-20 hidden md:block select-none pointer-events-none" 
-        
-      />
+    <section className="relative overflow-hidden bg-black py-16 md:py-24 px-4 sm:px-6">
+      {/* Top Right Pattern */}
+      <div className="absolute right-0 top-0 hidden h-48 w-64 opacity-20 md:block" />
 
-      <div className="relative mx-auto max-w-7xl flex flex-col items-center">
-        
-    
-
-        <div className="text-center mb-20 space-y-3">
-          <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight leading-snug max-w-2xl mx-auto">
+      <div className="relative mx-auto max-w-7xl">
+        {/* Heading */}
+        <div className="mb-12 text-center md:mb-20">
+          <h2 className="text-3xl font-semibold text-white md:text-4xl">
             Why Choose Us
-            
           </h2>
         </div>
 
-        {/* Overlapping Circles Grid Layout */}
-        <div className="flex flex-wrap items-center justify-center gap-y-12 md:-space-x-10 lg:-space-x-12 w-full max-w-6xl">
+        {/* Mobile = Vertical Overlap | Desktop = Horizontal Overlap */}
+        <div
+          className="
+            flex flex-col items-center
+            -space-y-6
+            sm:-space-y-16
+            md:-space-y-20
+            lg:flex-row
+            lg:flex-wrap
+            lg:justify-center
+            lg:gap-y-12
+            lg:-space-y-0
+            lg:-space-x-10
+            xl:-space-x-12
+          "
+        >
           {features.map((feature, index) => (
             <div
               key={index}
-              className="relative flex flex-col items-center justify-center text-center 
-                         w-[260px] h-[260px] sm:w-[280px] sm:h-[280px] lg:w-[290px] lg:h-[290px] 
-                         rounded-full bg-[#111111] border-[10px] border-black shadow-2xl 
-                         transition-transform duration-300 hover:scale-105 hover:z-20 z-10 
-                         px-6 sm:px-8"
+              className="
+                relative z-10
+                flex flex-col items-center justify-center
+                rounded-full
+                bg-[#111111]
+                border-[10px] border-black
+
+                w-[240px] h-[240px]
+                sm:w-[260px] sm:h-[260px]
+                md:w-[280px] md:h-[280px]
+                lg:w-[290px] lg:h-[290px]
+
+                px-6 text-center
+                shadow-2xl
+                transition-all duration-300
+                hover:z-20 hover:scale-105
+              "
               style={{
-                boxShadow: "0 25px 50px -12px rgba(0,0,0,0.7)"
+                boxShadow: "0 25px 50px -12px rgba(0,0,0,0.7)",
               }}
             >
-              {/* Green Badge Icon */}
-              <div className="mb-4 text-[#4ade80] flex items-center justify-center bg-[#1e293b]/30 p-2 rounded-full border border-[#4ade80]/10">
-                <Award className="w-6 h-6 fill-[#4ade80]/20" />
+              {/* Icon */}
+              <div className="mb-4 flex items-center justify-center rounded-full border border-[#4ade80]/20 bg-[#1e293b]/30 p-2 text-[#4ade80]">
+                <Award className="h-6 w-6 fill-[#4ade80]/20" />
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-semibold text-gray-100 mb-3 tracking-wide">
+              <h3 className="mb-3 text-lg font-semibold text-gray-100">
                 {feature.title}
               </h3>
 
               {/* Description */}
-              <p className="text-xs font-light text-gray-400 leading-relaxed max-w-[200px]">
+              <p className="max-w-[190px] text-xs leading-relaxed text-gray-400">
                 {feature.description}
               </p>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
