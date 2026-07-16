@@ -70,8 +70,8 @@ export default function MobileMenu() {
               </li>
             ))}
 
-            <Link href="/contact" onClick={() => setOpen(false)} className="block">
-              <Button variant="primary" className="w-full px-8 py-3 text-sm">
+            <Link href="/contact" onClick={() => setOpen(false)}>
+              <Button variant="primary" className="px-6 py-2 text-sm">
                 Contact Us
               </Button>
             </Link>
