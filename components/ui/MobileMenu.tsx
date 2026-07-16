@@ -19,7 +19,7 @@ export default function MobileMenu() {
       {/* Hamburger Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-white lg:hidden"
+        className="flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--border)] text-[var(--foreground)] lg:hidden"
         aria-label="Toggle Menu"
       >
         {open ? (
@@ -53,19 +53,16 @@ export default function MobileMenu() {
         )}
       </button>
 
-
       {/* Mobile Menu */}
       {open && (
-        <div className="absolute left-0 top-24 w-full border-t border-white/10 bg-black/90 backdrop-blur-xl lg:hidden">
-
+        <div className="absolute left-0 top-24 w-full border-t border-[var(--border)] bg-[var(--background)] lg:hidden">
           <ul className="flex flex-col gap-6 px-6 py-8">
-
             {navItems.map((item) => (
               <li key={item.name}>
                 <Link
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="text-gray-300 hover:text-white"
+                  className="text-[var(--muted)] transition-colors hover:text-[var(--foreground)]"
                 >
                   {item.name}
                 </Link>
@@ -75,13 +72,11 @@ export default function MobileMenu() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="rounded-xl bg-blue-600 px-8 py-3 text-center text-sm font-semibold text-white hover:bg-blue-700"
+              className="rounded-xl bg-blue-600 px-8 py-3 text-center text-sm font-semibold text-white transition hover:bg-blue-700"
             >
               Contact Us
             </Link>
-
           </ul>
-
         </div>
       )}
     </>

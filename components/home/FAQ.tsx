@@ -14,7 +14,7 @@ const faqData: FAQItem[] = [
     id: "01",
     question: "What services does Catalyst Analytics provide?",
     answer:
-      "Catalyst Analytics delivers end‑to‑end digital solutions including UX/UI design, web development, mobile app development, custom software engineering, product strategy, and brand identity. Our team supports startups, enterprises, and global brands with scalable, high‑quality digital products.",
+      "Catalyst Analytics delivers end-to-end digital solutions including UX/UI design, web development, mobile app development, custom software engineering, product strategy, and brand identity. Our team supports startups, enterprises, and global brands with scalable, high-quality digital products.",
   },
   {
     id: "02",
@@ -32,19 +32,17 @@ const faqData: FAQItem[] = [
     id: "04",
     question: "What is your typical project timeline?",
     answer:
-      "Project timelines vary based on scope and complexity. Most design and development projects range from 4 to 12 weeks. After reviewing your requirements, we provide a detailed timeline with clear milestones and delivery phases.",
+      "Project timelines vary depending on the scope and complexity. Most projects are delivered within 4–12 weeks, with clear milestones and regular progress updates.",
   },
   {
     id: "05",
     question: "How can we get started with Catalyst Analytics?",
     answer:
-      "Simply reach out through our contact form or email. We’ll schedule a discovery call to understand your goals, define the project scope, and prepare a tailored proposal aligned with your business objectives.",
+      "Simply contact us through our website or email. We'll schedule a discovery call, discuss your goals, define the project scope, and prepare a tailored proposal that fits your business needs.",
   },
 ];
 
-
 export default function FAQ() {
-  // Set the first item open by default to perfectly match the screenshot state
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFAQ = (index: number) => {
@@ -52,91 +50,115 @@ export default function FAQ() {
   };
 
   return (
-    <section className="bg-black text-white py-24 px-6 sm:px-8">
-    
-        
-      
-      
+    <section className="relative overflow-hidden bg-[var(--background)] py-20 md:py-24 px-6 sm:px-8">
+      {/* Decorative Pattern */}
+      <div
+        className="pointer-events-none absolute right-0 top-12 hidden h-56 w-40 opacity-10 md:block"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(255,255,255,.7) 1.3px, transparent 1.3px)",
+          backgroundSize: "16px 16px",
+        }}
+      />
 
-
-         <div className="relative mx-auto max-w-3xl flex flex-col items-center">
-        
-    
-
-        <div className="text-center mb-20 space-y-3">
-          <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight leading-snug max-w-2xl mx-auto">
+      <div className="relative mx-auto max-w-4xl">
+        {/* Heading */}
+        <div className="mb-14 text-center md:mb-16">
+          <h2 className="text-3xl font-semibold tracking-tight text-[var(--foreground)] md:text-5xl">
             Frequently Asked Questions
-            
           </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-[var(--muted)]">
+            Find answers to the most common questions about our services,
+            workflow, timelines, and collaboration process.
+          </p>
         </div>
 
-        {/* Accordion List */}
-        <div className="w-full space-y-4">
+        {/* FAQ List */}
+        <div className="space-y-5">
           {faqData.map((faq, index) => {
             const isOpen = openIndex === index;
 
             return (
               <div
-                key={index}
-                className="bg-[#0D0D0D] border border-white/[0.03] rounded-2xl p-5 md:p-6 transition-all duration-300"
+                key={faq.id}
+                className={`rounded-3xl border bg-[var(--card)] transition-all duration-300 ${
+                  isOpen
+                    ? "border-white/15 shadow-2xl"
+                    : "border-[var(--border)] hover:border-white/10"
+                }`}
               >
-                {/* Accordion Trigger Header */}
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center gap-5 text-left focus:outline-none group"
+                  className="flex w-full items-center gap-5 p-6 text-left"
                 >
-                  {/* Number Badge Container */}
-                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#141414] border border-white/[0.02] shadow-inner shrink-0">
+                  {/* Number */}
+                  <div
+                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border transition-all duration-300 ${
+                      isOpen
+                        ? "border-blue-500/30 bg-blue-500/10"
+                        : "border-[var(--border)] bg-white/[0.03]"
+                    }`}
+                  >
                     <span
-                      className={`text-sm font-bold tracking-wide transition-colors duration-300 ${
-                        isOpen ? "text-[#0070f3]" : "text-gray-400"
+                      className={`text-sm font-bold ${
+                        isOpen
+                          ? "text-blue-400"
+                          : "text-[var(--muted)]"
                       }`}
                     >
                       {faq.id}
                     </span>
                   </div>
 
-                  {/* Question Text */}
-                  <span
-                    className={`flex-1 text-sm md:text-base font-medium transition-colors duration-300 tracking-wide pr-4 ${
-                      isOpen ? "text-[#0070f3]" : "text-gray-200 group-hover:text-white"
+                  {/* Question */}
+                  <h3
+                    className={`flex-1 pr-4 text-base font-medium transition-colors duration-300 ${
+                      isOpen
+                        ? "text-blue-400"
+                        : "text-[var(--foreground)]"
                     }`}
                   >
                     {faq.question}
-                  </span>
+                  </h3>
 
-                  {/* Toggle Icon */}
-                  <div className="shrink-0 text-gray-400 group-hover:text-white transition-colors">
+                  {/* Icon */}
+                  <div
+                    className={`flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 ${
+                      isOpen
+                        ? "bg-blue-500/10 text-blue-400"
+                        : "bg-white/[0.03] text-[var(--muted)]"
+                    }`}
+                  >
                     {isOpen ? (
-                      <X className="w-5 h-5 text-[#0070f3]" />
+                      <X className="h-5 w-5" />
                     ) : (
-                      <Plus className="w-5 h-5 text-gray-400" />
+                      <Plus className="h-5 w-5" />
                     )}
                   </div>
                 </button>
 
-                {/* Expanding Answer Content */}
+                {/* Answer */}
                 <div
-                  className={`grid transition-all duration-300 ease-in-out ${
-                    isOpen ? "grid-rows-[1fr] opacity-100 mt-5" : "grid-rows-[0fr] opacity-0"
+                  className={`grid transition-all duration-300 ${
+                    isOpen
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
                   }`}
                 >
                   <div className="overflow-hidden">
-                    {/* Padding-left matches the offset alignment of the question text */}
-                    <p className="pl-16 text-xs md:text-sm font-light text-gray-400 leading-relaxed max-w-2xl">
-                      {faq.answer}
-                    </p>
+                    <div className="px-6 pb-6 pl-[92px]">
+                      <p className="leading-7 text-[var(--muted)]">
+                        {faq.answer}
+                      </p>
+                    </div>
                   </div>
                 </div>
-
               </div>
             );
           })}
         </div>
-
       </div>
-    
-    
     </section>
   );
 }

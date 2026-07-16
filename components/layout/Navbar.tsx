@@ -12,9 +12,8 @@ const navItems = [
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 bg-black/30 backdrop-blur-xl border-b border-white/10">
+    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/80 backdrop-blur-xl">
       <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-
         {/* Logo */}
         <Link href="/" className="shrink-0">
           <Image
@@ -27,21 +26,19 @@ export default function Navbar() {
           />
         </Link>
 
-
         {/* Desktop Navigation */}
-        <ul className="hidden lg:flex items-center gap-8 xl:gap-12">
+        <ul className="hidden items-center gap-8 lg:flex xl:gap-12">
           {navItems.map((item) => (
             <li key={item.name}>
               <Link
                 href={item.href}
-                className="text-base font-medium text-gray-300 transition-colors duration-300 hover:text-white"
+                className="text-base font-medium text-[var(--muted)] transition-colors duration-300 hover:text-[var(--foreground)]"
               >
                 {item.name}
               </Link>
             </li>
           ))}
         </ul>
-
 
         {/* Desktop CTA */}
         <Link
@@ -55,7 +52,7 @@ export default function Navbar() {
             text-sm
             font-semibold
             text-white
-            transition
+            transition-all
             duration-300
             hover:bg-blue-700
             lg:block
@@ -64,10 +61,8 @@ export default function Navbar() {
           Contact Us
         </Link>
 
-
-        {/* Mobile Menu Button */}
-      <MobileMenu />
-
+        {/* Mobile Menu */}
+        <MobileMenu />
       </nav>
     </header>
   );
