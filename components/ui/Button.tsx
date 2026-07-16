@@ -20,7 +20,7 @@ const variantStyles: Record<ButtonProps["variant"], string> = {
   primary:
     "text-white bg-[var(--primary)] border-primary",
   secondary:
-    "text-[var(--primary)] bg-transparent border-[var(--primary)] hover:bg-blue-600/10",
+    "text-[var(--primary)] bg-transparent border-[var(--primary)] hover:bg-blue-600/10 hover:text-white",
 };
 
 export default function Button({

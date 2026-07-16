@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { IoArrowForward } from "react-icons/io5";
+
 import Button from "@/components/ui/Button";
 
 export default function ContactSection() {
@@ -123,12 +123,10 @@ export default function ContactSection() {
                 className="w-full bg-[#1E1E1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600 resize-none"
               />
 
-              <button
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--primary)] py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
-              >
+              <Button variant="secondary" className="flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm">
                 Send
-                <IoArrowForward className="text-base" />
-              </button>
+                
+              </Button>
             </form>
 
           </div>
@@ -176,9 +174,9 @@ export default function ContactSection() {
                 and let&apos;s talk about your ideas.
               </p>
 
-              <button className="w-full rounded-xl bg-[var(--primary)] py-3 text-sm font-semibold text-white transition hover:bg-blue-700">
+              <Button variant="primary" className="w-full rounded-xl py-3 text-sm">
                 Book a Meeting
-              </button>
+              </Button>
 
             </div>
 
