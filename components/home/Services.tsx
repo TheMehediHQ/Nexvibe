@@ -80,12 +80,6 @@ export default function Services() {
               Ideas Implementation
             </span>
           </h2>
-
-          <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-[var(--muted)]">
-            We help startups, enterprises, and growing businesses build
-            scalable digital products with modern technologies, exceptional
-            design, and measurable business results.
-          </p>
         </div>
 
         {/* Services Grid */}
@@ -96,7 +90,7 @@ export default function Services() {
               className="group rounded-[32px] border border-[var(--border)] bg-[var(--card)] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-white/15 hover:bg-[#1A1A1A] hover:shadow-2xl"
             >
               {/* Icon */}
-              <div className="mb-8 flex h-24 w-24 items-center justify-center rounded-2xl bg-white/[0.03]">
+              <div className="mb-8 flex h-24 w-24 items-center justify-center rounded-2xl ">
                 <Image
                   src={service.imageSrc}
                   alt={service.title}
