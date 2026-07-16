@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import Button from "@/components/ui/Button";
 
 export interface CardItem {
   imageSrc: string;
@@ -53,19 +53,9 @@ export default function ServiceCard({ item }: ServiceCardProps) {
         ))}
       </div>
 
-      {/* Custom Capsule Action Button Style (Matches Screenshot) */}
+      {/* Action Button */}
       <div className="mt-auto">
-        <button className="flex items-center gap-4 rounded-full bg-[#141414] border border-white/[0.08] pl-2 pr-6 py-2 text-sm font-medium text-white transition hover:bg-[#1c1c1e] hover:border-white/[0.15] active:scale-95 shadow-lg group/btn">
-          
-          {/* Blue Arrow Icon Circle */}
-          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#3b82f6] text-white transition-transform duration-300 group-hover/btn:translate-x-1">
-            <ArrowRight className="w-5 h-5 stroke-[2.5]" />
-          </div>
-          
-          {/* Button Text */}
-          <span className="tracking-wide">Book a Call</span>
-          
-        </button>
+        <Button variant="primary">Book a Call</Button>
       </div>
 
     </div>

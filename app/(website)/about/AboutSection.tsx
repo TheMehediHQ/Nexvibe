@@ -193,24 +193,15 @@ export default function AboutSection() {
 
         {/* Custom Rounded Pill Button */}
         <div className="relative z-10 pt-2 flex justify-center">
-          <button
-            type="button"
-            className="
-              rounded-xl 
-              bg-[#0080FF] hover:bg-[#0070E0] 
-              text-white font-medium text-xs md:text-sm tracking-wide 
-              px-10 py-3.5 
-              transition active:scale-95 
-              shadow-[0_4px_20px_rgba(0,128,255,0.25)]
-              border border-white/10
-            "
+          <Button
+            variant="secondary"
             onClick={() => {
               // Replace with your actual contact logic
               console.log("Get In Touch clicked");
             }}
           >
             Get In Touch
-          </button>
+          </Button>
         </div>
       </div>
     </div>

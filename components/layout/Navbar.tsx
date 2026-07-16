@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import MobileMenu from "../ui/MobileMenu";
+import Button from "../ui/Button";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -41,24 +42,10 @@ export default function Navbar() {
         </ul>
 
         {/* Desktop CTA */}
-        <Link
-          href="/contact"
-          className="
-            hidden
-            rounded-xl
-            bg-blue-600
-            px-8
-            py-3
-            text-sm
-            font-semibold
-            text-white
-            transition-all
-            duration-300
-            hover:bg-blue-700
-            lg:block
-          "
-        >
-          Contact Us
+        <Link href="/contact" className="hidden lg:block">
+          <Button variant="primary" className="rounded-xl px-6 py-2 text-sm">
+            Contact Us
+          </Button>
         </Link>
 
         {/* Mobile Menu */}
