@@ -72,7 +72,7 @@ export default function MobileMenu() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="rounded-xl bg-blue-600 px-8 py-3 text-center text-sm font-semibold text-white transition hover:bg-blue-700"
+              className="rounded-xl bg-[var(--primary)] px-8 py-3 text-center text-sm font-semibold text-white transition hover:bg-blue-700"
             >
               Contact Us
             </Link>
