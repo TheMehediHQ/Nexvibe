@@ -31,7 +31,7 @@ export default function AboutSection() {
               Pioneering the intersection of AI, blockchain, and quantitative finance to deliver innovative solutions that drive business transformation
             </p>
 
-            <Button variant="primary">Get In Touch Now</Button>
+            <Button variant="primary" href="/contact">Get In Touch Now</Button>
           </div>
 
           {/* Chat Icon (With Animation) */}

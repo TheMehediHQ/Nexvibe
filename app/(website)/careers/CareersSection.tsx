@@ -35,7 +35,7 @@ export default function CareersSection() {
             <p className="text-gray-400 text-sm md:text-base leading-relaxed">
               We’re a team of builders, thinkers, and explorers using AI, machine learning, and blockchain to solve meaningful problems. </p>
 
-            <Button variant="primary">Get In Touch Now</Button>
+            <Button variant="primary" href="/contact">Get In Touch Now</Button>
 
           </div>
 

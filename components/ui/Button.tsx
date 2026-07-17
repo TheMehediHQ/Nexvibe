@@ -2,6 +2,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import type { ReactNode } from "react";
+import Link from "next/link";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -12,6 +13,9 @@ interface ButtonProps {
   children: ReactNode;
   className?: string;
   onClick?: () => void;
+  href?: string;
+  target?: string;
+  rel?: string;
 }
 
 const baseStyles =
@@ -47,12 +51,12 @@ export default function Button({
   children,
   className,
   onClick,
+  href,
+  target,
+  rel,
 }: ButtonProps) {
-  return (
-    <button
-      onClick={onClick}
-      className={cn(baseStyles, variantStyles[variant], className)}
-    >
+  const content = (
+    <>
       {/* Aurora Hover Fill Layer */}
       <span className="absolute left-0 block w-full h-0 transition-all bg-blue-700/40 opacity-100 group-hover/btn:h-full top-1/2 group-hover/btn:top-0 duration-400 ease" />
 
@@ -77,6 +81,22 @@ export default function Button({
       <span className="relative text-[1rem] group-hover/btn:pr-4 transition-all duration-400">
         {children}
       </span>
+    </>
+  );
+
+  const classNameMerged = cn(baseStyles, variantStyles[variant], className);
+
+  if (href) {
+    return (
+      <Link href={href} target={target} rel={rel} className={classNameMerged}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button onClick={onClick} className={classNameMerged}>
+      {content}
     </button>
   );
 }

@@ -35,7 +35,7 @@ export default function ContactSection() {
               your business. We&apos;re here to help.
             </p>
 
-            <Button variant="primary">Get In Touch Now</Button>
+            <Button variant="primary" href="/contact">Get In Touch Now</Button>
 
           </div>
 

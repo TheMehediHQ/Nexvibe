@@ -106,7 +106,7 @@ export default function PortfolioSection() {
             <p className="text-gray-400 text-sm md:text-base leading-relaxed">
               Explore a collection of digital experiences we’ve crafted for ambitious brands — from high-performance websites and web applications to innovative solutions designed to solve real business challenges.
             </p>
-            <Button variant="primary">Get In Touch Now</Button>
+            <Button variant="primary" href="/contact">Get In Touch Now</Button>
           </div>
 
           <div className="relative flex h-44 w-44 md:h-56 md:w-56 items-center justify-center">

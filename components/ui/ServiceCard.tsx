@@ -55,7 +55,14 @@ export default function ServiceCard({ item }: ServiceCardProps) {
 
       {/* Action Button */}
       <div className="mt-auto">
-        <Button variant="primary">Book a Call</Button>
+        <Button
+          variant="secondary"
+          href="https://wa.me/8801607128338?text=Hello%20Nexvibe!%20I'm%20interested%20in%20your%20services%20and%20would%20like%20to%20discuss%20my%20project."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Discuss Project
+        </Button>
       </div>
 
     </div>

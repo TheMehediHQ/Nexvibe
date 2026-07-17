@@ -189,7 +189,7 @@ export default function ServicesSection() {
               We create powerful digital solutions that help businesses thrive online. From stunning websites and scalable web applications to custom software and modern digital experiences, our team delivers technology-driven solutions designed for growth, performance, and success.
             </p>
 
-            <Button variant="primary">Get In Touch Now</Button>
+            <Button variant="primary" href="/contact">Get In Touch Now</Button>
           </div>
 
           {/* Chat Icon */}
