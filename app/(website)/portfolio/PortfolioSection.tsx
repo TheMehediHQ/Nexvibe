@@ -151,7 +151,7 @@ export default function PortfolioSection() {
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full bg-[#111112] border border-white/[0.06] rounded-xl pl-4 pr-10 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
             />
-            <div className="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center justify-center w-7 h-7 rounded-lg bg-blue-600/10 text-blue-500">
+            <div className="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center justify-center w-7 h-7 rounded-lg hover:bg-[#2461F5] bg-[#4ba3f5]  text-white ">
               <Search className="w-3.5 h-3.5" />
             </div>
           </div>
@@ -181,7 +181,7 @@ export default function PortfolioSection() {
 
             <button 
               onClick={handleClearAll}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs px-6 py-2.5 rounded-xl transition active:scale-95 shadow-lg shadow-blue-600/10"
+              className="bg-[#4ba3f5]   hover:bg-[#2461F5] text-white font-medium text-xs px-6 py-2.5 rounded-xl transition active:scale-95 shadow-lg shadow-blue-600/10"
             >
               Clear All
             </button>

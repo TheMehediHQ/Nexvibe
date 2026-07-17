@@ -38,12 +38,12 @@ export default function PortfolioCard({ item }: PortfolioCardProps) {
         </h3>
         
         {/* Exact circular blue arrow button matching the screen */}
-        <button 
-          className="flex items-center justify-center w-11 h-11 rounded-full bg-[#4ba3f5] text-white shrink-0 transition-transform hover:scale-105 active:scale-95"
-          aria-label={`View details for ${item.title}`}
-        >
-          <ArrowRight className="w-5 h-5 stroke-[2.5]" />
-        </button>
+        <button
+  className="group flex items-center justify-center w-11 h-11 rounded-full bg-[#4ba3f5] hover:bg-[#2461F5] text-white shrink-0 transition-transform hover:scale-105 active:scale-95"
+  aria-label={`View details for ${item.title}`}
+>
+  <ArrowRight className="w-5 h-5 stroke-[2.5] transition-transform duration-300 ease-out group-hover:-rotate-45 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+</button>
       </div>
 
       {/* Project Short Description Paragraph */}

@@ -153,7 +153,7 @@ export default function JobBoard() {
               placeholder="Search by keywords..."
               className="w-full pl-4 pr-11 py-3 rounded-full bg-[#141414] border border-white/10 text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-white/25 transition-colors"
             />
-            <button className="absolute right-1.5 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-500 transition-colors">
+            <button className="absolute right-1.5 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full hover:bg-[#2461F5] bg-[#4ba3f5] transition-colors">
               <Search size={16} className="text-white" />
             </button>
           </div>
