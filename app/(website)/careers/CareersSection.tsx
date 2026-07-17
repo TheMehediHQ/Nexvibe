@@ -3,6 +3,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Button from "@/components/ui/Button";
 
 export default function CareersSection() {
   return (
@@ -31,11 +32,7 @@ export default function CareersSection() {
             <p className="text-gray-400 text-sm md:text-base leading-relaxed">
               We’re a team of builders, thinkers, and explorers using AI, machine learning, and blockchain to solve meaningful problems. </p>
 
-            <button
-              className="rounded-xl bg-[var(--primary)] px-8 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
-            >
-              Get In Touch Now
-            </button>
+            <Button variant="primary">Get In Touch Now</Button>
 
           </div>
 

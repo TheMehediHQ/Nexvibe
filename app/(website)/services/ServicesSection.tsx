@@ -1,84 +1,3 @@
-// "use client";
-
-// import Image from "next/image";
-// import { motion } from "framer-motion";
-
-// export default function ServicesSection() {
-//   return (
-//     <section className="text-gray-300 min-h-screen py-12">
-//       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
-
-//         {/* Hero Banner */}
-//         <div className="relative overflow-hidden bg-[#141414] rounded-3xl p-8 md:p-12 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8">
-
-//           <div
-//             className="absolute inset-0 opacity-[0.03] pointer-events-none"
-//             style={{
-//               backgroundImage:
-//                 "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-//               backgroundSize: "20px 20px",
-//             }}
-//           />
-
-//           <div className="relative z-10 max-w-xl space-y-4 text-center md:text-left">
-
-//             <h1 className="text-3xl md:text-4xl font-bold text-white">
-//   Our Comprehensive <span className="text-blue-500">Digital Solutions</span>
-// </h1>
-
-
-//             <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-//           We create powerful digital solutions that help businesses thrive online. From stunning websites and scalable web applications to custom software and modern digital experiences, our team delivers technology-driven solutions designed for growth, performance, and success.
-//  </p>
-
-//             <button
-//               className="rounded-xl bg-blue-600 px-8 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
-//             >
-//               Get In Touch Now
-//             </button>
-
-//           </div>
-
-//           {/* Chat Icon */}
-//        <div className="relative flex h-44 w-44 md:h-56 md:w-56 items-center justify-center">
-
-//   {/* Glow Background */}
-//   <div className="
-//     absolute inset-0 
-//     rounded-full 
-//     bg-blue-500/20 
-//     blur-3xl 
-//     animate-pulse
-//   " />
-
-//   <motion.div
-//     animate={{ y: [0, -15, 0] }}
-//     transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-//     className="relative"
-//   >
-//     <Image
-//       src="/icons/service-hero.png"
-//       alt="Contact Icon"
-//       width={220}
-//       height={220}
-//       className="h-40 w-40 md:h-52 md:w-52 object-contain"
-//     />
-//   </motion.div>
-
-// </div>
-
-
-         
-
-//         </div>
-
-//         {/* Main Content */}
-       
-
-//       </div>
-//     </section>
-//   );
-// }
 
 
 
@@ -88,6 +7,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import ServiceCard, { CardItem } from "@/components/ui/ServiceCard"; // পাথ আপনার ফোল্ডার স্ট্রাকচার অনুযায়ী দিন
+import Button from "@/components/ui/Button";
 
 // 1. Services Data
 const servicesData: CardItem[] = [
@@ -245,7 +165,7 @@ const industriesData: CardItem[] = [
 
 export default function ServicesSection() {
   return (
-    <section className="text-gray-300 min-h-screen py-12 bg-black selection:bg-blue-500/30">
+    <section className="text-gray-300 min-h-screen py-12 bg-background selection:bg-blue-500/30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-24">
 
         {/* Hero Banner */}
@@ -265,29 +185,16 @@ export default function ServicesSection() {
               Our Comprehensive <span className="text-blue-500">Digital Solutions</span>
             </h1>
 
-
             <p className="text-gray-400 text-sm md:text-base leading-relaxed">
               We create powerful digital solutions that help businesses thrive online. From stunning websites and scalable web applications to custom software and modern digital experiences, our team delivers technology-driven solutions designed for growth, performance, and success.
             </p>
 
-            <button
-              className="rounded-xl bg-[var(--primary)] px-8 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
-            >
-              Get In Touch Now
-            </button>
+            <Button variant="primary">Get In Touch Now</Button>
           </div>
 
           {/* Chat Icon */}
           <div className="relative flex h-44 w-44 md:h-56 md:w-56 items-center justify-center">
-
-            {/* Glow Background */}
-            <div className="
-    absolute inset-0 
-    rounded-full 
-    bg-blue-500/20 
-    blur-3xl 
-    animate-pulse
-  " />
+            <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-3xl animate-pulse" />
 
             <motion.div
               animate={{ y: [0, -15, 0] }}
@@ -302,19 +209,40 @@ export default function ServicesSection() {
                 className="h-40 w-40 md:h-52 md:w-52 object-contain"
               />
             </motion.div>
-
           </div>
         </div>
 
+        {/* ----------------- SERVICES GRID ----------------- */}
+        <div className="space-y-16">
+          <div className="text-center space-y-3">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">Our Services</h2>
+            <p className="text-xs md:text-sm text-white max-w-md mx-auto leading-relaxed font-light">
+              High-performance system architecture and custom interfaces built to scale your workflow efficiency.
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
             {servicesData.map((service, idx) => (
               <ServiceCard key={idx} item={service} />
             ))}
           </div>
+        </div>
 
-        {/* Main Content */}
+        {/* ----------------- INDUSTRIES GRID ----------------- */}
+        {/* <div className="space-y-16 pt-8 border-t border-white/[0.03]">
+          <div className="text-center space-y-3">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">Industries We Serve</h2>
+            <p className="text-xs md:text-sm text-white max-w-md mx-auto leading-relaxed font-light">
+              Integrating specialized engineering models and architectures into targeted market domains.
+            </p>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+            {industriesData.map((industry, idx) => (
+              <ServiceCard key={idx} item={industry} />
+            ))}
+          </div>
+        </div> */}
 
       </div>
     </section>

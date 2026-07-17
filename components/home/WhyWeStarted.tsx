@@ -195,7 +195,11 @@ export default function WhyWeStarted() {
   };
 
   return (
-    <section className="bg-[#050505] text-white py-24 px-4 relative overflow-hidden select-none">
+    // <section className="bg-[#050505] text-white py-24 px-4 relative overflow-hidden select-none">
+
+    <section className="bg-background text-foreground py-24 px-4 relative overflow-hidden select-none">
+     
+     
       <div className="max-w-7xl mx-auto flex flex-col items-center">
 
         {/* Section Title */}
@@ -277,9 +281,9 @@ export default function WhyWeStarted() {
         </div>
 
         {/* CTA */}
-        <button className="mt-12 rounded-xl bg-[#0070f3] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-[var(--primary)] active:scale-95 cursor-pointer">
+        {/* <button className="mt-12 rounded-xl bg-[#0070f3] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-[var(--primary)] active:scale-95 cursor-pointer">
           Learn More
-        </button>
+        </button> */}
       </div>
     </section>
   );

@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Button from "@/components/ui/Button";
 
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "About Us", href: "/about" },
-  { name: "Careers", href: "/careers" },
+  // { name: "Careers", href: "/careers" },
 ];
 
 export default function MobileMenu() {
@@ -69,12 +70,10 @@ export default function MobileMenu() {
               </li>
             ))}
 
-            <Link
-              href="/contact"
-              onClick={() => setOpen(false)}
-              className="rounded-xl bg-[var(--primary)] px-8 py-3 text-center text-sm font-semibold text-white transition hover:bg-blue-700"
-            >
-              Contact Us
+            <Link href="/contact" onClick={() => setOpen(false)}>
+              <Button variant="primary" className="px-6 py-2 text-sm">
+                Contact Us
+              </Button>
             </Link>
           </ul>
         </div>
