@@ -1,6 +1,7 @@
 "use client";
 
 import { Palette, Smartphone, LayoutGrid, Briefcase } from "lucide-react";
+import Link from "next/link";
 
 type Job = {
   id: string;
@@ -97,9 +98,12 @@ function JobCard({ job }: { job: Job }) {
       </div>
 
       {/* CTA */}
-      <button className="mt-auto rounded-xl bg-blue-600 hover:bg-blue-700 transition-colors text-white text-sm font-semibold py-3">
-        Apply Now
-      </button>
+      <Link
+  href="/contact"
+  className="mt-auto rounded-xl bg-blue-600 hover:bg-blue-700 transition-colors text-white text-sm font-semibold py-3 text-center"
+>
+  Apply Now
+</Link>
     </div>
   );
 }

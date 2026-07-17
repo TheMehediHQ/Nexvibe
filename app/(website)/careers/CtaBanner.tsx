@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function CtaBanner() {
   return (
     <div className="relative overflow-hidden space-y-8 mx-auto max-w-5xl mt-5 bg-[#141414] rounded-3xl border border-white/10 py-14 px-6 md:py-16 text-center">
@@ -34,9 +36,9 @@ export default function CtaBanner() {
         </p>
 
         <div>
-          <button className="rounded-xl bg-blue-600 hover:bg-blue-700 transition-colors text-white text-sm font-semibold px-8 py-3">
+          <Link href="/contact" className="rounded-xl bg-blue-600 hover:bg-blue-700 transition-colors text-white text-sm font-semibold px-8 py-3">
             Get In Touch
-          </button>
+          </Link>
         </div>
       </div>
     </div>
