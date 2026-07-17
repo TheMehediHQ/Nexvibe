@@ -10,7 +10,7 @@ import Button from "@/components/ui/Button";
 const portfolioData: PortfolioItem[] = [
   {
     imageSrc: "/projects/test1.png",
-    title: "MachineLearningProject",
+    title: "MachineLearning",
     description: "Built automated deep learning pipelines to detect enterprise logistics patterns and increase anomaly precision indexes.",
     tags: ["Neural Network Pipeline", "Computer Vision Tuning", "Real-time Detection Arrays", "Custom Inference Clusters"],
     
