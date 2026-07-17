@@ -86,8 +86,8 @@ export default function FilterBar() {
   const [query, setQuery] = useState("");
 
   return (
-    <div className=" w-full flex items-center justify-center rounded-2xl bg-[#111111]  p-8">
-      <div className="w-full max-w-5xl flex flex-wrap items-center gap-3 p-3 rounded-full ">
+    <div className=" w-full flex items-center justify-center rounded-2xl bg-[#111111]  ">
+      <div className="w-full max-w-7xl flex flex-wrap items-center gap-3  rounded-full ">
         {FILTERS.map((f) => (
           <Dropdown
             key={f.key}

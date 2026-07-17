@@ -110,7 +110,7 @@ function JobCard({ job }: { job: Job }) {
 
 export default function JobListings() {
   return (
-    <div className="space-y-8 mx-auto max-w-5xl mt-5">
+    <div className="space-y-8 mx-auto max-w-7xl mt-5">
       <h2 className="text-2xl md:text-3xl font-bold text-white text-center">
         Open Positions
       </h2>

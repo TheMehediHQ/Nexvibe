@@ -4,6 +4,9 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
+import FilterBar from "./FilterBar";
+import JobListings from "./JobListings";
+import ReadyToDiscussCard from "@/components/ui/ReadyToDiscuss";
 
 export default function CareersSection() {
   return (
@@ -69,10 +72,15 @@ export default function CareersSection() {
 
         </div>
 
-        {/* Main Content */}
+
+ <FilterBar />
+      <JobListings/>
+      
+        
 
 
       </div>
+      <ReadyToDiscussCard />
     </section>
   );
 }

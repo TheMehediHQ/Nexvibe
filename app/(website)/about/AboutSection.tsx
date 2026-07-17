@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
+import ReadyToDiscussCard from '../../../components/ui/ReadyToDiscuss';
 
 export default function AboutSection() {
   return (
@@ -140,72 +141,7 @@ export default function AboutSection() {
 
       
 
-<div className="w-full max-w-5xl mx-auto pt-12">
-      <div
-        className="
-          relative 
-          rounded-[50px] md:rounded-[80px] 
-          bg-[#09090A] 
-          border border-white/[0.08] 
-          px-6 py-14 md:py-16 
-          text-center 
-          space-y-6 
-          overflow-hidden 
-          shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_25px_60px_-15px_rgba(0,0,0,0.9)]
-        "
-      >
-        {/* 1px Fine Square Grid Background (more prominent like screenshot) */}
-        <div
-          className="absolute inset-0 opacity-20 pointer-events-none"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px)
-            `,
-            backgroundSize: "40px 40px",
-            maskImage: "radial-gradient(circle at center, black 70%, transparent 100%)",
-            WebkitMaskImage:
-              "radial-gradient(circle at center, black 70%, transparent 100%)",
-          }}
-        />
-
-        {/* Light ambient top-center radial gradient reflection */}
-        <div
-          className="
-            absolute 
-            top-0 left-1/2 -translate-x-1/2 
-            w-[300px] h-[60px] 
-            bg-white/[0.02] blur-md rounded-full 
-            pointer-events-none
-          "
-        />
-
-        {/* Main Text Elements */}
-        <div className="relative z-10 space-y-4">
-          <h3 className="text-3xl md:text-4xl font-bold tracking-normal text-white max-w-2xl mx-auto">
-            Ready to Discuss
-          </h3>
-          <h3 className="text-sm md:text-base text-gray-300 font-light tracking-wide">
-            Your Product Needs With{" "}
-            <span className="text-[#0070f3] font-semibold">NexVibe</span> Experts?
-          </h3>
-        </div>
-
-        {/* Custom Rounded Pill Button */}
-        <div className="relative z-10 pt-2 flex justify-center">
-          <Button
-            variant="secondary"
-            onClick={() => {
-              // Replace with your actual contact logic
-              console.log("Get In Touch clicked");
-            }}
-          >
-            Get In Touch
-          </Button>
-        </div>
-      </div>
-    </div>
-
+<ReadyToDiscussCard />
 
 
 
