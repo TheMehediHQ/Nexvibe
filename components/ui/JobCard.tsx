@@ -3,17 +3,7 @@
 import { ElementType } from "react";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
-
-export interface Job {
-  id: string;
-  title: string;
-  icon: ElementType;
-  salaryMin: string;
-  salaryMax: string;
-  experience: string;
-  deadline: string;
-  skills: string;
-}
+import type { Job } from "@/lib/jobs";
 
 interface JobCardProps {
   job: Job;

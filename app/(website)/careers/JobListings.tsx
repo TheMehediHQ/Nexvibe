@@ -3,73 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown, Search } from "lucide-react";
 import JobCard from "@/components/ui/JobCard";
-import { Palette, Smartphone, LayoutGrid, Briefcase } from "lucide-react";
-
-// ----------------------
-// JOB DATA (no strong types)
-// ----------------------
-const JOBS = [
-  {
-    id: "web-designer",
-    title: "Web Designer",
-    icon: Palette,
-    department: "Design",
-    jobType: "Full-time",
-    workplaceType: "Remote",
-    experienceLevel: "1-3 years",
-    salaryMin: "$45,000",
-    salaryMax: "$60,000 per year",
-    experience: "1+ year",
-    deadline: "30/09/2025",
-    skills:
-      "Proficiency in Adobe Creative Suite (Photoshop, Illustrator, etc.), strong understanding of UI/UX design principles, responsive design expertise.",
-  },
-  {
-    id: "mobile-app-developer",
-    title: "Mobile App Developer",
-    icon: Smartphone,
-    department: "Engineering",
-    jobType: "Full-time",
-    workplaceType: "Hybrid",
-    experienceLevel: "2+ years",
-    salaryMin: "$55,000",
-    salaryMax: "$75,000 per year",
-    experience: "2+ years",
-    deadline: "15/10/2025",
-    skills:
-      "Proficiency in iOS or Android development (Swift, Kotlin), knowledge of mobile app design patterns, experience with mobile testing and debugging.",
-  },
-  {
-    id: "digital-marketing-specialist",
-    title: "Digital Marketing Specialist",
-    icon: LayoutGrid,
-    department: "Marketing",
-    jobType: "Full-time",
-    workplaceType: "Remote",
-    experienceLevel: "3-5 years",
-    salaryMin: "$50,000",
-    salaryMax: "$65,000 per year",
-    experience: "3+ years",
-    deadline: "20/11/2025",
-    skills:
-      "Proficiency in SEO, SEM, and social media marketing, experience with analytics tools (Google Analytics, etc.), content marketing expertise.",
-  },
-  {
-    id: "project-manager",
-    title: "Project Manager",
-    icon: Briefcase,
-    department: "Human Resources",
-    jobType: "Full-time",
-    workplaceType: "On-site",
-    experienceLevel: "5+ years",
-    salaryMin: "$60,000",
-    salaryMax: "$80,000 per year",
-    experience: "5+ years",
-    deadline: "05/12/2025",
-    skills:
-      "Strong organizational and communication skills, ability to manage project timelines and resources, experience in Agile project management methodologies.",
-  },
-];
+import { JOBS } from "@/lib/jobs";
 
 // ----------------------
 // FILTER CONFIG
