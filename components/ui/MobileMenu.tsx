@@ -9,7 +9,7 @@ const navItems = [
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "About Us", href: "/about" },
-  // { name: "Careers", href: "/careers" },
+ { name: "Careers", href: "/careers" },
 ];
 
 export default function MobileMenu() {
