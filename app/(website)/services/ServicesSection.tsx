@@ -216,7 +216,7 @@ export default function ServicesSection() {
         <div className="space-y-16">
           <div className="text-center space-y-3">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">Our Services</h2>
-            <p className="text-xs md:text-sm text-white max-w-md mx-auto leading-relaxed font-light">
+            <p className="text-xs md:text-sm text-[var(--muted)] max-w-md mx-auto leading-relaxed font-light">
               High-performance system architecture and custom interfaces built to scale your workflow efficiency.
             </p>
           </div>

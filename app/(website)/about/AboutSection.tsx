@@ -74,7 +74,7 @@ export default function AboutSection() {
               <h2 className="text-2xl md:text-3xl font-bold tracking-wide text-white">
                 Our Story
               </h2>
-              <div className="space-y-4 text-xs md:text-sm text-gray-400 font-light leading-relaxed tracking-wide">
+              <div className="space-y-4 text-xs md:text-sm text-[var(--muted)] font-light leading-relaxed tracking-wide">
                 <p>
                   Nexvibe started with a simple yet powerful vision: to bridge the gap between complex technological engineering and intuitive user experiences. As a forward-thinking software agency, we recognized that the digital landscape was evolving faster than ever, requiring more than just standard templates.
                 </p>
@@ -120,7 +120,7 @@ export default function AboutSection() {
               <h2 className="text-2xl md:text-3xl font-bold tracking-wide text-white">
                 Our Mission
               </h2>
-              <div className="space-y-4 text-xs md:text-sm text-gray-400 font-light leading-relaxed tracking-wide">
+              <div className="space-y-4 text-xs md:text-sm text-[var(--muted)] font-light leading-relaxed tracking-wide">
                 <p>
                   At Nexvibe, our mission is to empower enterprises, fast-growing startups, and industry leaders by engineering bulletproof software solutions that maximize operational value. We strive to clear technical roadblocks and provide product clarity through superior code craftsmanship.
                 </p>

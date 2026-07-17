@@ -126,7 +126,7 @@ export default function JobBoard() {
   });
 
   return (
-    <section className="mx-auto mt-5 max-w-7xl space-y-8">
+    <section className="mx-auto mt-5 max-w-7xl space-y-8 ">
       <h2 className="text-center text-2xl font-bold text-white md:text-3xl">
         Open Positions
       </h2>

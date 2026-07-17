@@ -85,7 +85,7 @@ export default function PortfolioSection() {
   };
 
   return (
-    <section className="text-gray-300 min-h-screen py-12 bg-black selection:bg-blue-500/30">
+    <section className="text-gray-300 min-h-screen py-12 bg-background selection:bg-blue-500/30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
 
         {/* ================= Hero Banner ================= */}
@@ -132,9 +132,11 @@ export default function PortfolioSection() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
             Our Case Studies
           </h2>
-          <p className="text-xs md:text-sm text-gray-500 leading-relaxed font-light">
-            Explore our engineering milestones. We transform sophisticated technological concepts into bulletproof production architectures built for global industry scale.
-          </p>
+         
+
+           <p className="text-xs md:text-sm text-[var(--muted)] max-w-md mx-auto leading-relaxed font-light">
+              Explore our engineering milestones. We transform sophisticated technological concepts into bulletproof production architectures built for global industry scale.
+            </p>
         </div>
 
         {/* ================= FILTER & SEARCH BAR CONTROL ================= */}
