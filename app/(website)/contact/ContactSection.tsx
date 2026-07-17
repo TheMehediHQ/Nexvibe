@@ -174,7 +174,13 @@ export default function ContactSection() {
                 and let&apos;s talk about your ideas.
               </p>
 
-              <Button variant="primary" className="w-full rounded-xl py-3 text-sm">
+              <Button
+                variant="primary"
+                href="https://cal.com/TheMehediHQ/15min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full rounded-xl py-3 text-sm"
+              >
                 Book a Meeting
               </Button>
 

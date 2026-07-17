@@ -114,7 +114,12 @@ export default function Hero() {
           {/* CTA + Social Proof */}
           <div className="space-y-6">
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center">
-              <Button variant="primary" onClick={() => (window.location.href = "/contact")}>
+              <Button
+                variant="primary"
+                href="https://cal.com/TheMehediHQ/15min"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Book a Meeting
               </Button>
 
