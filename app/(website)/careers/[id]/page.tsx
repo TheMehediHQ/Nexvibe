@@ -204,7 +204,7 @@ export default async function JobDetailPage({
         </div>
 
         {/* 8. SIMILAR POSITIONS */}
-        <section className="mt-20">
+        {/* <section className="mt-20">
           <SectionHeading>Similar Positions</SectionHeading>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {similar.map((s) => (
@@ -245,7 +245,7 @@ export default async function JobDetailPage({
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
       </div>
     </div>
   );
