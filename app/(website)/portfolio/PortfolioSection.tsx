@@ -9,38 +9,38 @@ import Button from "@/components/ui/Button";
 
 const portfolioData: PortfolioItem[] = [
   {
-    imageSrc: "/projects/test.png",
+    imageSrc: "/projects/test1.png",
     title: "MachineLearningProject",
     description: "Built automated deep learning pipelines to detect enterprise logistics patterns and increase anomaly precision indexes.",
     tags: ["Neural Network Pipeline", "Computer Vision Tuning", "Real-time Detection Arrays", "Custom Inference Clusters"],
     
   },
   {
-    imageSrc: "/projects/test.png",
+    imageSrc: "/projects/test2.png",
     title: "ProjectLoremipsum",
     description: "Architected decentralized immutable ledger bridges supporting zero-knowledge state management across multiple subnets.",
     tags: ["Cross-Chain Relayers", "ZK-Proof Architectures", "Smart Contract Hardening", "DeFi Liquidity Hubs"],
   },
   {
-    imageSrc: "/projects/test.png",
+    imageSrc: "/projects/test3.png",
     title: "ProjectLoremipsum",
     description: "Engineered sub-millisecond automated order execution systems designed for global market microstructures.",
     tags: ["High-Frequency Routing", "Backtesting Core Engine", "Risk Mitigation Loops", "Multi-Venue Aggregation"],
   },
   {
-    imageSrc: "/projects/test.png",
+    imageSrc: "/projects/test4.png",
     title: "ProjectLoremipsum",
     description: "Constructed lakehouse architectures scaling telemetry ingest pipelines to process petabyte arrays efficiently.",
     tags: ["Real-time Stream Ingest", "Delta Lake Layouts", "Automated ETL Core", "Data Infrastructure Audits"],
   },
   {
-    imageSrc: "/projects/test.png",
+    imageSrc: "/projects/test5.png",
     title: "ProjectLoremipsum",
     description: "Designed multi-region cloud governance mesh architectures featuring auto-healing deployment clusters.",
     tags: ["High-Availability Setup", "CI/CD Pipeline Sweeps", "Model Hosting Systems", "Kubernetes Mesh Layers"],
   },
   {
-    imageSrc: "/projects/test.png",
+    imageSrc: "/projects/test6.png",
     title: "ProjectLoremipsum",
     description: "Developed institutional-grade data control platforms handling encrypted high-throughput enterprise pipelines.",
     tags: ["Zero-Trust Networks", "Automated Compliance", "Secure Data Enclaves", "Identity Access Nodes"],
