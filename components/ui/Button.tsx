@@ -38,10 +38,11 @@ const variantStyles: Record<ButtonProps["variant"], string> = {
     backdrop-blur-[2px]
   `,
   secondary: `
-    text-[var(--primary)] 
-    bg-transparent 
-    border-[var(--primary)] 
-    hover:bg-blue-600/10 
+    text-[#4ba3f5] 
+    bg-transparent
+    border-1
+    border-[#4ba3f5]!
+    hover:bg-[#2461F5]!
     hover:text-white
   `,
 };
