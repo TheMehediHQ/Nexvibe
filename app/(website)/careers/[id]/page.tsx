@@ -60,7 +60,7 @@ export default async function JobDetailPage({
         />
         <div className="absolute -top-24 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-blue-600/20 blur-3xl" />
 
-        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+        <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-24">
           <Link
             href="/careers"
             className="inline-flex items-center gap-2 text-sm text-slate-400 transition-colors hover:text-white"
@@ -69,45 +69,53 @@ export default async function JobDetailPage({
             Back to Careers
           </Link>
 
-          <div className="mt-8 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <div className="flex items-center gap-5">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/5 text-[#0070f3] ring-1 ring-white/10">
-                <Icon size={30} />
+          <div className="mt-6 flex flex-col gap-6 lg:mt-8 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
+            <div className="flex items-center gap-4 sm:gap-5">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/5 text-[#0070f3] ring-1 ring-white/10 sm:h-16 sm:w-16">
+                <Icon size={28} />
               </div>
-              <div>
-                <p className="text-sm font-medium uppercase tracking-wide text-blue-500">
+              <div className="min-w-0">
+                <p className="text-xs font-medium uppercase tracking-wide text-blue-500 sm:text-sm">
                   {job.department}
                 </p>
-                <h1 className="mt-1 text-3xl font-bold text-white md:text-5xl">
+                <h1 className="mt-1 text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
                   {job.title}
                 </h1>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-gray-300">
-                {job.jobType}
-              </span>
-              <span className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-gray-300">
-                {job.workplaceType}
-              </span>
-              <Link href="#apply">
-                <Button variant="primary">Apply Now</Button>
-              </Link>
-            </div>
+           
+
+<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+  <div className="flex flex-wrap gap-2">
+    <span className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-gray-300">
+      {job.jobType}
+    </span>
+
+    <span className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-gray-300">
+      {job.workplaceType}
+    </span>
+  </div>
+
+  <Link href="#apply" className="w-full sm:w-auto">
+    <Button variant="primary">
+      Apply Now
+    </Button>
+  </Link>
+</div>
           </div>
         </div>
       </section>
 
       {/* MAIN + SIDEBAR */}
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-12">
           {/* LEFT CONTENT */}
-          <div className="space-y-14 lg:col-span-2">
+          <div className="space-y-12 lg:col-span-2 lg:space-y-14">
             {/* 2. ABOUT THIS POSITION */}
             <section>
               <SectionHeading>About This Position</SectionHeading>
-              <div className="space-y-4 text-sm leading-7 text-gray-300">
+              <div className="space-y-4 text-sm leading-relaxed text-gray-300 sm:text-base">
                 {job.description?.map((p) => (
                   <p key={p}>{p}</p>
                 )) ?? <p>{job.skills}</p>}
@@ -129,7 +137,7 @@ export default async function JobDetailPage({
             {/* 5. BENEFITS */}
             <section className="rounded-2xl border border-white/10 bg-[#141414] p-8">
               <SectionHeading>Benefits</SectionHeading>
-              <div className="space-y-4 text-sm leading-7 text-gray-300">
+              <div className="space-y-4 text-sm leading-relaxed text-gray-300 sm:text-base">
                 {job.benefits?.map((b) => (
                   <p key={b}>{b}</p>
                 ))}
@@ -147,7 +155,7 @@ export default async function JobDetailPage({
 
           {/* 6. STICKY SIDEBAR */}
           <aside className="lg:col-span-1">
-            <div className="lg:sticky lg:top-24 space-y-6 rounded-2xl border border-white/10 bg-[#141414] p-6">
+            <div className="space-y-6 rounded-2xl border border-white/10 bg-[#141414] p-6 lg:sticky lg:top-24">
               <h3 className="text-lg font-semibold text-white">
                 Job Summary
               </h3>
@@ -198,7 +206,7 @@ export default async function JobDetailPage({
         {/* 8. SIMILAR POSITIONS */}
         <section className="mt-20">
           <SectionHeading>Similar Positions</SectionHeading>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {similar.map((s) => (
               <div
                 key={s.id}

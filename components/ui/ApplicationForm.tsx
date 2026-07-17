@@ -129,11 +129,11 @@ export default function ApplicationForm({ jobTitle }: { jobTitle: string }) {
       </div>
 
       {/* CAPTCHA placeholder */}
-      <div className="flex items-center justify-between rounded-xl border border-white/10 bg-[#141414] px-4 py-4">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-white/10 bg-[#141414] px-4 py-4">
         <div className="flex items-center gap-3">
           <input
             type="checkbox"
-            className="h-4 w-4 accent-blue-600"
+            className="h-4 w-4 shrink-0 accent-blue-600"
             required
           />
           <span className="text-sm text-slate-300">I&apos;m not a robot</span>
@@ -144,7 +144,7 @@ export default function ApplicationForm({ jobTitle }: { jobTitle: string }) {
       </div>
 
       <div className="flex justify-center pt-2">
-        <Button variant="primary" className="px-10">
+        <Button variant="primary" className="w-full justify-center px-10 sm:w-auto">
           Submit Application
         </Button>
       </div>
