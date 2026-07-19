@@ -11,7 +11,7 @@ const navLinks = [
   { name: "Portfolio", href: "/portfolio" },
   { name: "About Us", href: "/about" },
 
-   { name: "Careers", href: "/careers" },
+  { name: "Careers", href: "/careers" },
 
 ];
 
@@ -58,42 +58,42 @@ export default function Footer() {
           <div className="space-y-8">
             {/* Social Links */}
             <div className="flex w-fit gap-3 rounded-2xl border border-[var(--border)] p-3">
-  <Link
-    href="https://www.facebook.com/nexvivehq"
-    target="_blank"
-    aria-label="Facebook"
-    className="group flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--card)] transition-all duration-300 hover:-rotate-6 hover:scale-105 hover:border-blue-600 hover:bg-blue-600"
-  >
-    <FaFacebookF
-      size={20}
-      className="transition-transform duration-300 group-hover:scale-110"
-    />
-  </Link>
+              <Link
+                href="https://www.facebook.com/nexvivehq"
+                target="_blank"
+                aria-label="Facebook"
+                className="group flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--card)] transition-all duration-300 hover:-rotate-6 hover:scale-105 hover:border-blue-600 hover:bg-blue-600"
+              >
+                <FaFacebookF
+                  size={20}
+                  className="transition-transform duration-300 group-hover:scale-110"
+                />
+              </Link>
 
-  <Link
-    href="https://github.com/NexvibeHq"
-    target="_blank"
-    aria-label="Github"
-    className="group flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--card)] transition-all duration-300 hover:-rotate-6 hover:scale-105 hover:border-blue-600 hover:bg-blue-600"
-  >
-    <FaGithub
-      size={20}
-      className="transition-transform duration-300 group-hover:scale-110"
-    />
-  </Link>
+              <Link
+                href="https://github.com/NexvibeHq"
+                target="_blank"
+                aria-label="Github"
+                className="group flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--card)] transition-all duration-300 hover:-rotate-6 hover:scale-105 hover:border-blue-600 hover:bg-blue-600"
+              >
+                <FaGithub
+                  size={20}
+                  className="transition-transform duration-300 group-hover:scale-110"
+                />
+              </Link>
 
-  <Link
-    href="https://www.linkedin.com/company/nexvivehq"
-    target="_blank"
-    aria-label="LinkedIn"
-    className="group flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--card)] transition-all duration-300 hover:-rotate-6 hover:scale-105 hover:border-blue-600 hover:bg-blue-600"
-  >
-    <FaLinkedinIn
-      size={20}
-      className="transition-transform duration-300 group-hover:scale-110"
-    />
-  </Link>
-</div>
+              <Link
+                href="https://www.linkedin.com/company/nexvivehq"
+                target="_blank"
+                aria-label="LinkedIn"
+                className="group flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--card)] transition-all duration-300 hover:-rotate-6 hover:scale-105 hover:border-blue-600 hover:bg-blue-600"
+              >
+                <FaLinkedinIn
+                  size={20}
+                  className="transition-transform duration-300 group-hover:scale-110"
+                />
+              </Link>
+            </div>
 
             {/* Policies */}
             <div className="flex flex-wrap gap-6 text-sm text-[var(--muted)]">

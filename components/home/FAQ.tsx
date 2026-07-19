@@ -83,11 +83,10 @@ export default function FAQ() {
             return (
               <div
                 key={faq.id}
-                className={`rounded-3xl border bg-[var(--card)] transition-all duration-300 ${
-                  isOpen
+                className={`rounded-3xl border bg-[var(--card)] transition-all duration-300 ${isOpen
                     ? "border-white/15 shadow-2xl"
                     : "border-[var(--border)] hover:border-white/10"
-                }`}
+                  }`}
               >
                 <button
                   onClick={() => toggleFAQ(index)}
@@ -95,18 +94,16 @@ export default function FAQ() {
                 >
                   {/* Number */}
                   <div
-                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border transition-all duration-300 ${
-                      isOpen
+                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border transition-all duration-300 ${isOpen
                         ? "border-blue-500/30 bg-blue-500/10"
                         : "border-[var(--border)] bg-white/[0.03]"
-                    }`}
+                      }`}
                   >
                     <span
-                      className={`text-sm font-bold ${
-                        isOpen
+                      className={`text-sm font-bold ${isOpen
                           ? "text-blue-400"
                           : "text-[var(--muted)]"
-                      }`}
+                        }`}
                     >
                       {faq.id}
                     </span>
@@ -114,22 +111,20 @@ export default function FAQ() {
 
                   {/* Question */}
                   <h3
-                    className={`flex-1 pr-4 text-base font-medium transition-colors duration-300 ${
-                      isOpen
+                    className={`flex-1 pr-4 text-base font-medium transition-colors duration-300 ${isOpen
                         ? "text-blue-400"
                         : "text-[var(--foreground)]"
-                    }`}
+                      }`}
                   >
                     {faq.question}
                   </h3>
 
                   {/* Icon */}
                   <div
-                    className={`flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 ${
-                      isOpen
+                    className={`flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 ${isOpen
                         ? "bg-blue-500/10 text-blue-400"
                         : "bg-white/[0.03] text-[var(--muted)]"
-                    }`}
+                      }`}
                   >
                     {isOpen ? (
                       <X className="h-5 w-5" />
@@ -141,11 +136,10 @@ export default function FAQ() {
 
                 {/* Answer */}
                 <div
-                  className={`grid transition-all duration-300 ${
-                    isOpen
+                  className={`grid transition-all duration-300 ${isOpen
                       ? "grid-rows-[1fr] opacity-100"
                       : "grid-rows-[0fr] opacity-0"
-                  }`}
+                    }`}
                 >
                   <div className="overflow-hidden">
                     <div className="px-6 pb-6 pl-[92px]">
