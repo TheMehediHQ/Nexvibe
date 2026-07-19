@@ -13,13 +13,10 @@ const logos = [
 ];
 
 export default function LogoMarquee() {
-  // ইনফিনিট স্ক্রলিং লুপ ঠিক রাখার জন্য লোগোর অ্যারেকে ডুপ্লিকেট করা হয়েছে
   const duplicatedLogos = [...logos, ...logos, ...logos];
 
   return (
     <section className="relative w-full bg-[#050505] py-8 border-y border-white/[0.04] overflow-hidden select-none">
-      
-      {/* দুই পাশে আবছা ছায়া (Fade Effect) তৈরি করার জন্য ব্লার মাস্ক */}
       <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
       <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
@@ -27,11 +24,11 @@ export default function LogoMarquee() {
         <motion.div
           className="flex items-center gap-16 md:gap-24 pr-16 md:pr-24"
           animate={{
-            x: ["0%", "-33.33%"], // ডুপ্লিকেট করা অ্যারের সাইজ অনুযায়ী ৩ ভাগের ১ ভাগ স্ক্রল হবে
+            x: ["0%", "-33.33%"],
           }}
           transition={{
             ease: "linear",
-            duration: 20, // স্পিড কন্ট্রোল করার জন্য (বেশি দিলে আস্তে চলবে, কম দিলে জোরে)
+            duration: 20,
             repeat: Infinity,
           }}
         >
