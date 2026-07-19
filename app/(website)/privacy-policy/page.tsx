@@ -117,7 +117,7 @@ export default function PrivacyPolicyPage() {
     <div className="relative min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       {/* Hero Header */}
       <section className="border-b border-[var(--border)] py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-sm text-[var(--muted)] hover:text-white transition-colors mb-6"
@@ -139,7 +139,7 @@ export default function PrivacyPolicyPage() {
 
       {/* Main Content */}
       <section className="py-16">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
             {/* Table of Contents Sticky Sidebar */}
             <div className="lg:col-span-4">

@@ -91,16 +91,14 @@ body {
   left: -150%;
   width: 400%;
   height: 400%;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0%,
-    transparent 40%,
-    #a855f7 45%,
-    #3b82f6 50%,
-    #a855f7 55%,
-    transparent 60%,
-    transparent 100%
-  );
+  background: conic-gradient(from 0deg,
+      transparent 0%,
+      transparent 40%,
+      #a855f7 45%,
+      #3b82f6 50%,
+      #a855f7 55%,
+      transparent 60%,
+      transparent 100%);
   animation: border-beam-spin 4s linear infinite;
   z-index: -2;
 }
@@ -110,7 +108,8 @@ body {
   content: "";
   position: absolute;
   inset: 1.5px;
-  background: rgba(13, 13, 13, 0.92); /* updated for subtle glow */
+  background: rgba(13, 13, 13, 0.92);
+  /* updated for subtle glow */
   border-radius: 11px;
   z-index: -1;
   transition: background 0.3s ease;
@@ -118,7 +117,8 @@ body {
 
 /* Subtle bottom glow (matches screenshot) */
 .border-beam {
-  box-shadow: 0 4px 18px rgba(59, 130, 246, 0.25); /* soft blue glow */
+  box-shadow: 0 4px 18px rgba(59, 130, 246, 0.25);
+  /* soft blue glow */
 }
 
 /* Hover Glow */
@@ -127,12 +127,10 @@ body {
 }
 
 .border-beam:hover::after {
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(168, 85, 247, 0.25) 0%,
-    rgba(59, 130, 246, 0.1) 60%,
-    #0d0d0d 100%
-  );
+  background: radial-gradient(circle at 50% 50%,
+      rgba(168, 85, 247, 0.25) 0%,
+      rgba(59, 130, 246, 0.1) 60%,
+      #0d0d0d 100%);
 }
 
 /* Rotation Animation */
@@ -140,6 +138,7 @@ body {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
