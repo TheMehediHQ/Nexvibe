@@ -9,6 +9,7 @@ export interface PortfolioItem {
   title: string;
   description: string;
   tags: string[];
+  link?: string;
 }
 
 interface PortfolioCardProps {
@@ -39,6 +40,7 @@ export default function PortfolioCard({ item }: PortfolioCardProps) {
         
         {/* Exact circular blue arrow button matching the screen */}
         <button
+  onClick={() => item.link && window.open(item.link, "_blank", "noopener,noreferrer")}
   className="group flex items-center justify-center w-11 h-11 rounded-full bg-[#4ba3f5] hover:bg-[#2461F5] text-white shrink-0 transition-transform hover:scale-105 active:scale-95"
   aria-label={`View details for ${item.title}`}
 >

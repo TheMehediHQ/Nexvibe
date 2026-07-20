@@ -9,42 +9,43 @@ import Button from "@/components/ui/Button";
 
 const portfolioData: PortfolioItem[] = [
   {
-    imageSrc: "/projects/test1.png",
-    title: "MachineLearning",
-    description: "Built automated deep learning pipelines to detect enterprise logistics patterns and increase anomaly precision indexes.",
-    tags: ["Neural Network Pipeline", "Computer Vision Tuning", "Real-time Detection Arrays", "Custom Inference Clusters"],
-    
+    imageSrc: "/projects/ticketly.png",
+    title: "Ticketly",
+    description: "Tickety is a comprehensive event management platform that helps you create, manage, and sell tickets for your events. Whether you're organizing a small workshop or a large conference, we've got you covered.",
+   tags: [
+  "SaaS Platform",
+  "Online Ticketing",
+  "Payment Integration",
+  "Admin Dashboard",
+],
+link: "https://preview.themeforest.net/item/venuex-event-ticketing-management-saas-dashboard-html-template/full_screen_preview/61427808",
   },
   {
-    imageSrc: "/projects/test2.png",
-    title: "ProjectLoremipsum",
-    description: "Architected decentralized immutable ledger bridges supporting zero-knowledge state management across multiple subnets.",
-    tags: ["Cross-Chain Relayers", "ZK-Proof Architectures", "Smart Contract Hardening", "DeFi Liquidity Hubs"],
-  },
-  {
-    imageSrc: "/projects/test3.png",
-    title: "ProjectLoremipsum",
-    description: "Engineered sub-millisecond automated order execution systems designed for global market microstructures.",
-    tags: ["High-Frequency Routing", "Backtesting Core Engine", "Risk Mitigation Loops", "Multi-Venue Aggregation"],
-  },
-  {
-    imageSrc: "/projects/test4.png",
-    title: "ProjectLoremipsum",
-    description: "Constructed lakehouse architectures scaling telemetry ingest pipelines to process petabyte arrays efficiently.",
-    tags: ["Real-time Stream Ingest", "Delta Lake Layouts", "Automated ETL Core", "Data Infrastructure Audits"],
-  },
-  {
-    imageSrc: "/projects/test5.png",
-    title: "ProjectLoremipsum",
-    description: "Designed multi-region cloud governance mesh architectures featuring auto-healing deployment clusters.",
-    tags: ["High-Availability Setup", "CI/CD Pipeline Sweeps", "Model Hosting Systems", "Kubernetes Mesh Layers"],
-  },
-  {
-    imageSrc: "/projects/test6.png",
-    title: "ProjectLoremipsum",
-    description: "Developed institutional-grade data control platforms handling encrypted high-throughput enterprise pipelines.",
-    tags: ["Zero-Trust Networks", "Automated Compliance", "Secure Data Enclaves", "Identity Access Nodes"],
-  },
+  imageSrc: "/projects/SavvyFi.png",
+  title: "SavvyFi",
+  description:
+    "A modern gamified finance and savings dashboard that helps users track expenses, manage budgets, monitor financial goals, and gain actionable insights through interactive analytics and intuitive visualizations.",
+  tags: [
+    "Personal Finance",
+    "Savings Tracker",
+    "Budget Management",
+    "Analytics Dashboard",
+  ],
+  link: "https://preview.themeforest.net/item/savvyfi-gamified-finance-savings-dashboard-html-template/full_screen_preview/61010279",
+},
+{
+  imageSrc: "/projects/creatorx.png",
+  title: "CreatorX",
+  description:
+    "A modern YouTube creator analytics dashboard designed to track channel performance, monitor audience growth, analyze video metrics, and manage content through an intuitive, data-driven interface.",
+  tags: [
+    "YouTube Analytics",
+    "Creator Dashboard",
+    "Audience Insights",
+    "Content Management",
+  ],
+  link: "https://preview.themeforest.net/item/creatorx-youtube-creator-analytics-dashboard-html-template/full_screen_preview/62070859"}
+  
 ];
 
 export default function PortfolioSection() {
