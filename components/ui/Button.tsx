@@ -16,6 +16,8 @@ interface ButtonProps {
   href?: string;
   target?: string;
   rel?: string;
+  disabled?: boolean;
+  type?: "button" | "submit" | "reset";
 }
 
 const baseStyles =
@@ -55,6 +57,8 @@ export default function Button({
   href,
   target,
   rel,
+  disabled,
+  type = "button",
 }: ButtonProps) {
   const content = (
     <>
@@ -85,7 +89,12 @@ export default function Button({
     </>
   );
 
-  const classNameMerged = cn(baseStyles, variantStyles[variant], className);
+  const classNameMerged = cn(
+    baseStyles,
+    variantStyles[variant],
+    disabled && "opacity-50 cursor-not-allowed",
+    className
+  );
 
   if (href) {
     return (
@@ -96,7 +105,12 @@ export default function Button({
   }
 
   return (
-    <button onClick={onClick} className={classNameMerged}>
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className={classNameMerged}
+    >
       {content}
     </button>
   );

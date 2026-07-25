@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Barlow } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const barlow = Barlow({
@@ -30,7 +31,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={barlow.variable}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        {children}
+        <Toaster
+          position="bottom-right"
+          theme="dark"
+          toastOptions={{
+            classNames: {
+              toast: "group toast group flex! max-w-md",
+            },
+          }}
+        />
+      </body>
     </html>
   );
 }
