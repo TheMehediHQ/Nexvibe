@@ -1,3 +1,5 @@
+
+import React from "react";
 import {
   Html,
   Head,
@@ -18,6 +20,50 @@ interface CareerNotificationEmailProps {
   resumeFileName?: string;
 }
 
+function Field({
+  label,
+  value,
+}: {
+  label: string;
+  value: React.ReactNode;
+}) {
+  return (
+    <Section
+      style={{
+        border: "1px solid #e5e7eb",
+        borderRadius: "10px",
+        padding: "14px 16px",
+        marginBottom: "14px",
+        backgroundColor: "#ffffff",
+      }}
+    >
+      <Text
+        style={{
+          margin: 0,
+          fontSize: "12px",
+          color: "#6b7280",
+          textTransform: "uppercase",
+          letterSpacing: "0.08em",
+          fontWeight: 600,
+        }}
+      >
+        {label}
+      </Text>
+
+      <Text
+        style={{
+          margin: "6px 0 0",
+          fontSize: "16px",
+          color: "#111827",
+          lineHeight: "1.6",
+        }}
+      >
+        {value}
+      </Text>
+    </Section>
+  );
+}
+
 export default function CareerNotificationEmail({
   name,
   email,
@@ -29,174 +75,199 @@ export default function CareerNotificationEmail({
   return (
     <Html>
       <Head />
+
       <Body
         style={{
           margin: 0,
-          padding: "24px",
-          backgroundColor: "#0d0d0e",
-          color: "#e5e7eb",
+          padding: "32px 16px",
+          backgroundColor: "#f5f7fb",
+          color: "#111827",
           fontFamily:
-            "Barlow, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+            "Barlow, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
         }}
       >
         <Container
           style={{
-            maxWidth: "600px",
+            maxWidth: "640px",
             margin: "0 auto",
-            backgroundColor: "#141414",
+            backgroundColor: "#ffffff",
+            border: "1px solid #e5e7eb",
             borderRadius: "16px",
-            border: "1px solid rgba(255,255,255,0.08)",
-            padding: "32px",
+            overflow: "hidden",
+            boxShadow: "0 8px 30px rgba(0,0,0,.05)",
           }}
         >
-          <Heading
+          {/* Header */}
+          <Section
             style={{
-              margin: 0,
-              marginBottom: "24px",
-              fontSize: "24px",
-              fontWeight: 600,
-              color: "#ffffff",
+              backgroundColor: "#0A84FF",
+              padding: "32px",
             }}
           >
-            New Job Application
-          </Heading>
-
-          <Section style={{ marginBottom: "24px" }}>
             <Text
               style={{
                 margin: 0,
-                marginBottom: "8px",
+                color: "#ffffff",
                 fontSize: "14px",
-                color: "#9ca3af",
+                fontWeight: 600,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
               }}
             >
-              A new job application has been submitted through the careers form.
+              NexVibe Careers
+            </Text>
+
+            <Heading
+              style={{
+                margin: "10px 0 0",
+                fontSize: "30px",
+                fontWeight: 700,
+                color: "#ffffff",
+              }}
+            >
+              📄 New Job Application
+            </Heading>
+
+            <Text
+              style={{
+                margin: "12px 0 0",
+                fontSize: "15px",
+                color: "#E8F2FF",
+                lineHeight: "1.7",
+              }}
+            >
+              A new candidate has submitted an application through your careers
+              page.
             </Text>
           </Section>
 
-          <Hr
+          {/* Body */}
+          <Section
             style={{
-              border: 0,
-              borderTop: "1px solid rgba(255,255,255,0.08)",
-              margin: "24px 0",
+              padding: "32px",
             }}
-          />
-
-          <Section>
+          >
             <Text
               style={{
-                margin: 0,
-                marginBottom: "16px",
+                margin: "0 0 18px",
                 fontSize: "13px",
-                color: "#9ca3af",
+                color: "#6b7280",
                 textTransform: "uppercase",
-                letterSpacing: "0.05em",
+                letterSpacing: "0.08em",
+                fontWeight: 700,
               }}
             >
-              Application Details
+              Applicant Information
             </Text>
 
-            <Text
-              style={{
-                margin: 0,
-                marginBottom: "12px",
-                fontSize: "16px",
-                color: "#ffffff",
-              }}
-            >
-              <strong>Name:</strong> {name}
-            </Text>
+            <Field label="Full Name" value={name} />
 
-            <Text
-              style={{
-                margin: 0,
-                marginBottom: "12px",
-                fontSize: "16px",
-                color: "#ffffff",
-              }}
-            >
-              <strong>Email:</strong> {email}
-            </Text>
+            <Field label="Email Address" value={email} />
 
-            <Text
-              style={{
-                margin: 0,
-                marginBottom: "12px",
-                fontSize: "16px",
-                color: "#ffffff",
-              }}
-            >
-              <strong>Phone:</strong> {phone}
-            </Text>
+            <Field label="Phone Number" value={phone} />
 
-            <Text
-              style={{
-                margin: 0,
-                marginBottom: "12px",
-                fontSize: "16px",
-                color: "#ffffff",
-              }}
-            >
-              <strong>Position:</strong> {position}
-            </Text>
+            <Field
+              label="Applied Position"
+              value={
+                <span
+                  style={{
+                    display: "inline-block",
+                    backgroundColor: "#EFF6FF",
+                    color: "#0A84FF",
+                    padding: "6px 12px",
+                    borderRadius: "999px",
+                    fontWeight: 600,
+                    fontSize: "14px",
+                  }}
+                >
+                  {position}
+                </span>
+              }
+            />
 
-            {resumeFileName && (
-              <Text
-                style={{
-                  margin: 0,
-                  marginBottom: "12px",
-                  fontSize: "16px",
-                  color: "#ffffff",
-                }}
-              >
-                <strong>Resume:</strong> {resumeFileName} (attached)
-              </Text>
-            )}
+            <Field
+              label="Resume"
+              value={
+                resumeFileName ? (
+                  <>
+                    📎 {resumeFileName}
+                    <br />
+                    <span
+                      style={{
+                        color: "#16a34a",
+                        fontSize: "14px",
+                      }}
+                    >
+                      Attached to this email
+                    </span>
+                  </>
+                ) : (
+                  <span style={{ color: "#9ca3af" }}>
+                    No resume uploaded
+                  </span>
+                )
+              }
+            />
 
             {coverLetter && (
               <>
                 <Text
                   style={{
-                    margin: "16px 0 8px 0",
-                    fontSize: "16px",
-                    color: "#ffffff",
+                    margin: "28px 0 12px",
+                    fontSize: "13px",
+                    color: "#6b7280",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                    fontWeight: 700,
                   }}
                 >
-                  <strong>Cover Letter:</strong>
+                  Cover Letter
                 </Text>
-                <Text
+
+                <Section
                   style={{
-                    margin: 0,
-                    marginBottom: "12px",
-                    fontSize: "16px",
-                    color: "#ffffff",
-                    lineHeight: "1.6",
-                    whiteSpace: "pre-wrap",
+                    backgroundColor: "#f9fafb",
+                    border: "1px solid #e5e7eb",
+                    borderRadius: "10px",
+                    padding: "18px",
                   }}
                 >
-                  {coverLetter}
-                </Text>
+                  <Text
+                    style={{
+                      margin: 0,
+                      fontSize: "15px",
+                      color: "#374151",
+                      lineHeight: "1.8",
+                      whiteSpace: "pre-wrap",
+                    }}
+                  >
+                    {coverLetter}
+                  </Text>
+                </Section>
               </>
             )}
+
+            <Hr
+              style={{
+                border: 0,
+                borderTop: "1px solid #e5e7eb",
+                margin: "32px 0 24px",
+              }}
+            />
+
+            <Text
+              style={{
+                margin: 0,
+                fontSize: "13px",
+                color: "#6b7280",
+                lineHeight: "1.7",
+                textAlign: "center",
+              }}
+            >
+              This email was automatically generated from the{" "}
+              <strong>NexVibe Careers Form</strong>.
+            </Text>
           </Section>
-
-          <Hr
-            style={{
-              border: 0,
-              borderTop: "1px solid rgba(255,255,255,0.08)",
-              margin: "24px 0",
-            }}
-          />
-
-          <Text
-            style={{
-              margin: 0,
-              fontSize: "12px",
-              color: "#6b7280",
-            }}
-          >
-            This email was sent from the NexVibe careers application form.
-          </Text>
         </Container>
       </Body>
     </Html>
