@@ -1,12 +1,51 @@
-
 "use client";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
 
 import Button from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
+import { contactSchema, type ContactInput } from "@/lib/schemas/contact";
+import { sendContactEmail } from "@/app/actions/contact";
 
 export default function ContactSection() {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactInput>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      company: "",
+      phoneNumber: "",
+      message: "",
+      website: "",
+    },
+  });
+
+  const onSubmit = async (data: ContactInput) => {
+    try {
+      const result = await sendContactEmail(data);
+      if (result.success) {
+        toast.success(result.message || "Message sent successfully!");
+        reset();
+      } else {
+        toast.error(result.error || "Failed to send message.");
+        console.log(result.error);
+      }
+    } catch (err) {
+      toast.error("An unexpected error occurred. Please try again later.");
+      console.log(err)
+    }
+  };
+
   return (
     <section className="text-gray-300 min-h-screen py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
@@ -82,50 +121,131 @@ export default function ContactSection() {
               Send Us a Message
             </h2>
 
-            <form className="space-y-4">
-
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              {/* Honeypot field (hidden from real users, bots will fill it) */}
+              <div className="hidden" aria-hidden="true">
                 <input
-                  required
-                  placeholder="First Name"
-                  className="w-full bg-[#1E1E1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600"
+                  type="text"
+                  autoComplete="off"
+                  {...register("website")}
+                  placeholder="Leave this empty"
                 />
-
-                <input
-                  required
-                  placeholder="Last Name"
-                  className="w-full bg-[#1E1E1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600"
-                />
-
               </div>
 
-              <input
-                required
-                type="email"
-                placeholder="Email"
-                className="w-full bg-[#1E1E1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600"
-              />
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div>
+                  <input
+                    {...register("firstName")}
+                    placeholder="First Name"
+                    className={cn(
+                      "w-full bg-[#1E1E1E] border rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600 transition-all",
+                      errors.firstName ? "border-red-500/50 focus:border-red-500" : "border-white/10"
+                    )}
+                  />
+                  {errors.firstName && (
+                    <span className="text-red-400 text-xs mt-1 block px-1">
+                      {errors.firstName.message}
+                    </span>
+                  )}
+                </div>
 
-              <input
-                placeholder="Company"
-                className="w-full bg-[#1E1E1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600"
-              />
+                <div>
+                  <input
+                    {...register("lastName")}
+                    placeholder="Last Name"
+                    className={cn(
+                      "w-full bg-[#1E1E1E] border rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600 transition-all",
+                      errors.lastName ? "border-red-500/50 focus:border-red-500" : "border-white/10"
+                    )}
+                  />
+                  {errors.lastName && (
+                    <span className="text-red-400 text-xs mt-1 block px-1">
+                      {errors.lastName.message}
+                    </span>
+                  )}
+                </div>
+              </div>
 
-              <input
-                placeholder="Phone Number"
-                className="w-full bg-[#1E1E1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600"
-              />
+              <div>
+                <input
+                  type="email"
+                  {...register("email")}
+                  placeholder="Email"
+                  className={cn(
+                    "w-full bg-[#1E1E1E] border rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600 transition-all",
+                    errors.email ? "border-red-500/50 focus:border-red-500" : "border-white/10"
+                  )}
+                />
+                {errors.email && (
+                  <span className="text-red-400 text-xs mt-1 block px-1">
+                    {errors.email.message}
+                  </span>
+                )}
+              </div>
 
-              <textarea
-                rows={4}
-                placeholder="Message"
-                className="w-full bg-[#1E1E1E] border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600 resize-none"
-              />
+              <div>
+                <input
+                  {...register("company")}
+                  placeholder="Company (Optional)"
+                  className={cn(
+                    "w-full bg-[#1E1E1E] border rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600 transition-all",
+                    errors.company ? "border-red-500/50 focus:border-red-500" : "border-white/10"
+                  )}
+                />
+                {errors.company && (
+                  <span className="text-red-400 text-xs mt-1 block px-1">
+                    {errors.company.message}
+                  </span>
+                )}
+              </div>
 
-              <Button variant="secondary" className="flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm">
-                Send
-                
+              <div>
+                <input
+                  {...register("phoneNumber")}
+                  placeholder="Phone Number (Optional)"
+                  className={cn(
+                    "w-full bg-[#1E1E1E] border rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600 transition-all",
+                    errors.phoneNumber ? "border-red-500/50 focus:border-red-500" : "border-white/10"
+                  )}
+                />
+                {errors.phoneNumber && (
+                  <span className="text-red-400 text-xs mt-1 block px-1">
+                    {errors.phoneNumber.message}
+                  </span>
+                )}
+              </div>
+
+              <div>
+                <textarea
+                  rows={4}
+                  {...register("message")}
+                  placeholder="Message"
+                  className={cn(
+                    "w-full bg-[#1E1E1E] border rounded-xl px-4 py-3 text-sm text-white outline-none placeholder:text-gray-500 focus:border-blue-600 resize-none transition-all",
+                    errors.message ? "border-red-500/50 focus:border-red-500" : "border-white/10"
+                  )}
+                />
+                {errors.message && (
+                  <span className="text-red-400 text-xs mt-1 block px-1">
+                    {errors.message.message}
+                  </span>
+                )}
+              </div>
+
+              <Button
+                variant="secondary"
+                type="submit"
+                disabled={isSubmitting}
+                className="flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm"
+              >
+                {isSubmitting ? (
+                  <span className="flex items-center gap-2">
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-[#4ba3f5] border-t-transparent" />
+                    Sending...
+                  </span>
+                ) : (
+                  "Send Message"
+                )}
               </Button>
             </form>
 
