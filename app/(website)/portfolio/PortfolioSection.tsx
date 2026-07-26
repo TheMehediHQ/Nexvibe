@@ -17,6 +17,7 @@ const portfolioData: PortfolioItem[] = [
   "Online Ticketing",
   "Payment Integration",
   "Admin Dashboard",
+  "Web Application",
 ],
 link: "https://preview.themeforest.net/item/venuex-event-ticketing-management-saas-dashboard-html-template/full_screen_preview/61427808",
   },
@@ -30,6 +31,7 @@ link: "https://preview.themeforest.net/item/venuex-event-ticketing-management-sa
     "Savings Tracker",
     "Budget Management",
     "Analytics Dashboard",
+    "Web Application",
   ],
   link: "https://preview.themeforest.net/item/savvyfi-gamified-finance-savings-dashboard-html-template/full_screen_preview/61010279",
 },
@@ -43,6 +45,7 @@ link: "https://preview.themeforest.net/item/venuex-event-ticketing-management-sa
     "Creator Dashboard",
     "Audience Insights",
     "Content Management",
+    "Web Application",
   ],
   link: "https://preview.themeforest.net/item/creatorx-youtube-creator-analytics-dashboard-html-template/full_screen_preview/62070859"}
   
@@ -165,7 +168,7 @@ export default function PortfolioSection() {
               className="bg-[#111112] border border-white/[0.06] rounded-xl px-4 py-2.5 text-xs text-gray-300 focus:outline-none focus:border-blue-500 cursor-pointer min-w-[140px]"
             >
               <option value="All">All Tech Stack</option>
-              <option value="Machine Learning">Machine Learning</option>
+              <option value="Web Application">Web Application</option>
               <option value="Blockchain">Blockchain</option>
               <option value="Algorithmic Trading">Algorithmic Trading</option>
             </select>
