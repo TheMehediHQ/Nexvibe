@@ -511,7 +511,7 @@ export default function ContactSection() {
         </p>
 
         <p className="mt-2 text-xs leading-relaxed text-gray-400">
-          We're available for startups, businesses, and long-term
+          We&apos;re available for startups, businesses, and long-term
           development partnerships.
         </p>
       </div>
