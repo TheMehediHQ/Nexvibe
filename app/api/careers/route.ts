@@ -7,6 +7,7 @@ import CareerConfirmationEmail from "@/emails/CareerConfirmationEmail";
 import { careerFormSchema, HONEYPOT_FIELD } from "@/lib/validations";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { verifyTurnstileToken } from "@/lib/turnstile";
+import { getJobById, isDeadlinePassed } from "@/lib/jobs";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -42,8 +43,32 @@ export async function POST(request: NextRequest) {
     const headline = (formData.get("headline") as string) || "";
     const coverLetter = (formData.get("coverLetter") as string) || "";
     const position = formData.get("position") as string;
+    const jobId = formData.get("jobId") as string;
     const turnstileToken = formData.get("turnstileToken") as string;
     const resumeFile = formData.get("resume") as File | null;
+
+    // --- Deadline validation ---
+    if (!jobId) {
+      return NextResponse.json(
+        { success: false, error: "Job ID is required." },
+        { status: 400 }
+      );
+    }
+
+    const job = getJobById(jobId);
+    if (!job) {
+      return NextResponse.json(
+        { success: false, error: "Job not found." },
+        { status: 404 }
+      );
+    }
+
+    if (isDeadlinePassed(job.deadline)) {
+      return NextResponse.json(
+        { success: false, error: "This job is no longer accepting applications." },
+        { status: 410 }
+      );
+    }
 
     // --- Zod validation ---
     const parsed = careerFormSchema.safeParse({

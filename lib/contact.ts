@@ -55,8 +55,8 @@ export const CONTACT_CONTENT: ContactPageContent = {
     successDescription: "I'll get back to you within 24–48 hours.",
   },
   contactInfo: {
-    email: "contact.nexvibe@gmail.com",
-    phone: "+8801747874773",
+    email: "hello@nexvibe.tech",
+    phone: "+880 1607-128338",
     office: "Remote Based\nBangladesh",
   },
   consultation: {

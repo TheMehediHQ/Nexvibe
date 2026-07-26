@@ -3,7 +3,8 @@ import Link from "next/link";
 import { ArrowLeft, Check } from "lucide-react";
 import Button from "@/components/ui/Button";
 import ApplicationForm from "@/components/ui/ApplicationForm";
-import { JOBS, getJobById } from "@/lib/jobs";
+import CountdownTimer from "@/components/ui/CountdownTimer";
+import { JOBS, getJobById, isDeadlinePassed, formatDeadlineForDisplay } from "@/lib/jobs";
 
 export function generateStaticParams() {
   return JOBS.map((job) => ({ id: job.id }));
@@ -31,6 +32,20 @@ function CardList({ items }: { items?: string[] }) {
   );
 }
 
+function StatusBadge({ passed }: { passed: boolean }) {
+  return (
+    <span
+      className={`rounded-full px-4 py-1.5 text-xs font-semibold ${
+        passed
+          ? "bg-red-500/20 text-red-400 border border-red-500/30"
+          : "bg-green-500/20 text-green-400 border border-green-500/30"
+      }`}
+    >
+      {passed ? "Applications Closed" : "Applications Open"}
+    </span>
+  );
+}
+
 export default async function JobDetailPage({
   params,
 }: {
@@ -44,7 +59,7 @@ export default async function JobDetailPage({
   }
 
   const Icon = job.icon;
-  const similar = JOBS.filter((j) => j.id !== job.id).slice(0, 3);
+  const deadlinePassed = isDeadlinePassed(job.deadline);
 
   return (
     <div className="pb-16">
@@ -81,28 +96,31 @@ export default async function JobDetailPage({
                 <h1 className="mt-1 text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
                   {job.title}
                 </h1>
+                <p className="mt-2 text-sm font-semibold text-[var(--text-primary)] transition-colors [html.light_&]:text-[var(--text-primary)]">
+                  Opening Position: {job.openings ? job.openings.toString().padStart(2, "0") : "01"}
+                </p>
               </div>
             </div>
 
-           
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-wrap gap-2">
+                <StatusBadge passed={deadlinePassed} />
 
-<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-  <div className="flex flex-wrap gap-2">
-    <span className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-gray-300">
-      {job.jobType}
-    </span>
+                <span className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-gray-300">
+                  {job.jobType}
+                </span>
 
-    <span className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-gray-300">
-      {job.workplaceType}
-    </span>
-  </div>
+                <span className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-gray-300">
+                  {job.workplaceType}
+                </span>
+              </div>
 
-  <Link href="#apply" className="w-full sm:w-auto">
-    <Button variant="primary">
-      Apply Now
-    </Button>
-  </Link>
-</div>
+              <Link href="#apply" className="w-full sm:w-auto">
+                <Button variant="primary" disabled={deadlinePassed}>
+                  {deadlinePassed ? "Position Closed" : "Apply Now"}
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -147,10 +165,32 @@ export default async function JobDetailPage({
             {/* 7. APPLICATION FORM */}
             <section id="apply">
               <SectionHeading>Apply for this position</SectionHeading>
-              <div className="rounded-2xl border border-white/10 bg-[#141414] p-6 md:p-8">
-                <ApplicationForm jobTitle={job.title} />
-              </div>
+              {deadlinePassed ? (
+                <div className="rounded-2xl border border-white/10 bg-[#141414] p-6 md:p-8">
+                  <div className="text-center">
+                    <h3 className="text-lg font-semibold text-white mb-2">
+                      This position is no longer accepting applications.
+                    </h3>
+                    <p className="text-gray-400">
+                      The application deadline for this role has passed.
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <div className="rounded-2xl border border-white/10 bg-[#141414] p-6 md:p-8">
+                  <ApplicationForm jobTitle={job.title} jobId={job.id} deadline={job.deadline} />
+                </div>
+              )}
             </section>
+
+            {/* SEO: Closed position notice */}
+            {deadlinePassed && (
+              <section className="text-sm text-gray-500">
+                <p>
+                  This vacancy has closed and is no longer accepting applications.
+                </p>
+              </section>
+            )}
           </div>
 
           {/* 6. STICKY SIDEBAR */}
@@ -181,7 +221,17 @@ export default async function JobDetailPage({
                   <p className="text-xs uppercase tracking-wide text-slate-500">
                     Deadline
                   </p>
-                  <p className="mt-1 font-medium text-white">{job.deadline}</p>
+                  <p className="mt-1 font-medium text-white">
+                    {formatDeadlineForDisplay(job.deadline)}
+                  </p>
+                  {!deadlinePassed && (
+                    <CountdownTimer deadline={job.deadline} />
+                  )}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-[var(--text-primary)] transition-colors [html.light_&]:text-[var(--text-primary)]">
+                    Opening Position: {job.openings ? job.openings.toString().padStart(2, "0") : "01"}
+                  </p>
                 </div>
               </div>
 
@@ -195,8 +245,8 @@ export default async function JobDetailPage({
               </div>
 
               <Link href="#apply" className="block">
-                <Button variant="primary" className="w-full justify-center">
-                  Apply Now
+                <Button variant="primary" className="w-full justify-center" disabled={deadlinePassed}>
+                  {deadlinePassed ? "Position Closed" : "Apply Now"}
                 </Button>
               </Link>
             </div>

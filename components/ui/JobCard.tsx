@@ -44,6 +44,10 @@ export default function JobCard({
         <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-gray-300">
           Deadline · {job.deadline}
         </span>
+
+        <span className="text-sm font-semibold text-[var(--text-primary)] transition-colors [html.light_&]:text-[var(--text-primary)]">
+          Opening Position: {job.openings ? job.openings.toString().padStart(2, "0") : "01"}
+        </span>
       </div>
 
       {/* Skills */}

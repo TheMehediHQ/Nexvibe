@@ -39,7 +39,7 @@ export default function Footer() {
             <div className="flex flex-col gap-4 text-sm text-[var(--muted)]">
               <div className="flex items-center gap-3">
                 <Mail size={18} className="shrink-0 text-blue-500" />
-                <span>contact.nexvibe@gmail.com</span>
+                <span>hello@nexvibe.tech</span>
               </div>
 
               <div className="flex items-center gap-3">
