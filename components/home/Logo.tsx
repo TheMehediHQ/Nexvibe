@@ -1,51 +1,84 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
 
-const logos = [
-  { name: "Zapier", src: "/logos/amazon.png" },
-  { name: "Spotify", src: "/logos/amazon.png" },
-  { name: "Zoom", src: "/logos/amazon.png" },
-  { name: "Slack", src: "/logos/amazon.png" },
-  { name: "Amazon", src: "/logos/amazon.png" },
-  { name: "Adobe", src: "/logos/amazon.png" },
+const row1 = [
+  "DESIGN FLEXIBILITY",
+  "CREATIVE DESIGN",
+  "DEDICATED SUPPORT",
+  "CODING FLEXIBILITY",
+  "SPEED OPTIMIZED",
+  "WEB DEVELOPMENT",
 ];
 
-export default function LogoMarquee() {
-  const duplicatedLogos = [...logos, ...logos, ...logos];
+const row2 = [
+  "PUT YOUR BEST FOOT FORWARD",
+  "FOR YOUR SUCCESS",
+  "DEVELOPMENT",
+  "STRATEGY",
+  "CREATIVE UI/UX DESIGN",
+];
+
+function SparkleIcon() {
+  return (
+    <svg
+      className="h-5 w-5 shrink-0 fill-white text-white"
+      viewBox="0 0 24 24"
+    >
+      <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+    </svg>
+  );
+}
+
+export default function GradientMarquee() {
+  const duplicatedRow1 = [...row1, ...row1, ...row1, ...row1];
+  const duplicatedRow2 = [...row2, ...row2, ...row2, ...row2];
 
   return (
-    <section className="relative w-full bg-[#050505] py-8 border-y border-white/[0.04] overflow-hidden select-none">
-      <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
-
-      <div className="flex w-max items-center">
+    <div className="flex flex-col select-none font-sans overflow-hidden">
+      {/* Top Banner */}
+      <section className="relative overflow-hidden bg-gradient-to-r from-[#6366f1] via-[#06b6d4] to-[#10b981] py-3.5">
         <motion.div
-          className="flex items-center gap-16 md:gap-24 pr-16 md:pr-24"
-          animate={{
-            x: ["0%", "-33.33%"],
-          }}
+          className="flex w-max items-center gap-8"
+          animate={{ x: ["0%", "-50%"] }}
           transition={{
+            duration: 90, // 👈 স্পিড অনেক স্লো করা হয়েছে
             ease: "linear",
-            duration: 20,
             repeat: Infinity,
           }}
         >
-          {duplicatedLogos.map((logo, index) => (
-            <div 
-              key={index} 
-              className="h-6 md:h-7 w-auto flex items-center justify-center opacity-40 hover:opacity-80 transition-opacity duration-200 grayscale invert"
-            >
-              <img
-                src={logo.src}
-                alt={logo.name}
-                className="h-full object-contain pointer-events-none"
-              />
+          {duplicatedRow1.map((item, index) => (
+            <div key={`r1-${index}`} className="flex items-center gap-8">
+              <span className="text-base sm:text-lg font-black tracking-wider text-white uppercase drop-shadow-sm whitespace-nowrap">
+                {item}
+              </span>
+              <SparkleIcon />
             </div>
           ))}
         </motion.div>
-      </div>
-    </section>
+      </section>
+
+      {/* Bottom Banner */}
+      <section className="relative overflow-hidden bg-gradient-to-r from-[#f97316] via-[#ec4899] to-[#8b5cf6] py-3.5 border-t border-white/10">
+        <motion.div
+          className="flex w-max items-center gap-8"
+          animate={{ x: ["-50%", "0%"] }}
+          transition={{
+            duration: 100, // 👈 স্পিড অনেক স্লো করা হয়েছে
+            ease: "linear",
+            repeat: Infinity,
+          }}
+        >
+          {duplicatedRow2.map((item, index) => (
+            <div key={`r2-${index}`} className="flex items-center gap-8">
+              <span className="text-base sm:text-lg font-black tracking-wider text-white uppercase drop-shadow-sm whitespace-nowrap">
+                {item}
+              </span>
+              <SparkleIcon />
+            </div>
+          ))}
+        </motion.div>
+      </section>
+    </div>
   );
 }
