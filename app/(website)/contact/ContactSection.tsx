@@ -401,7 +401,7 @@ export default function ContactSection() {
           </div>
 
           {/* Right Side */}
-          <div className="flex h-full flex-col gap-6 lg:col-span-5">
+          {/* <div className="flex h-full flex-col gap-6 lg:col-span-5">
 
             <div className="flex flex-1 flex-col rounded-2xl border border-white/10 bg-[#141414] p-6 md:p-8">
 
@@ -454,7 +454,91 @@ export default function ContactSection() {
 
             </div>
 
-          </div>
+          </div> */}
+
+{/* Right Side */}
+<div className="flex h-full flex-col lg:col-span-5">
+  {/* Contact Information */}
+  <div className="flex-1 rounded-2xl border border-white/10 bg-[#141414] p-6 md:p-8">
+    <h2 className="mb-6 text-lg font-semibold text-white">
+      Contact Information
+    </h2>
+
+    <div className="space-y-6">
+      <div>
+        <h4 className="text-sm font-semibold text-white">Email</h4>
+        <a
+          href={`mailto:${contactInfo.email}`}
+          className="text-xs text-gray-400 transition-colors hover:text-white"
+        >
+          {contactInfo.email}
+        </a>
+      </div>
+
+      <div>
+        <h4 className="text-sm font-semibold text-white">Phone</h4>
+        <a
+          href={`tel:${contactInfo.phone}`}
+          className="text-xs text-gray-400 transition-colors hover:text-white"
+        >
+          {contactInfo.phone}
+        </a>
+      </div>
+
+      <div>
+        <h4 className="text-sm font-semibold text-white">Office</h4>
+        <p className="whitespace-pre-line text-xs text-gray-400">
+          {contactInfo.office}
+        </p>
+      </div>
+
+      <div className="border-t border-white/10 pt-6">
+        <h4 className="text-sm font-semibold text-white">
+          Response Time
+        </h4>
+
+        <p className="mt-1 text-xs leading-relaxed text-gray-400">
+          We typically respond to all inquiries within{" "}
+          <span className="font-medium text-white">
+            24–48 business hours.
+          </span>
+        </p>
+      </div>
+
+      <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-4">
+        <p className="text-sm font-medium text-emerald-400">
+          🟢 Currently Accepting New Projects
+        </p>
+
+        <p className="mt-2 text-xs leading-relaxed text-gray-400">
+          We're available for startups, businesses, and long-term
+          development partnerships.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {/* Consultation */}
+  <div className="mt-6 rounded-2xl border border-white/10 bg-[#141414] p-6 md:p-8">
+    <h2 className="mb-4 text-lg font-semibold text-white">
+      {consultation.heading}
+    </h2>
+
+    <p className="mb-6 text-xs leading-relaxed text-gray-400">
+      {consultation.description}
+    </p>
+
+    <Button
+      variant="primary"
+      href={consultation.ctaHref}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full rounded-xl py-3 text-sm"
+    >
+      {consultation.ctaText}
+    </Button>
+  </div>
+</div>
 
         </div>
 
