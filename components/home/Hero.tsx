@@ -52,7 +52,7 @@ export default function Hero() {
   });
 
   return (
-    <section className="relative overflow-hidden bg-[var(--background)] py-16 sm:py-20 md:py-24 lg:py-32">
+    <section className="min-h-screen relative overflow-hidden bg-[var(--background)] py-16 sm:py-20 md:py-24 lg:py-32">
       {/* Background Dot Grid */}
       <div
         className="absolute inset-0 opacity-[0.08]"
