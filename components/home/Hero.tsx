@@ -2,43 +2,43 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useCallback, useRef } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import Button from "@/components/ui/Button";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const robotRef = useRef<HTMLDivElement>(null);
 
-  const { contextSafe } = useGSAP({ scope: containerRef });
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      const container = containerRef.current;
+      const robot = robotRef.current;
+      if (!container || !robot) return;
 
-  const handleMouseMove = contextSafe((e: React.MouseEvent<HTMLDivElement>) => {
-    const container = containerRef.current;
-    const robot = robotRef.current;
-    if (!container || !robot) return;
+      const rect = container.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
 
-    const rect = container.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
+      const distX = e.clientX - centerX;
+      const distY = e.clientY - centerY;
 
-    const distX = e.clientX - centerX;
-    const distY = e.clientY - centerY;
+      // Follow the cursor up to 35% of the distance, capping the maximum translation to 65px
+      const targetX = Math.max(-65, Math.min(65, distX * 0.35));
+      const targetY = Math.max(-65, Math.min(65, distY * 0.35));
 
-    // Follow the cursor up to 35% of the distance, capping the maximum translation to 65px
-    const targetX = Math.max(-65, Math.min(65, distX * 0.35));
-    const targetY = Math.max(-65, Math.min(65, distY * 0.35));
+      gsap.to(robot, {
+        x: targetX,
+        y: targetY,
+        duration: 0.4,
+        ease: "power3.out",
+        overwrite: "auto",
+      });
+    },
+    []
+  );
 
-    gsap.to(robot, {
-      x: targetX,
-      y: targetY,
-      duration: 0.4,
-      ease: "power3.out",
-      overwrite: "auto",
-    });
-  });
-
-  const handleMouseLeave = contextSafe(() => {
+  const handleMouseLeave = useCallback(() => {
     const robot = robotRef.current;
     if (!robot) return;
 
@@ -49,7 +49,7 @@ export default function Hero() {
       ease: "elastic.out(1, 0.3)",
       overwrite: "auto",
     });
-  });
+  }, []);
 
   return (
     <section className="min-h-screen relative overflow-hidden bg-[var(--background)] py-16 sm:py-20 md:py-24 lg:py-32">
@@ -125,7 +125,7 @@ export default function Hero() {
 
               <Button
                 variant="secondary"
-                href="https://wa.me/8801607128338?text=Hello%20Nexvibe!%20I'm%20interested%20in%20your%20services%20and%20would%20like%20to%20discuss%20my%20project."
+                href="https://wa.me/88+8801747874773?text=Hello%20Nexvibe!%20I'm%20interested%20in%20your%20services%20and%20would%20like%20to%20discuss%20my%20project."
                 target="_blank"
                 rel="noopener noreferrer"
               >

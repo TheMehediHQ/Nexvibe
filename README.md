@@ -1,30 +1,96 @@
+# Nexvibe
 
+AI-driven data solutions agency website — built with [Next.js 16](https://nextjs.org), [React 19](https://react.dev), and [Tailwind CSS 4](https://tailwindcss.com).
 
+## Pages
 
+| Route              | Description                        |
+|--------------------|------------------------------------|
+| `/`                | Home — hero, services, portfolio, FAQ, testimonials |
+| `/about`           | About the team and mission         |
+| `/services`        | Service offerings                  |
+| `/portfolio`       | Case studies and project showcase  |
+| `/careers`         | Open positions + application form  |
+| `/contact`         | Contact form                       |
+| `/privacy-policy`  | Privacy policy                     |
+| `/terms-of-service`| Terms of service                   |
 
-First, run the development server:
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Styling:** Tailwind CSS 4, CSS variables for theming
+- **Animation:** GSAP, Framer Motion, AOS
+- **Email:** Resend + React Email (contact & career forms with confirmation emails)
+- **Rate Limiting:** Upstash Redis + `@upstash/ratelimit`
+- **Bot Protection:** Cloudflare Turnstile
+- **Validation:** Zod
+- **Icons:** Lucide React, React Icons
+
+## Getting Started
+
+### Prerequisites
+
+- [Bun](https://bun.sh) (or npm)
+- Accounts: [Resend](https://resend.com), [Upstash](https://upstash.com), [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/)
+
+### Install & Run
 
 ```bash
-npm run dev
+bun install
+bun run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local` and fill in the values:
 
-## Learn More
+```bash
+cp .env.example .env.local
+```
 
-To learn more about Next.js, take a look at the following resources:
+| Variable                       | Purpose                          |
+|--------------------------------|----------------------------------|
+| `RESEND_API_KEY`               | Resend API key for sending emails|
+| `RESEND_FROM_EMAIL`            | Sender address for emails        |
+| `CONTACT_TO_EMAIL`             | Recipient for contact form submissions |
+| `CAREERS_TO_EMAIL`             | Recipient for job applications   |
+| `UPSTASH_REDIS_REST_URL`       | Upstash Redis REST URL           |
+| `UPSTASH_REDIS_REST_TOKEN`     | Upstash Redis REST token         |
+| `TURNSTILE_SECRET_KEY`         | Cloudflare Turnstile secret key  |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY`| Cloudflare Turnstile site key   |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+app/
+  (website)/          # Page routes (home, about, services, etc.)
+  api/                # API routes (contact, careers)
+components/
+  common/             # Shared components (WhatsApp button)
+  home/               # Home page sections (Hero, FAQ, Portfolio, etc.)
+  layout/             # Navbar, Footer
+  ui/                 # Reusable UI components (Button, Cards, Forms)
+emails/               # React Email templates (contact & career notifications)
+lib/                  # Utilities (validation, rate limiting, Turnstile)
+```
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Command          | Description              |
+|------------------|--------------------------|
+| `bun run dev`    | Start development server |
+| `bun run build`  | Production build         |
+| `bun run start`  | Start production server  |
+| `bun run lint`   | Run ESLint               |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy
+
+Deploy on [Vercel](https://vercel.com):
+
+```bash
+vercel
+```
+
+Make sure to add all environment variables in the Vercel project settings.

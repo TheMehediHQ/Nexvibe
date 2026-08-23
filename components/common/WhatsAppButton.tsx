@@ -8,7 +8,7 @@ interface WhatsAppButtonProps {
 }
 
 export default function WhatsAppButton({
-  phoneNumber = "+8801607128338", // Replace with client's preferred WhatsApp number
+  phoneNumber = "+8801747874773", // Replace with client's preferred WhatsApp number
   message = "Hello Nexvibe team! I'd like to inquire about your services.",
 }: WhatsAppButtonProps) {
   const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(message)}`;

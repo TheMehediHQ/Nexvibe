@@ -255,7 +255,7 @@ export default function ContactConfirmationEmail({
             >
               💬{" "}
               <Link
-                href="https://wa.me/8801607128338"
+                href="https://wa.me/88+8801747874773"
                 style={{
                   color: "#0A84FF",
                   textDecoration: "none",
