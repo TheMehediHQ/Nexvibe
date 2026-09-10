@@ -4,52 +4,9 @@ import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
-import PortfolioCard, { PortfolioItem } from "@/components/ui/PortfolioCard";
+import PortfolioCard from "@/components/ui/PortfolioCard";
 import Button from "@/components/ui/Button";
-
-const portfolioData: PortfolioItem[] = [
-  {
-    imageSrc: "/projects/ticketly.png",
-    title: "Ticketly",
-    description: "Tickety is a comprehensive event management platform that helps you create, manage, and sell tickets for your events. Whether you're organizing a small workshop or a large conference, we've got you covered.",
-   tags: [
-  "SaaS Platform",
-  "Online Ticketing",
-  "Payment Integration",
-  "Admin Dashboard",
-  "Web Application",
-],
-link: "https://preview.themeforest.net/item/venuex-event-ticketing-management-saas-dashboard-html-template/full_screen_preview/61427808",
-  },
-  {
-  imageSrc: "/projects/SavvyFi.png",
-  title: "SavvyFi",
-  description:
-    "A modern gamified finance and savings dashboard that helps users track expenses, manage budgets, monitor financial goals, and gain actionable insights through interactive analytics and intuitive visualizations.",
-  tags: [
-    "Personal Finance",
-    "Savings Tracker",
-    "Budget Management",
-    "Analytics Dashboard",
-    "Web Application",
-  ],
-  link: "https://preview.themeforest.net/item/savvyfi-gamified-finance-savings-dashboard-html-template/full_screen_preview/61010279",
-},
-{
-  imageSrc: "/projects/creatorx.png",
-  title: "CreatorX",
-  description:
-    "A modern YouTube creator analytics dashboard designed to track channel performance, monitor audience growth, analyze video metrics, and manage content through an intuitive, data-driven interface.",
-  tags: [
-    "YouTube Analytics",
-    "Creator Dashboard",
-    "Audience Insights",
-    "Content Management",
-    "Web Application",
-  ],
-  link: "https://preview.themeforest.net/item/creatorx-youtube-creator-analytics-dashboard-html-template/full_screen_preview/62070859"}
-  
-];
+import { PORTFOLIO_PROJECTS } from "@/lib/portfolio";
 
 export default function PortfolioSection() {
   // ১. ফিল্টারিং এর জন্য স্টেট (States) ঘোষণা করা হলো
@@ -59,7 +16,7 @@ export default function PortfolioSection() {
 
   // ২. ফিল্টার লজিক (useMemo ব্যবহার করা হয়েছে পারফরম্যান্স অপ্টিমাইজেশনের জন্য)
   const filteredPortfolio = useMemo(() => {
-    return portfolioData.filter((project) => {
+    return PORTFOLIO_PROJECTS.filter((project) => {
       // সার্চ ম্যাচ চেক (Title, Description অথবা Tags এর সাথে মিললে)
       const matchesSearch =
         project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||

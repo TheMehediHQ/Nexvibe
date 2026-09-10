@@ -3,14 +3,9 @@
 import React from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import type { PortfolioItem } from "@/lib/portfolio";
 
-export interface PortfolioItem {
-  imageSrc: string;
-  title: string;
-  description: string;
-  tags: string[];
-  link?: string;
-}
+export type { PortfolioItem };
 
 interface PortfolioCardProps {
   item: PortfolioItem;
