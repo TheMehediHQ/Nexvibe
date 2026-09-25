@@ -65,7 +65,7 @@ export default function FAQ() {
       <div className="relative mx-auto max-w-4xl">
         {/* Heading */}
         <div className="mb-14 text-center md:mb-16">
-          <h2 className="text-3xl font-semibold tracking-tight text-[var(--foreground)] md:text-5xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-[var(--foreground)] md:text-4xl">
             Frequently Asked Questions
           </h2>
 
