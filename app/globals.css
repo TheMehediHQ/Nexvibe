@@ -22,10 +22,23 @@
 
   /* Font */
   --font-sans: var(--font-barlow);
+  
+  /* Override text-sm and text-xs size globally */
+  --text-sm: 1rem;
+  --text-xs: 1rem;
 }
 
 * {
   border-color: var(--border);
+}
+
+/* Override text-sm and text-xs font sizes globally */
+.text-sm {
+  font-size: 1rem !important;
+}
+
+.text-xs {
+  font-size: 1rem !important;
 }
 
 html {

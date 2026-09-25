@@ -211,7 +211,7 @@ function PricingCard({ plan }: { plan: PricingItem }) {
                 style={{ backgroundColor: plan.accentColor }}
               />
               <span
-                className={`text-[13px] leading-relaxed transition-colors duration-200 ${
+                className={`text-sm leading-relaxed transition-colors duration-200 ${
                   feature.startsWith("Everything in")
                     ? "font-semibold text-white"
                     : "font-light text-gray-300 group-hover:text-white"
