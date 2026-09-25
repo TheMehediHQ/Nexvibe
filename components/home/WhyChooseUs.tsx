@@ -76,7 +76,7 @@ const headingVariants: Variants = {
   },
 };
 
-function FeatureCard({ feature, index }: { feature: FeatureItem; index: number }) {
+function FeatureCard({ feature }: { feature: FeatureItem; index?: number }) {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 

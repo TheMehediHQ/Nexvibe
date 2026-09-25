@@ -1,8 +1,6 @@
-import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
-import { ArrowUpRight } from "lucide-react";
 import Button from "@/components/ui/Button";
 
 export default function NotFound() {

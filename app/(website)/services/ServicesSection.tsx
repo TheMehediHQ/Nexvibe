@@ -87,7 +87,8 @@ const servicesData: CardItem[] = [
 
 
 // 2. Industries Data
-const industriesData: CardItem[] = [
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const _industriesData: CardItem[] = [
   {
     imageSrc: "/icons/72355892508 1 (1).png",
     title: "Financial Services",

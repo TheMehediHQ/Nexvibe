@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { ArrowLeft, Shield, Lock, Eye, Database, Cookie, Bell, UserCheck, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, Shield, Lock, Eye, Database, Cookie, Bell, UserCheck, CheckCircle2, LucideIcon } from "lucide-react";
 
 interface PolicySection {
   id: string;
-  icon: any;
+  icon: LucideIcon;
   title: string;
   paragraphs: string[];
   keyPoints?: string[];

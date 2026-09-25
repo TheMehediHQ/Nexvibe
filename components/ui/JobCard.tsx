@@ -1,6 +1,5 @@
 "use client";
 
-import { ElementType } from "react";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import type { Job } from "@/lib/jobs";

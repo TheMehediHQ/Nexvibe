@@ -214,7 +214,7 @@ function PricingCard({ plan }: { plan: PricingItem }) {
                 className={`text-sm leading-relaxed transition-colors duration-200 ${
                   feature.startsWith("Everything in")
                     ? "font-semibold text-white"
-                    : "font-light text-gray-300 group-hover:text-white"
+                    : "font-normal text-gray-300 group-hover:text-white"
                 }`}
               >
                 {feature}

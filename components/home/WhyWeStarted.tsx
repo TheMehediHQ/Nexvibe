@@ -59,12 +59,10 @@ function useWindowSize() {
   const [width, setWidth] = useState(1200);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      setWidth(window.innerWidth);
-      const handleResize = () => setWidth(window.innerWidth);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
+    const handleResize = () => setWidth(window.innerWidth);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return width;

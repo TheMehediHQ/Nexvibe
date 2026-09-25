@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { ArrowLeft, Scale, Zap, Briefcase, Layers, ShieldAlert, AlertCircle, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, Scale, Zap, Briefcase, Layers, ShieldAlert, AlertCircle, CheckCircle2, LucideIcon } from "lucide-react";
 
 interface TermSection {
   id: string;
-  icon: any;
+  icon: LucideIcon;
   title: string;
   paragraphs: string[];
   highlights?: string[];

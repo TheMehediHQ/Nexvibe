@@ -447,7 +447,7 @@ export default function ContactSection() {
                 href={consultation.ctaHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full rounded-xl py-3 text-sm"
+                className="w-full justify-center text-center rounded-xl py-3 text-sm"
               >
                 {consultation.ctaText}
               </Button>
@@ -533,7 +533,7 @@ export default function ContactSection() {
       href={consultation.ctaHref}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-full rounded-xl py-3 text-sm"
+      className="w-full justify-center text-center rounded-xl py-3 text-sm"
     >
       {consultation.ctaText}
     </Button>

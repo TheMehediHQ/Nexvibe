@@ -1,4 +1,4 @@
-import { Palette, Smartphone, LayoutGrid, Briefcase } from "lucide-react";
+import { LayoutGrid } from "lucide-react";
 import type { ComponentType } from "react";
 
 export interface Job {
