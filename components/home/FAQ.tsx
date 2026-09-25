@@ -69,10 +69,7 @@ export default function FAQ() {
             Frequently Asked Questions
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-[var(--muted)]">
-            Find answers to the most common questions about our services,
-            workflow, timelines, and collaboration process.
-          </p>
+       
         </div>
 
         {/* FAQ List */}
