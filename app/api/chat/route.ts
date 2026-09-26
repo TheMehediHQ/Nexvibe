@@ -24,7 +24,7 @@ Your goal is to be helpful, professional, friendly, and concise. Always represen
 
 ### Contact Information:
 - WhatsApp: +8801747874773 (Direct WhatsApp consultation)
-- Email: contact.nexvibe@gmail.com
+- Email: hello@nexvibe.tech
 - Website: https://nexvibe.tech (Pages: /services, /portfolio, /about, /careers, /contact)
 
 Guidelines:
@@ -61,7 +61,7 @@ Tell me about your project idea, or explore our full list on the **/services** p
     return `You can connect with the Nexvibe team directly:
 
 • **WhatsApp:** [+8801747874773](https://wa.me/8801747874773) (Fastest response)
-• **Email:** contact.nexvibe@gmail.com
+• **Email:** hello@nexvibe.tech
 • **Meeting:** You can schedule a free consultation via our **/contact** page.
 
 We typically respond within 24-48 hours. How can we help you today?`;
