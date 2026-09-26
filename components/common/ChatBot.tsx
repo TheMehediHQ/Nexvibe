@@ -5,6 +5,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Bot, X, Send, RefreshCw, User, ExternalLink, MessageCircle } from "lucide-react";
 import WhatsAppIcon from "@/components/common/icons/WhatsAppIcon";
 
+function renderMarkdown(text: string): string {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-sky-400 underline hover:text-sky-300">$1</a>')
+    .replace(/^---$/gm, '<hr class="border-white/10 my-3" />')
+    .replace(/\n/g, "<br />");
+}
+
 interface Message {
   id: string;
   role: "user" | "assistant";
@@ -308,9 +320,12 @@ export default function ChatBot() {
                           : "bg-gradient-to-r from-sky-600 to-indigo-600 text-white font-medium shadow-md shadow-sky-900/30"
                       }`}
                     >
-                      <div className="whitespace-pre-wrap break-words">
-                        {m.content}
-                      </div>
+                      <div
+                        className="whitespace-pre-wrap break-words"
+                        dangerouslySetInnerHTML={{
+                          __html: isAssistant ? renderMarkdown(m.content) : m.content,
+                        }}
+                      />
                     </div>
 
                     {!isAssistant && (
