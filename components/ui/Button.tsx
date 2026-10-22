@@ -16,6 +16,7 @@ interface ButtonProps {
   href?: string;
   target?: string;
   rel?: string;
+  download?: boolean | string;
   disabled?: boolean;
   type?: "button" | "submit" | "reset";
 }
@@ -57,6 +58,7 @@ export default function Button({
   href,
   target,
   rel,
+  download,
   disabled,
   type = "button",
 }: ButtonProps) {
@@ -98,7 +100,13 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} target={target} rel={rel} className={classNameMerged}>
+      <Link
+        href={href}
+        target={target}
+        rel={rel}
+        download={download}
+        className={classNameMerged}
+      >
         {content}
       </Link>
     );
