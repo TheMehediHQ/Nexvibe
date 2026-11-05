@@ -59,7 +59,7 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex w-fit gap-3 rounded-2xl border border-[var(--border)] p-3">
               <Link
-                href="https://www.facebook.com/nexvivehq"
+                href="https://www.facebook.com/nexvibehq"
                 target="_blank"
                 aria-label="Facebook"
                 className="group flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--card)] transition-all duration-300 hover:-rotate-6 hover:scale-105 hover:border-blue-600 hover:bg-blue-600"
@@ -83,7 +83,7 @@ export default function Footer() {
               </Link>
 
               <Link
-                href="https://www.linkedin.com/company/nexvivehq"
+                href="https://www.linkedin.com/company/nexvibehq"
                 target="_blank"
                 aria-label="LinkedIn"
                 className="group flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--card)] transition-all duration-300 hover:-rotate-6 hover:scale-105 hover:border-blue-600 hover:bg-blue-600"
